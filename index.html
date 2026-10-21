@@ -1,0 +1,3210 @@
+<!doctype html>
+<html lang="fr" data-embed>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio de Tiago Del Nery-Fontaine, étudiant game designer à ISART Digital : level design, system design et game feel. En recherche de stage.">
+<meta property="og:title" content="Tiago Del Nery-Fontaine · Game Designer">
+<meta property="og:description" content="Portfolio de Tiago Del Nery-Fontaine, étudiant game designer à ISART Digital : level design, system design et game feel. En recherche de stage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://geassoff.github.io/">
+<meta property="og:image" content="https://geassoff.github.io/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e5001c">
+<link rel="alternate" hreflang="fr" href="https://geassoff.github.io/">
+<link rel="alternate" hreflang="en" href="https://geassoff.github.io/?lang=en">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e5001c'/%3E%3Ctext x='32' y='50' font-family='Impact,Anton,sans-serif' font-size='48' text-anchor='middle' fill='%23f4f1ea'%3ET%3C/text%3E%3C/svg%3E">
+<title>Tiago Del Nery-Fontaine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Abril+Fatface&family=Bungee&family=Rubik+Mono+One&family=Special+Elite&family=Dela+Gothic+One&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,700;0,800;1,800&display=swap">
+<style>
+/* Layout: écrans de menu pause empilés — dalles inclinées rouge / noir / blanc, chaque section ouverte par une plaque de titre tranchée. */
+:root {
+  --red: #e5001c;
+  --red-deep: #8f0011;
+  --red-text: #ff4a5c; /* red for small text on dark grounds (>= 5:1) */
+  --ink: #0c0b0b;
+  --ink-2: #1b1818;
+  --paper: #f5f2ec;
+  --paper-dim: #cfc9c0;
+  --yellow: #ffe600; /* P5 social-stats star */
+  --display: "Anton", "Impact", "Arial Narrow Bold", sans-serif;
+  --body: "Barlow Semi Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --jp: "Dela Gothic One", "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --dots: radial-gradient(circle, rgba(0,0,0,.28) 1.4px, transparent 1.7px);
+  --dots-light: radial-gradient(circle, rgba(255,255,255,.09) 1.4px, transparent 1.7px);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--paper); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
+p { margin: 0; }
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: var(--gutter-l);
+  padding-right: var(--gutter-r);
+}
+section { position: relative; overflow-x: clip; }
+section[id], .dossier { scroll-margin-top: 72px; }
+
+/* ---------- Ransom-note letters ---------- */
+.ransom { display: inline; }
+.ransom .l {
+  display: inline-block;
+  line-height: 1;
+  padding: .06em .1em .04em;
+  margin: 0 .015em;
+}
+.ransom .sp { display: inline-block; width: .32em; }
+.ransom .w { display: inline-block; white-space: nowrap; }
+.l.f0 { font-family: "Anton", var(--display); }
+.l.f1 { font-family: "Abril Fatface", Georgia, serif; }
+.l.f2 { font-family: "Bungee", var(--display); }
+.l.f3 { font-family: "Rubik Mono One", var(--display); font-size: .82em; }
+.l.f4 { font-family: "Special Elite", "Courier New", monospace; font-weight: 700; }
+.l.f5 { font-family: var(--jp); font-size: .9em; }
+.l.c0 { background: var(--paper); color: var(--ink); }
+.l.c1 { background: var(--ink); color: var(--paper); }
+.l.c2 { background: var(--red); color: var(--paper); }
+.l.c3 { background: transparent; color: var(--paper); }
+.l.c4 { background: var(--paper); color: var(--red); }
+
+/* ---------- Shared bits ---------- */
+.jp { font-family: var(--jp); letter-spacing: .08em; }
+.eyebrow {
+  font-family: var(--body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .82rem;
+}
+.plate {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .2rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: .5rem 1.8rem .7rem 1.2rem;
+  transform: rotate(-3deg);
+  clip-path: polygon(0 6%, 100% 0, 97% 100%, 2% 92%);
+  box-shadow: none;
+}
+.plate h2 {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 9vw, 6.2rem);
+  line-height: .95;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  text-shadow: .05em .05em 0 var(--red);
+}
+/* Kicker as its own red tag, above the title, so tall glyphs (À, É) never cover it. */
+.plate .kick {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  background: var(--red);
+  color: var(--paper);
+  font-weight: 800;
+  font-size: .9rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .1rem .6rem;
+  margin: .25rem 0 .35rem;
+  transform: rotate(-2deg);
+}
+.plate--paper { background: var(--paper); color: var(--ink); }
+.plate--paper h2 { text-shadow: .05em .05em 0 var(--red); }
+
+.btn {
+  --b: var(--paper); --t: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--t);
+  background: var(--b);
+  padding: .55rem 1.5rem .6rem 1.2rem;
+  clip-path: polygon(0 0, 100% 8%, 95% 100%, 4% 90%);
+  transition: transform .14s ease, background .14s ease, color .14s ease;
+  border: 0;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus-visible { transform: rotate(-3deg) scale(1.05); background: var(--red); color: var(--paper); }
+.btn--red { --b: var(--red); --t: var(--paper); }
+.btn--red:hover, .btn--red:focus-visible { background: var(--paper); color: var(--ink); }
+.btn--ink { --b: var(--ink); --t: var(--paper); }
+.btn .arr { font-family: var(--body); font-weight: 800; }
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 50;
+  background: var(--ink);
+  border-bottom: 3px solid var(--red);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 10px 16px; padding-block: 8px; }
+.brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1.05; margin-right: auto; min-width: 0; }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 1.2rem; letter-spacing: .03em; text-transform: uppercase; }
+.brand small { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red-text); }
+.topnav { display: flex; gap: 2px; }
+.topnav a {
+  font-weight: 800;
+  font-size: .86rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .4rem .75rem;
+  clip-path: polygon(0 8%, 100% 0, 95% 100%, 4% 92%);
+  transition: background .12s ease, color .12s ease;
+}
+.topnav a:hover, .topnav a:focus-visible { background: var(--red); color: var(--paper); outline: none; }
+.top-cv {
+  font-family: var(--display);
+  font-size: 1rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--paper);
+  color: var(--ink);
+  padding: .3rem .9rem;
+  clip-path: polygon(0 0, 100% 10%, 95% 100%, 4% 90%);
+}
+.top-cv:hover, .top-cv:focus-visible { background: var(--red); color: var(--paper); }
+.sound {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  font-family: var(--display);
+  font-size: .95rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .2rem .65rem;
+  cursor: pointer;
+  transform: skewX(-8deg);
+}
+.sound:hover, .sound:focus-visible { background: var(--paper); color: var(--ink); }
+/* FR / EN switch: the current language sits on red */
+.lang {
+  display: inline-flex;
+  padding: 0;
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  font-family: var(--display);
+  font-size: .95rem;
+  letter-spacing: .05em;
+  cursor: pointer;
+  transform: skewX(-8deg);
+}
+.lang span { padding: .2rem .5rem; transition: background .12s ease, color .12s ease; }
+.lang span.on { background: var(--red); color: var(--paper); }
+.lang:hover span:not(.on), .lang:focus-visible span:not(.on) { background: var(--paper); color: var(--ink); }
+.sound .bars { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+.sound .bars i { width: 3px; background: currentColor; }
+.sound .bars i:nth-child(1) { height: 5px; }
+.sound .bars i:nth-child(2) { height: 9px; }
+.sound .bars i:nth-child(3) { height: 12px; }
+.sound[aria-pressed="false"] .bars i { height: 2px; }
+
+/* ---------- HERO ---------- */
+.hero {
+  background: var(--ink);
+  padding-block: clamp(28px, 5vw, 56px) 0;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 260vmax;
+  height: 260vmax;
+  left: 70%;
+  top: 40%;
+  margin: -130vmax 0 0 -130vmax;
+  background: repeating-conic-gradient(from 0deg, var(--red) 0 7deg, var(--red-deep) 7deg 14deg);
+  z-index: -2;
+  animation: spin 120s linear infinite;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, var(--ink) 0 34%, rgba(12,11,11,.55) 48%, transparent 62%),
+    var(--dots) 0 0 / 9px 9px;
+  z-index: -1;
+  pointer-events: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+.hero-copy { display: flex; flex-direction: column; gap: 1.2rem; min-width: 0; position: relative; z-index: 2; }
+.tag-role {
+  align-self: flex-start;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  letter-spacing: .06em;
+  padding: .2rem 1rem .25rem .7rem;
+  transform: rotate(-4deg);
+  clip-path: polygon(0 0, 100% 10%, 96% 100%, 2% 88%);
+}
+.name { font-size: clamp(2.6rem, 9vw, 6.8rem); line-height: 1.12; }
+.name .row { display: block; }
+.name .row + .row { font-size: .52em; margin-top: .3em; padding-left: .4em; }
+.name .row:first-child { transform: rotate(-2deg); transform-origin: left; }
+.name .row + .row { transform: rotate(1.5deg); transform-origin: left; }
+.lede { max-width: 34ch; font-size: 1.2rem; color: var(--paper); }
+.lede strong { color: var(--paper); background: var(--red); padding: 0 .25em; font-weight: 700; }
+
+.status {
+  align-self: flex-start;
+  position: relative;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--ink);
+  padding: 1.1rem 2.2rem;
+  isolation: isolate;
+  transform: rotate(3deg);
+}
+.status::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  clip-path: polygon(0% 18%, 9% 0%, 22% 14%, 38% 2%, 52% 15%, 68% 0%, 80% 13%, 96% 4%, 92% 30%, 100% 50%, 93% 66%, 100% 92%, 82% 84%, 66% 100%, 52% 86%, 34% 98%, 22% 85%, 4% 96%, 8% 70%, 0% 52%, 7% 36%);
+  z-index: -1;
+}
+.status b { color: var(--red); }
+.status-when {
+  align-self: flex-start;
+  margin: -.5rem 0 0 .6rem;
+  background: var(--red);
+  color: var(--paper);
+  font-weight: 800;
+  font-size: .9rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  transform: rotate(-1.5deg);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.facts-bar {
+  margin: 4px 0 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 14px;
+  background: rgba(12, 11, 11, .88);
+  border-left: 5px solid var(--red);
+  padding: .9rem 1rem;
+  max-width: 560px;
+}
+.facts-bar dt { font-weight: 800; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); padding-top: .2rem; }
+.facts-bar dd { margin: 0; font-weight: 600; font-size: 1.02rem; }
+
+.showcase {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 520px);
+  aspect-ratio: 1 / 1.08;
+  max-width: 100%;
+}
+.shot {
+  --x: 0%; --y: 0%; --r: 0deg; --z: 1; --s: 1;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: var(--z);
+  width: 62%;
+  display: block;
+  background: var(--paper);
+  padding: 8px 8px 0;
+  text-decoration: none;
+  color: var(--ink);
+  transform: rotate(var(--r)) scale(var(--s));
+  box-shadow: var(--sh, 10px 10px 0 var(--ink));
+  transition:
+    left .6s cubic-bezier(.75, 0, .2, 1),
+    top .6s cubic-bezier(.75, 0, .2, 1),
+    transform .6s cubic-bezier(.75, 0, .2, 1),
+    box-shadow .6s ease,
+    background .15s ease,
+    color .15s ease;
+}
+.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--ink); }
+.shot span {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  padding: .25rem .2rem .35rem;
+}
+/* four cards, back to front; each caption stays visible past the card above it */
+.shot.p0 { --x: 0%; --y: 0%; --r: -7deg; --z: 1; --sh: 10px 10px 0 var(--ink); }
+.shot.p1 { --x: 38%; --y: 6%; --r: 5deg; --z: 2; --sh: -10px 10px 0 var(--ink); }
+.shot.p2 { --x: 3%; --y: 45%; --r: -3deg; --z: 3; --sh: 10px 10px 0 var(--ink); }
+.shot.p3 { --x: 37%; --y: 56%; --r: 4deg; --z: 4; --sh: -12px 12px 0 var(--red-deep); }
+.shot.p1 span, .shot.p3 span { text-align: right; }
+.shot.pop { animation: pop .6s cubic-bezier(.3, 0, .2, 1); }
+.shot.sink { animation: sink .6s cubic-bezier(.3, 0, .2, 1); }
+@keyframes pop { 0% { scale: 1; } 45% { scale: 1.14; } 100% { scale: 1; } }
+@keyframes sink { 0% { scale: 1; } 45% { scale: .86; } 100% { scale: 1; } }
+.shot:hover, .shot:focus-visible { --s: 1.05; z-index: 5; outline: none; background: var(--red); color: var(--paper); }
+
+/* P5-style pause menu */
+.menu-band {
+  margin-top: clamp(28px, 5vw, 52px);
+  background: var(--ink);
+  clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
+  padding-block: clamp(40px, 6vw, 70px) clamp(26px, 4vw, 40px);
+}
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 18px;
+  align-items: end;
+}
+.menu li:nth-child(1) { transform: rotate(-4deg); }
+.menu li:nth-child(2) { transform: rotate(2deg) translateY(-10px); }
+.menu li:nth-child(3) { transform: rotate(-2deg); }
+.menu li:nth-child(4) { transform: rotate(3deg) translateY(-14px); }
+.menu a {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: .3rem .7rem .45rem;
+  transition: transform .15s ease;
+}
+.menu a::before, .menu a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .17s cubic-bezier(.2,.9,.3,1.3);
+}
+.menu a::before { inset: 0; background: var(--red); clip-path: polygon(0 14%, 100% 0, 95% 100%, 4% 86%); }
+.menu a::after { inset: 18% -6% 22% 70%; background: var(--paper); clip-path: polygon(0 50%, 100% 0, 100% 100%); transition-delay: .04s; }
+.menu a:hover, .menu a:focus-visible { transform: translateX(6px) scale(1.04); outline: none; }
+.menu a:hover::before, .menu a:focus-visible::before,
+.menu a:hover::after, .menu a:focus-visible::after { transform: scaleX(1); }
+.menu .big {
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+.menu .sub { font-size: .85rem; font-weight: 700; color: var(--paper-dim); letter-spacing: .1em; text-transform: uppercase; }
+.menu .jp { font-size: .78rem; color: var(--red); }
+.menu a:hover .jp, .menu a:focus-visible .jp, .menu a:hover .sub, .menu a:focus-visible .sub { color: var(--paper); }
+
+/* ---------- MISSIONS ---------- */
+.missions {
+  background: var(--red);
+  padding-block: clamp(48px, 8vw, 96px);
+  isolation: isolate;
+}
+.missions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--dots) 0 0 / 10px 10px;
+  z-index: -1;
+}
+.sec-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 28px; margin-bottom: clamp(28px, 5vw, 52px); }
+.sec-head p { max-width: 42ch; width: fit-content; font-weight: 600; background: var(--ink); color: var(--paper); padding: .35rem .8rem; }
+
+.targets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: clamp(48px, 8vw, 90px);
+}
+.target {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--ink);
+  clip-path: polygon(0 0, 100% 3%, 97% 100%, 2% 97%);
+  transition: transform .16s ease;
+}
+.target:nth-child(2), .target:nth-child(4) { transform: rotate(1.5deg); }
+.target:nth-child(1), .target:nth-child(3) { transform: rotate(-1.2deg); }
+.target:hover, .target:focus-visible { transform: rotate(-3deg) scale(1.03); outline: none; }
+.target .logo { aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.target .logo img { width: 100%; height: 100%; object-fit: contain; }
+.target .body { padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
+.target .body h3 { font-family: var(--display); font-size: 1.9rem; text-transform: uppercase; line-height: 1; }
+.target .body .eyebrow { color: var(--red-text); }
+.target .body .go { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .8rem; color: var(--paper-dim); }
+.target:hover .go, .target:focus-visible .go { color: var(--paper); }
+
+/* project dossier */
+.dossier {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(30px, 4vw, 44px) clamp(22px, 4vw, 44px);
+  /* Fixed offsets, not %: an opened dossier gets very tall and % cuts would eat the text. */
+  clip-path: polygon(0 14px, 100% 0, calc(100% - 10px) 100%, 10px calc(100% - 14px));
+}
+.dossier + .dossier { margin-top: clamp(40px, 7vw, 80px); }
+.dossier-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin-bottom: 22px;
+}
+.dossier-head h3 {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  line-height: .9;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: .045em .045em 0 var(--red);
+}
+.dossier-head .genre {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 1.15rem;
+  letter-spacing: .05em;
+  padding: .2rem .9rem;
+  transform: rotate(-2deg);
+  margin-bottom: .6rem;
+}
+.dossier-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3.5vw, 40px);
+}
+.dossier.flip .media { order: 2; }
+.media { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.screen {
+  position: relative;
+  background: var(--ink);
+  padding: 8px;
+  transform: rotate(-1.2deg);
+  box-shadow: 10px 10px 0 var(--red);
+}
+.dossier.flip .screen { transform: rotate(1.2deg); box-shadow: -10px 10px 0 var(--red); }
+.screen img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.screen .label {
+  position: absolute;
+  top: -12px;
+  left: 14px;
+  background: var(--red-deep);
+  color: var(--paper);
+  font-weight: 800;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .15rem .6rem;
+}
+.thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.thumbs img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--ink); border: 4px solid var(--ink); }
+.thumbs img:nth-child(1) { transform: rotate(-2deg); }
+.thumbs img:nth-child(2) { transform: rotate(1.5deg) translateY(6px); }
+.thumbs img:nth-child(3) { transform: rotate(-1deg); }
+
+.facts { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.stats { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-items: baseline; }
+.stats dt {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 800;
+  font-size: .74rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .12rem .55rem;
+  transform: skewX(-12deg);
+  justify-self: start;
+}
+.stats dd { margin: 0; font-weight: 600; }
+.pitch { max-width: 62ch; }
+
+.dialog {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1.6rem 1.3rem 1.1rem;
+  margin-top: 14px;
+  clip-path: polygon(0 4%, 100% 0, 98% 100%, 1% 94%);
+}
+.dialog-wrap { position: relative; padding-top: 6px; margin-top: 10px; }
+.dialog-name {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  z-index: 2;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .1rem .8rem;
+  transform: rotate(-4deg);
+  border: 3px solid var(--ink);
+}
+.dialog q {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.1;
+  quotes: none;
+  color: var(--paper);
+  margin-bottom: .45rem;
+}
+.dialog q::first-letter { color: var(--red); }
+.dialog p { color: var(--paper-dim); font-size: 1.02rem; }
+
+.links { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.role-wrap { margin-top: clamp(26px, 4vw, 40px); }
+.role-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.role-title h4 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  text-transform: uppercase;
+}
+.role-title .jp { color: var(--red); font-size: .85rem; }
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+.skills-list li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: .7rem .9rem .75rem;
+  background: var(--ink);
+  color: var(--paper-dim);
+  clip-path: polygon(0 0, 100% 4%, 99% 100%, 0 96%);
+}
+.skills-list li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-top: .3rem;
+  background: var(--red);
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 0 var(--paper);
+}
+.skills-list b { display: block; color: var(--paper); font-weight: 800; letter-spacing: .02em; }
+
+/* collapsible project detail */
+.more-btn {
+  margin-top: clamp(22px, 3.5vw, 32px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: left;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: .7rem 1.2rem;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 6%, 99.4% 100%, .4% 92%);
+  transition: background .14s ease;
+}
+.more-btn:hover, .more-btn:focus-visible { background: var(--red-deep); outline: none; }
+.more-btn .chev { display: inline-block; transition: transform .2s ease; }
+.more-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.less-btn { justify-content: center; gap: .6rem; background: var(--red); }
+.less-btn:hover, .less-btn:focus-visible { background: var(--ink); }
+.more { animation: reveal .35s cubic-bezier(.2, .8, .2, 1); }
+@keyframes reveal { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.more .thumbs { max-width: 760px; }
+.gif-fig { margin: 0 0 18px; max-width: 600px; display: flex; flex-direction: column; gap: 6px; }
+.gif-fig img { width: 100%; border: 6px solid var(--ink); box-shadow: 8px 8px 0 var(--red); }
+.gif-fig figcaption { font-size: .95rem; font-weight: 500; margin-top: 6px; }
+
+/* Lumi's Jar: the player-facing pitch, laid out like a store page */
+.vitrine {
+  margin-top: clamp(28px, 4.5vw, 44px);
+  background: var(--dots-light) 0 0 / 10px 10px, var(--ink);
+  color: var(--paper);
+  padding: clamp(24px, 3.5vw, 38px) clamp(18px, 3.5vw, 38px) clamp(26px, 3.5vw, 38px);
+  clip-path: polygon(0 10px, 100% 0, calc(100% - 8px) 100%, 6px calc(100% - 10px));
+}
+.vitrine-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: clamp(18px, 3vw, 26px); }
+.vitrine-kick {
+  background: var(--red);
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .1rem .6rem;
+  transform: rotate(-3deg);
+}
+.vitrine-head h4 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: .05em .05em 0 var(--red);
+}
+.vitrine-badge {
+  margin-left: auto;
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+  font-weight: 800;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .15rem .6rem;
+  transform: rotate(1.5deg);
+}
+.vitrine-top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(22px, 3.5vw, 36px); align-items: start; }
+.vitrine-key {
+  margin: 0;
+  background: var(--paper);
+  padding: 6px;
+  transform: rotate(-1deg);
+  box-shadow: 10px 10px 0 var(--red);
+}
+.vitrine-key img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.vitrine-pitch { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.vitrine-hook {
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.vitrine-hook em { font-style: normal; color: var(--yellow); }
+.vitrine-pitch > p:not(.vitrine-hook) { color: var(--paper-dim); }
+.vitrine-tags { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.vitrine-tags li {
+  background: var(--ink-2);
+  border: 1px solid #423b3b;
+  font-weight: 700;
+  font-size: .86rem;
+  padding: .08rem .6rem;
+  transform: skewX(-10deg);
+}
+.vitrine-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 6px 0 0; }
+.vitrine-nums div { background: var(--paper); color: var(--ink); padding: .4rem .7rem .5rem; clip-path: polygon(0 0, 100% 6%, 97% 100%, 2% 94%); }
+.vitrine-nums div:nth-child(3n + 2) { background: var(--red); color: var(--paper); }
+.vitrine-nums dt { font-family: var(--display); font-size: 1.9rem; line-height: 1.05; }
+.vitrine-nums dd { margin: 0; font-weight: 800; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.vitrine-feats {
+  list-style: none;
+  margin: clamp(32px, 5vw, 48px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3.5vw, 34px) clamp(16px, 2.5vw, 24px);
+  counter-reset: feat;
+}
+.vitrine-feats li { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; counter-increment: feat; }
+.vitrine-feats li::before {
+  content: counter(feat, decimal-leading-zero);
+  position: absolute;
+  top: -14px;
+  left: -6px;
+  z-index: 1;
+  background: var(--red);
+  font-family: var(--display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  padding: 0 .45rem;
+  transform: rotate(-6deg);
+}
+.vitrine-feats img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 4px solid var(--paper); margin-bottom: 6px; }
+.vitrine-feats li:nth-child(odd) img { transform: rotate(-1.2deg); }
+.vitrine-feats li:nth-child(even) img { transform: rotate(1deg); }
+.vitrine-feats h5 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.45rem; line-height: 1.05; text-transform: uppercase; }
+.vitrine-feats p { color: var(--paper-dim); font-size: 1rem; }
+.vitrine-foot {
+  margin-top: clamp(28px, 4vw, 40px);
+  padding-top: 18px;
+  border-top: 3px solid var(--red);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+}
+.vitrine-promises { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 28px; flex: 1 1 520px; }
+.vitrine-promises li { flex: 1 1 180px; font-size: .98rem; color: var(--paper-dim); }
+.menus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 920px; }
+.menus figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.menus img { width: 100%; aspect-ratio: 23 / 20; object-fit: cover; object-position: top; background: #2b2119; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--red); }
+.menus figure:nth-child(2) img { transform: rotate(1deg); }
+.menus figcaption { font-size: .95rem; font-weight: 500; }
+.menus figcaption b { font-weight: 800; }
+.vitrine-promises b { display: block; color: var(--yellow); font-family: var(--display); font-weight: 400; font-size: 1.25rem; letter-spacing: .02em; text-transform: uppercase; }
+
+/* level design steps */
+.ld-level { margin-bottom: 26px; }
+.ld-level h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; }
+.ld-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ld-steps.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
+.ld-steps.one { grid-template-columns: minmax(0, 1fr); max-width: 410px; }
+.ld-steps figure { position: relative; margin: 0; min-width: 0; }
+.ld-steps img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; border: 4px solid var(--ink); background: var(--ink); }
+.ld-steps figure.sketch img { background: #fff; }
+.step-lbl {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  z-index: 1;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 800;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .12rem .55rem;
+}
+.ld-steps figure:last-child .step-lbl { background: var(--red-deep); }
+
+/* rules + classes (Fatal Boing) */
+.rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 820px; }
+.rules li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; align-items: baseline; padding: .6rem .9rem; border-left: 4px solid var(--red); background: rgba(12, 11, 11, .05); }
+.rules b { font-family: var(--display); font-weight: 400; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .03em; }
+.classes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.classes--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.class-card { background: var(--ink); color: var(--paper); padding: 1rem 1.1rem 1.2rem; clip-path: polygon(0 0, 100% 3%, 98% 100%, 1% 97%); }
+.class-card:nth-child(2) { transform: rotate(.8deg); }
+.class-card h5 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-transform: uppercase; }
+.class-card .kind { display: inline-block; margin: .2rem 0 .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
+.class-card p { color: var(--paper-dim); }
+
+/* process */
+.process { margin-top: clamp(26px, 4vw, 40px); }
+.process-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.process figure { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.process figure:first-child { grid-column: 1 / -1; }
+.process figure img { width: 100%; background: #fff; border: 4px solid var(--ink); }
+.process figcaption { font-size: .95rem; font-weight: 500; }
+.process figcaption b { font-weight: 800; }
+.process-intro { max-width: 62ch; margin-bottom: 14px; }
+.sprints { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 6px; }
+.sprints li {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: .5rem .8rem;
+  border-left: 4px solid var(--ink);
+  background: rgba(12, 11, 11, .05);
+}
+.sprints li.mine { border-left-color: var(--red); background: rgba(229, 0, 28, .08); }
+.sprints .sp-n { font-family: var(--display); font-size: 1.2rem; }
+.sprints .who { font-size: .9rem; font-weight: 500; color: #4a4444; }
+.sprints li.mine .tag {
+  display: inline-block;
+  margin-left: .4rem;
+  background: var(--red-deep);
+  color: var(--paper);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .05rem .4rem;
+  vertical-align: middle;
+}
+.process h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.4rem; text-transform: uppercase; }
+.process figure.chart img { background: #000; }
+.process .credit { margin-top: 10px; font-size: .9rem; color: #4a4444; }
+
+/* zoomable images + lightbox */
+img[data-zoom] { cursor: zoom-in; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(12, 11, 11, .94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  cursor: zoom-out;
+}
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; box-shadow: 14px 14px 0 var(--red); }
+.lightbox-close {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  font-family: var(--display);
+  font-size: 1.1rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: var(--paper);
+  color: var(--ink);
+  border: 0;
+  padding: .35rem 1rem;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 10%, 95% 100%, 4% 90%);
+}
+.lightbox-close:hover, .lightbox-close:focus-visible { background: var(--red); color: var(--paper); }
+
+/* video facade (hosted version only) */
+.play {
+  position: absolute;
+  inset: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 11, 11, .25);
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.play span {
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: var(--paper);
+  padding: .5rem 1.4rem .55rem 1.1rem;
+  clip-path: polygon(0 0, 100% 10%, 95% 100%, 4% 90%);
+  transition: transform .14s ease, background .14s ease, color .14s ease;
+}
+.play:hover span, .play:focus-visible span { transform: rotate(-3deg) scale(1.08); background: var(--paper); color: var(--ink); }
+.screen iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+
+/* ---------- COMPÉTENCES ---------- */
+.stats-sec {
+  background: var(--ink);
+  padding-block: clamp(56px, 9vw, 110px);
+  isolation: isolate;
+}
+.stats-sec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0 62%, var(--red-deep) 62% 64%, transparent 64% 100%),
+    var(--dots-light) 0 0 / 10px 10px;
+  z-index: -1;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+}
+.panel-title {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  text-transform: uppercase;
+  background: var(--red);
+  color: var(--paper);
+  padding: .1rem 1rem .2rem .7rem;
+  transform: rotate(-2deg);
+  clip-path: polygon(0 0, 100% 6%, 97% 100%, 1% 94%);
+  margin-bottom: 16px;
+}
+.panel-title.alt { background: var(--paper); color: var(--ink); transform: rotate(2deg); }
+.kit { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.kit li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: .55rem 1rem;
+  background: var(--ink-2);
+  font-weight: 700;
+  font-size: 1.12rem;
+  border-left: 5px solid var(--red);
+  transform: skewX(-8deg);
+}
+.kit li > span { transform: skewX(8deg); }
+.kit .ico { width: 12px; height: 12px; background: var(--red); transform: rotate(45deg); flex: none; }
+.col { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
+
+.ranks { display: flex; flex-direction: column; gap: 12px; }
+.rank {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 14px;
+  align-items: center;
+  padding: .7rem 1rem .8rem;
+  background: var(--ink-2);
+  clip-path: polygon(0 0, 100% 6%, 99% 100%, 0 94%);
+}
+.rank .what { font-weight: 800; font-size: 1.12rem; min-width: 0; }
+.rank .lvl { color: var(--paper-dim); font-weight: 500; font-size: .95rem; grid-column: 1; }
+.pips { display: flex; gap: 5px; grid-row: 1 / span 2; grid-column: 2; align-items: center; }
+.pips i {
+  width: 16px;
+  height: 22px;
+  background: #3a3434;
+  clip-path: polygon(30% 0, 100% 0, 70% 100%, 0 100%);
+}
+.pips i.on { background: var(--red); }
+.pips .max {
+  font-family: var(--display);
+  font-size: .95rem;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 0 .4rem;
+  margin-left: 4px;
+  transform: rotate(-6deg);
+}
+/* Social stats (P5 yellow star) + the two traits, at the top of the section */
+.stat-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+  margin-bottom: clamp(40px, 7vw, 72px);
+}
+.social { margin: 0; min-width: 0; }
+.social svg { display: block; width: 100%; max-width: 520px; height: auto; overflow: visible; }
+.social .ring { fill: none; stroke: #3a3434; stroke-width: 1.5; }
+.social .axis { stroke: #3a3434; stroke-width: 1.5; }
+.social .star-bg { fill: var(--ink-2); stroke: var(--paper); stroke-width: 4; stroke-linejoin: round; }
+.social .val { fill: var(--yellow); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; transform-origin: 0 0; }
+.social .dot { fill: var(--ink); stroke: var(--yellow); stroke-width: 3; }
+.social .lbl { font-family: var(--display); font-size: 21px; letter-spacing: .04em; text-transform: uppercase; fill: var(--paper); }
+.social .star-spin { animation: spin 40s linear infinite; }
+.social.armed .val { transform: scale(0) rotate(-40deg); }
+.social.go .val { animation: starpop .7s cubic-bezier(.2, 1.4, .4, 1) forwards; }
+@keyframes starpop { from { transform: scale(0) rotate(-40deg); } to { transform: none; } }
+
+.traits { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+.trait {
+  position: relative;
+  padding: 1.2rem 1.4rem 1.3rem;
+  background: var(--paper);
+  color: var(--ink);
+  transform: rotate(-2deg);
+  box-shadow: 9px 9px 0 var(--red);
+}
+.trait:nth-child(2) { background: var(--red); color: var(--paper); transform: rotate(1.5deg); box-shadow: -9px 9px 0 var(--paper); }
+.trait h4 { margin: 0 0 .35rem; font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 3.6vw, 2.5rem); line-height: 1; text-transform: uppercase; }
+.trait p { font-weight: 600; font-size: 1.12rem; }
+
+/* ---------- CONFIDENT ---------- */
+.coop {
+  background: var(--paper);
+  color: var(--ink);
+  padding-block: clamp(56px, 9vw, 110px);
+  isolation: isolate;
+}
+.coop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-8deg, transparent 0 78%, var(--red) 78% 79.5%, var(--ink) 79.5% 100%);
+  z-index: -1;
+  opacity: 1;
+}
+.coop-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 60px);
+  align-items: start;
+}
+.arcana {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 18px 18px 22px;
+  transform: rotate(-3deg);
+  box-shadow: 12px 12px 0 var(--red);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.arcana .arc-kick { font-weight: 800; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red-text); }
+.arcana .card-art {
+  border: 3px solid var(--paper);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  max-width: 100%;
+}
+.arcana .card-art img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; filter: grayscale(1) contrast(1.25); transition: filter .4s ease, transform .4s ease; }
+.arcana .card-art { position: relative; }
+.arcana.petting { animation: wiggle .45s ease-in-out infinite alternate; }
+.arcana.petting .card-art img { filter: none; transform: scale(1.04); }
+@keyframes wiggle { from { transform: rotate(-3deg); } to { transform: rotate(-1.4deg) translateY(-2px); } }
+.pet-zone {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  width: 70%;
+  height: 95%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: grab;
+  touch-action: none;
+}
+.pet-zone:active { cursor: grabbing; }
+/* no "save image" menu on a long press: petting on a phone is a long press */
+.arcana .card-art, .arcana .pet-zone { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+.arcana .card-art img { pointer-events: none; -webkit-user-drag: none; }
+.pet-zone:focus-visible { outline: 3px dashed var(--red); outline-offset: -6px; }
+.purr-bubble {
+  position: absolute;
+  top: -24px;
+  right: -22px;
+  z-index: 3;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.3rem;
+  letter-spacing: .04em;
+  padding: .45rem 1.2rem;
+  clip-path: polygon(0 20%, 12% 0, 30% 12%, 50% 0, 70% 10%, 90% 0, 100% 30%, 94% 60%, 100% 90%, 78% 84%, 60% 100%, 42% 88%, 20% 100%, 6% 84%, 0 60%);
+  transform: rotate(8deg) scale(0);
+  transition: transform .18s cubic-bezier(.2, .9, .3, 1.4);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.arcana.petting .purr-bubble { transform: rotate(8deg) scale(1); }
+.purr-heart {
+  position: absolute;
+  z-index: 4;
+  color: var(--red);
+  font-size: 1.5rem;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 2px 2px 0 var(--paper);
+  animation: heart 1.1s ease-out forwards;
+}
+@keyframes heart {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(.6); }
+  to { opacity: 0; transform: translate(calc(-50% + var(--dx)), -90px) scale(1.25); }
+}
+/* grinning music notes: around the cat card, in the background, and out of the cat when petted */
+.note { display: block; width: var(--s, 48px); height: auto; overflow: visible; }
+.cat-note { position: absolute; z-index: 3; pointer-events: none; animation: bob var(--d, 3s) ease-in-out var(--dl, 0s) infinite alternate; }
+.cat-note.n1 { --s: 58px; --d: 2.6s; --r0: -14deg; --r1: 6deg; top: 14%; left: -46px; }
+.cat-note.n2 { --s: 40px; --d: 3.2s; --dl: -1s; --r0: 10deg; --r1: 28deg; top: 46%; right: -34px; }
+.cat-note.n3 { --s: 34px; --d: 2.2s; --dl: -.6s; --r0: -24deg; --r1: -4deg; bottom: 12%; left: -30px; }
+.arcana.petting .cat-note { animation-duration: .5s; }
+.fl.note-fl { background: none; clip-path: none; }
+.purr-note { position: absolute; z-index: 4; width: 30px; pointer-events: none; animation: heart 1.1s ease-out forwards; }
+
+/* invitation to pet the cat, until the first pet */
+.pet-hint { position: absolute; inset: 0; z-index: 2; pointer-events: none; transition: opacity .3s ease; }
+.pet-hint .hand { position: absolute; top: 38%; left: 22%; font-size: 2.2rem; line-height: 1; filter: drop-shadow(2px 2px 0 var(--ink)); animation: stroke 1.4s ease-in-out infinite; }
+.pet-hint b {
+  position: absolute;
+  left: 8px;
+  bottom: 10px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .2rem .7rem .25rem;
+  transform: rotate(-4deg);
+  box-shadow: 4px 4px 0 var(--ink);
+  animation: nudge 1.4s ease-in-out infinite;
+}
+@keyframes stroke { 0%, 100% { transform: translate(0, 0) rotate(-10deg); } 50% { transform: translate(48px, 14px) rotate(14deg); } }
+@keyframes nudge { 0%, 100% { transform: rotate(-4deg) scale(1); } 50% { transform: rotate(-2deg) scale(1.08); } }
+.arcana.petted .pet-hint, .arcana.petting .pet-hint { opacity: 0; }
+@media (max-width: 620px) {
+  /* no gutter on phones: the notes sit on the card corners like stickers */
+  .arcana { margin-inline: auto; }
+  .cat-note.n1 { --s: 44px; top: -22px; left: -8px; }
+  .cat-note.n2 { --s: 36px; right: -12px; }
+  .cat-note.n3 { --s: 32px; left: -6px; bottom: 18%; }
+}
+.arcana .arc-name { font-family: var(--display); font-size: 1.8rem; letter-spacing: .12em; text-transform: uppercase; }
+.arcana .rank-row { display: flex; justify-content: center; gap: 4px; }
+.arcana .rank-row i { width: 12px; height: 12px; background: var(--red); transform: rotate(45deg); }
+.arcana .rank-cap { font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-dim); }
+
+.bio { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.bio .intro { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 500; line-height: 1.35; max-width: 40ch; }
+.bio .intro b { background: var(--ink); color: var(--paper); padding: 0 .25em; font-weight: 700; }
+.path { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.path .step {
+  background: var(--ink);
+  color: var(--paper);
+  padding: .4rem 1rem;
+  font-weight: 700;
+  clip-path: polygon(0 0, 100% 8%, 96% 100%, 3% 92%);
+}
+.path .step small { display: block; color: var(--paper-dim); font-weight: 500; font-size: .82rem; }
+.path .step.now { background: var(--red); }
+.path .step.now small { color: var(--paper); }
+.path .arrow { font-family: var(--display); font-size: 1.8rem; color: var(--red); }
+.passion h3 { font-family: var(--display); font-size: clamp(1.8rem, 3.6vw, 2.6rem); text-transform: uppercase; margin-bottom: .5rem; }
+.passion h3 span { color: var(--red); }
+.passion p { max-width: 64ch; margin-bottom: .8rem; }
+
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: clamp(36px, 6vw, 64px);
+}
+.hobby { display: flex; flex-direction: column; background: var(--ink); color: var(--paper); clip-path: polygon(0 0, 100% 2%, 98% 100%, 1% 98%); }
+.hobby:nth-child(2) { transform: translateY(18px) rotate(1deg); }
+.hobby:nth-child(1) { transform: rotate(-1deg); }
+.hobby:nth-child(3) { transform: rotate(-.6deg); }
+.hobby img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.hobby .t { padding: 1rem 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
+.hobby h4 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-transform: uppercase; }
+.hobby h4 .jp { color: var(--red); font-size: .8rem; margin-left: .4rem; }
+.hobby p { color: var(--paper-dim); font-size: 1rem; }
+
+/* ---------- CALLING CARD ---------- */
+.contact {
+  background: var(--red);
+  padding-block: clamp(60px, 10vw, 120px);
+  isolation: isolate;
+  overflow: clip; /* the oversized rays below would otherwise add blank scroll past the footer */
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  /* a big square centred on the card, so it can spin without uncovering the corners */
+  width: 300vmax;
+  height: 300vmax;
+  left: 50%;
+  top: 50%;
+  margin: -150vmax 0 0 -150vmax;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, transparent 0 8deg, rgba(0,0,0,.2) 8deg 16deg);
+  z-index: -1;
+  animation: spin 50s linear infinite;
+}
+.card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(26px, 5vw, 54px);
+  transform: rotate(-2deg);
+  box-shadow: 16px 16px 0 var(--paper);
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px solid var(--red);
+  pointer-events: none;
+}
+.card { overflow: hidden; }
+.card::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(100deg, transparent 0, rgba(255,255,255,.04) 30%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.04) 70%, transparent 100%);
+  transform: translateX(-160%) skewX(-18deg);
+  animation: shine 4.5s cubic-bezier(.5, 0, .3, 1) 1s infinite;
+  pointer-events: none;
+}
+@keyframes shine { 0% { transform: translateX(-160%) skewX(-18deg); } 45%, 100% { transform: translateX(420%) skewX(-18deg); } }
+.card-head .l { animation: hop 4.5s ease-in-out calc(1s + var(--i, 0) * 60ms) infinite; }
+/* translate/rotate, not transform: each letter keeps its own random tilt set inline */
+@keyframes hop { 0%, 8%, 100% { translate: 0 0; rotate: 0deg; } 3% { translate: 0 -.16em; rotate: -8deg; } }
+.card-head { font-size: clamp(1.9rem, 6vw, 3.6rem); line-height: 1.25; margin-bottom: 22px; }
+.card-head .row { display: block; }
+.card-head .row:nth-child(2) { padding-left: 1.2em; font-size: .8em; }
+.card-text { font-size: clamp(1.15rem, 2.2vw, 1.4rem); max-width: 52ch; margin-bottom: 26px; }
+.card-text em { font-style: normal; color: var(--paper); background: var(--red); padding: 0 .25em; }
+.channels { display: grid; gap: 12px; position: relative; }
+.channel {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink-2);
+  padding: .7rem 1rem;
+  clip-path: polygon(0 0, 100% 6%, 99% 100%, 0 94%);
+}
+.channel .k { font-weight: 800; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-text); }
+.channel .v { font-weight: 700; font-size: 1.15rem; overflow-wrap: anywhere; user-select: all; min-width: 0; }
+.channel a.v { text-decoration: none; user-select: auto; }
+.channel .v--note { font-size: 1.05rem; user-select: text; }
+.channel a.v:hover { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; }
+.copy {
+  font-family: var(--display);
+  font-size: 1rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: var(--paper);
+  color: var(--ink);
+  border: 0;
+  padding: .35rem .9rem;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 10%, 94% 100%, 4% 90%);
+}
+.copy:hover, .copy:focus-visible { background: var(--red); color: var(--paper); }
+.sign { margin-top: 24px; text-align: right; font-family: "Special Elite", "Courier New", monospace; font-size: 1.15rem; color: var(--paper-dim); }
+.sign b { font-family: var(--display); font-weight: 400; color: var(--paper); font-size: 1.5rem; letter-spacing: .04em; }
+
+footer {
+  background: var(--ink);
+  padding-block: 28px;
+  color: var(--paper-dim);
+  font-size: .95rem;
+}
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; align-items: center; }
+footer .tyt { font-family: var(--display); color: var(--paper); font-size: 1.4rem; letter-spacing: .06em; transform: rotate(-2deg); }
+footer .tyt span { color: var(--red); }
+
+/* ---------- Living background: drifting dots + floating P5 shapes ---------- */
+.missions::before, .stats-sec::before { animation: drift 14s linear infinite; }
+@keyframes drift { to { background-position: 0 0, 40px 40px; } }
+.missions::before { animation-name: drift-one; }
+@keyframes drift-one { to { background-position: 40px 40px; } }
+.floaters { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.fl {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  background: var(--c);
+  opacity: var(--o, .8);
+  animation: bob var(--d) ease-in-out var(--dl) infinite alternate;
+}
+.fl.star { clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.fl.gem { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.fl.slash { height: calc(var(--s) * .32); clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
+.fl.spark { clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%); animation-name: twinkle; }
+/* sections out of view stop animating (set by the script), so phones only run what is on screen */
+.offscreen, .offscreen::before, .offscreen::after,
+.offscreen *, .offscreen *::before, .offscreen *::after { animation-play-state: paused !important; }
+@keyframes bob {
+  from { transform: translateY(-14px) rotate(var(--r0)); }
+  to { transform: translateY(16px) rotate(var(--r1)); }
+}
+@keyframes twinkle {
+  0%, 70% { transform: scale(.4) rotate(0deg); opacity: 0; }
+  80% { transform: scale(1.1) rotate(45deg); opacity: var(--o, .9); }
+  100% { transform: scale(.3) rotate(90deg); opacity: 0; }
+}
+
+/* ---------- Responsive ---------- */
+.top-cv, .sound, .lang { white-space: nowrap; flex: none; }
+@media (max-width: 760px) {
+  .topnav { display: none; }
+}
+@media (max-width: 480px) {
+  .brand small { display: none; }
+  .brand b { font-size: 1rem; white-space: nowrap; }
+  /* sound toggle shrinks to its bars icon; the label stays for screen readers */
+  .sound { padding: .2rem .55rem; min-height: 36px; }
+  .lang span { padding: .2rem .38rem; }
+  /* the hero's big CV button sits right below: the bar keeps the name, FR/EN and sound */
+  .top-cv { display: none; }
+  .sound::before { content: "♪"; font-family: var(--body); font-weight: 800; font-size: 1rem; line-height: 1; }
+  .sound .lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .tag-role { font-size: 1rem; }
+  .vitrine-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vitrine-nums div:nth-child(3n + 2) { background: var(--paper); color: var(--ink); }
+  .vitrine-nums div:nth-child(4n + 2), .vitrine-nums div:nth-child(4n + 3) { background: var(--red); color: var(--paper); }
+  .social svg { width: calc(100% + 24px); max-width: none; margin-left: -12px; }
+}
+@media (max-width: 360px) {
+  .topbar .wrap { gap: 8px; }
+  .brand b { font-size: .9rem; }
+}
+@media (max-width: 1200px) {
+  .targets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .hero-grid, .dossier-grid, .stats-grid, .coop-grid, .stat-top { grid-template-columns: minmax(0, 1fr); }
+  .dossier.flip .media { order: 0; }
+  .vitrine-top { grid-template-columns: minmax(0, 1fr); }
+  .vitrine-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .targets { grid-template-columns: minmax(0, 1fr); }
+  .showcase { width: min(92%, 440px); }
+  .arcana { max-width: 300px; }
+}
+@media (max-width: 620px) {
+  .classes { grid-template-columns: minmax(0, 1fr); }
+  .vitrine-feats { grid-template-columns: minmax(0, 1fr); }
+  .menus { grid-template-columns: minmax(0, 1fr); max-width: 460px; }
+  .vitrine-badge { margin-left: 0; }
+  .rules li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .ld-steps, .ld-steps.two, .ld-steps.one { grid-template-columns: minmax(0, 1fr); max-width: none; }
+  .process-grid { grid-template-columns: minmax(0, 1fr); }
+  .skills-list, .traits, .hobbies { grid-template-columns: minmax(0, 1fr); }
+  .hobby:nth-child(2) { transform: rotate(1deg); }
+  .channel { grid-template-columns: minmax(0, 1fr) auto; }
+  .channel .k { grid-column: 1 / -1; }
+  .menu { grid-template-columns: minmax(0, 1fr); }
+  .menu li { transform: none !important; }
+  .menu li:nth-child(even) { padding-left: 2rem; }
+  /* phones: the games come right under the name, before the lede and the buttons */
+  .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 1.1rem; }
+  .hero-copy { display: contents; }
+  .tag-role { order: 1; }
+  .name { order: 2; }
+  .status { order: 3; }
+  .status-when { order: 4; font-size: .76rem; letter-spacing: .05em; padding-inline: .6rem; }
+  .showcase { order: 5; }
+  .lede { order: 6; }
+  .hero-actions { order: 7; }
+  .facts-bar { order: 8; }
+  .showcase {
+    width: 100%;
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 14px;
+    padding: 6px 6px 12px;
+  }
+  .shot { position: relative; left: auto; top: auto; width: auto; padding: 6px 6px 0; }
+  .shot span, .shot.p1 span, .shot.p3 span { font-size: 1.05rem; text-align: left; }
+  .showcase .shot:nth-child(1) { --r: -3deg; --sh: 6px 6px 0 var(--ink); }
+  .showcase .shot:nth-child(2) { --r: 2.5deg; --sh: -6px 6px 0 var(--ink); }
+  .showcase .shot:nth-child(3) { --r: 2deg; --sh: 6px 6px 0 var(--ink); }
+  .showcase .shot:nth-child(4) { --r: -2.5deg; --sh: -6px 6px 0 var(--red-deep); }
+  /* the band gets tall once the menu stacks: a % slant would cut into "Projets" */
+  .menu-band { clip-path: polygon(0 34px, 100% 0, 100% 100%, 0 100%); padding-top: 58px; }
+  /* room around the game title, so it is not squeezed between the genre tag and the buttons */
+  .dossier-head { gap: 20px; }
+  .dossier-head .genre { font-size: 1rem; margin-bottom: 1.1rem; text-wrap: balance; }
+  .dossier-head h3 { font-size: 3.4rem; }
+  /* the path stacks: the arrow points down to the next step */
+  .path { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .path .arrow { transform: rotate(90deg); margin-left: 1.6rem; line-height: 1; }
+  /* phones: drop the animations that repaint big areas every frame */
+  .missions::before, .stats-sec::before, .contact::before { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Tiago Del Nery-Fontaine</b><small>Game Designer · cherche un stage</small></a>
+    <nav class="topnav" aria-label="Navigation rapide">
+      <a href="#missions">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#confident">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top-cv" href="https://drive.google.com/file/d/1I_BjQ7_zlHRfxsTsNFt9V4ltrxRemQ57/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a>
+    <button class="lang" id="lang-toggle" type="button"><span>FR</span><span>EN</span></button>
+    <button class="sound" id="sound-toggle" type="button" aria-pressed="false" title="Activer ou couper les effets sonores"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">Son : off</span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="tag-role">Game Designer · Level Design · Game Feel</span>
+      <h1 class="name" aria-label="Tiago Del Nery-Fontaine">
+        <span class="row" data-ransom data-seed="3">TIAGO</span>
+        <span class="row" data-ransom data-seed="11">DEL NERY-FONTAINE</span>
+      </h1>
+      <p class="lede">Étudiant à <strong>ISART Digital</strong>, axé sur la création de prototypes jouables, le level design et la rédaction de GDD précis.</p>
+      <div class="status">En recherche de <b>stage</b> !</div>
+      <p class="status-when">Avril → septembre 2027 · durée flexible</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://drive.google.com/file/d/1I_BjQ7_zlHRfxsTsNFt9V4ltrxRemQ57/view?usp=sharing" target="_blank" rel="noopener">Mon CV <span class="arr">↗</span></a>
+        <a class="btn btn--red" href="#contact">Me contacter <span class="arr">▸</span></a>
+      </div>
+      <dl class="facts-bar">
+        <dt>Formation</dt><dd>ISART Digital, Game Design · avant : informatique &amp; maths à la Sorbonne</dd>
+        <dt>Spécialités</dt><dd>Level design, system design, game feel, prototypage</dd>
+        <dt>Outils</dt><dd>Unity (Cinemachine, DOTween), Ren'Py, Visual Scripting, Python</dd>
+        <dt>Langues</dt><dd>Français natif · anglais C1 · portugais C1</dd>
+      </dl>
+    </div>
+    <div class="showcase" aria-label="Aperçu des projets">
+      <a class="shot p0" href="#push-push"><img src="assets/push-1.jpg" alt="Capture de Push Push"><span>Push Push</span></a>
+      <a class="shot p1" href="#fatal-boing"><img src="assets/fatal-1.jpg" alt="Capture de Fatal Boing"><span>Fatal Boing !</span></a>
+      <a class="shot p2" href="#amy"><img src="assets/amy-inventaire.jpg" alt="Capture de Amy"><span>Amy</span></a>
+      <a class="shot p3" href="#lumis-jar"><img src="assets/lumi-miniature.jpg" data-src-en="assets/lumi-miniature-en.jpg" alt="Capture de Lumi's Jar"><span>Lumi’s Jar</span></a>
+    </div>
+  </div>
+
+  <nav class="menu-band" aria-label="Sections">
+    <div class="wrap">
+      <ul class="menu">
+        <li><a href="#missions"><span class="big">Projets</span><span class="sub">Missions · 4 jeux</span></a></li>
+        <li><a href="#competences"><span class="big">Compétences</span><span class="sub">Stats</span></a></li>
+        <li><a href="#confident"><span class="big">À propos</span><span class="sub">Confident</span></a></li>
+        <li><a href="#contact"><span class="big">Contact</span><span class="sub">Calling card · CV</span></a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+<!-- ================= MISSIONS ================= -->
+<section class="missions" id="missions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="plate">
+        <span class="kick">Missions</span>
+        <h2>Projets</h2>
+      </div>
+      <p>Quatre projets réalisés en 2026 : un puzzle platformer, un party game à un bouton, un visual novel d'enquête et un petit jeu qui vit sur le bureau.</p>
+    </div>
+
+    <div class="targets">
+      <a class="target" href="#push-push">
+        <div class="logo"><img src="assets/push-logo.jpg" alt="Logo de Push Push"></div>
+        <div class="body">
+          <span class="eyebrow">Puzzle platformer 2,5D</span>
+          <h3>Push Push</h3>
+          <span class="go">Level Designer · Game Designer ▸</span>
+        </div>
+      </a>
+      <a class="target" href="#fatal-boing">
+        <div class="logo"><img src="assets/fatal-logo.jpg" alt="Logo de Fatal Boing"></div>
+        <div class="body">
+          <span class="eyebrow">Party game à un bouton</span>
+          <h3>Fatal Boing !</h3>
+          <span class="go">Projet solo · Design &amp; dev ▸</span>
+        </div>
+      </a>
+      <a class="target" href="#amy">
+        <div class="logo"><img src="assets/amy-logo.jpg" alt="Logo de Amy"></div>
+        <div class="body">
+          <span class="eyebrow">Visual novel d'enquête</span>
+          <h3>Amy</h3>
+          <span class="go">Narrative Designer · Game Designer ▸</span>
+        </div>
+      </a>
+      <a class="target" href="#lumis-jar">
+        <div class="logo"><img src="assets/lumi-logo.jpg" alt="Logo de Lumi's Jar"></div>
+        <div class="body">
+          <span class="eyebrow">Idle game de bureau</span>
+          <h3>Lumi’s Jar</h3>
+          <span class="go">Projet perso · Game design &amp; direction ▸</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- PUSH PUSH -->
+    <article class="dossier" id="push-push">
+      <div class="dossier-head">
+        <div>
+          <span class="genre">Un puzzle platformer en 2,5D</span>
+          <h3>Push Push</h3>
+        </div>
+        <div class="links">
+          <a class="btn btn--red" href="https://alexandrinfr.itch.io/push-push" target="_blank" rel="noopener">Télécharger sur itch.io <span class="arr">↗</span></a>
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=WdsLGsdeSPQ" target="_blank" rel="noopener">Trailer <span class="arr">▸</span></a>
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=9Av32mUv_PY" target="_blank" rel="noopener">Walkthrough <span class="arr">▸</span></a>
+        </div>
+      </div>
+      <div class="dossier-grid">
+        <div class="media">
+          <div class="screen" data-video="WdsLGsdeSPQ" data-video-label="Regarder le trailer"><span class="label">Core mechanic</span><img src="assets/push-gameplay.gif" alt="Niveau 5 : le personnage saute, les blocs basculent et un bloc surgit pour l'écraser" loading="lazy"></div>
+          <div class="dialog-wrap">
+            <span class="dialog-name">Core mechanic</span>
+            <div class="dialog">
+              <q>Chaque saut change les règles.</q>
+              <p>À chaque saut, les blocs alternent entre deux états. Sauter face à un bloc désactivé le fait surgir sur l'axe Z et tue instantanément le personnage. Il faut donc planifier ses sauts autant que ses déplacements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <dl class="stats">
+            <dt>Rôle</dt><dd>Game Designer, dominante level design et 3C</dd>
+            <dt>Date</dt><dd>Février à avril 2026</dd>
+            <dt>Équipe</dt><dd>9 personnes : 6 game designers, 2 programmeurs, 1 compositeur et sound designer</dd>
+            <dt>Type</dt><dd>Projet étudiant, ISART Digital</dd>
+            <dt>Moteur</dt><dd>Unity</dd>
+            <dt>Plateforme</dt><dd>PC (Windows)</dd>
+          </dl>
+          <p class="pitch">Push Push est un puzzle platformer en 2,5D basé sur une mécanique d'alternance d'états : à chaque saut, les blocs du niveau basculent entre actif et inactif. Un mauvais saut face à un bloc désactivé, et il surgit sur l'axe Z pour t'écraser. Timing, anticipation et lecture de l'espace sont tes seuls outils, à travers plusieurs mondes aux ambiances différentes. Un projet qui m'a fait travailler le tuning des 3C, le rythme du level design et le pacing.</p>
+        </div>
+      </div>
+      <button class="more-btn" type="button" aria-expanded="false" aria-controls="push-push-more"><span class="more-lbl">Level design, process et captures</span><span class="chev" aria-hidden="true">▾</span></button>
+      <div class="more" id="push-push-more" hidden>
+      <div class="role-wrap ld">
+        <div class="role-title"><h4>Level design</h4></div>
+        <p class="process-intro">Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Clique sur une image pour l'agrandir.</p>
+        <div class="ld-level">
+          <h5>Monde 2 · Niveau 1</h5>
+          <div class="ld-steps two">
+          <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-m2-n1-croquis.jpg" alt="Croquis papier du niveau 1 du monde 2" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-m2-n1-final.jpg" alt="Niveau 1 du monde 2 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 2 · Niveau 3</h5>
+          <div class="ld-steps one">
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-m2-n3-final.jpg" alt="Niveau 3 du monde 2 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 1</h5>
+          <div class="ld-steps">
+          <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n1-croquis.jpg" alt="Croquis papier du niveau 1 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Capture annotée</span><img src="assets/ld-n1-annote.jpg" alt="Capture du niveau 1 du monde 3 annotée avec le chemin du joueur en pointillés" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n1-final.jpg" alt="Niveau 1 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 1, le piège du départ</h5>
+          <div class="ld-steps">
+          <figure class="sketch"><span class="step-lbl">Croquis du piège</span><img src="assets/ld-n1-piege-croquis.jpg" alt="Croquis papier du piège au départ du niveau 1 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">En jeu</span><img src="assets/ld-n1-piege-a.jpg" alt="Le départ du niveau 1 du monde 3 en jeu, avant le saut" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Après un saut</span><img src="assets/ld-n1-piege-b.jpg" alt="Le même endroit après un saut : les blocs ont changé d'état" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 2</h5>
+          <div class="ld-steps">
+          <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n2-croquis.jpg" alt="Croquis papier du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n2-blockout.jpg" alt="Blockout Unity du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n2-final.jpg" alt="Niveau 2 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 3</h5>
+          <div class="ld-steps two">
+          <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n3-blockout.jpg" alt="Blockout Unity du niveau 3 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n3-final.jpg" alt="Niveau 3 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 4</h5>
+          <div class="ld-steps">
+          <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n4-croquis.jpg" alt="Croquis papier du niveau 4 du monde 3, des blocs emboîtés" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n4-blockout.jpg" alt="Blockout Unity du niveau 4 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n4-final.jpg" alt="Niveau 4 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+        <div class="ld-level">
+          <h5>Monde 3 · Niveau 5</h5>
+          <div class="ld-steps">
+          <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n5-croquis.jpg" alt="Croquis papier du niveau 5 du monde 3, un long saut" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n5-blockout.jpg" alt="Blockout Unity du niveau 5 du monde 3" loading="lazy" data-zoom></figure>
+          <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n5-final.jpg" alt="Niveau 5 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
+          </div>
+        </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Captures</h4></div>
+        <figure class="gif-fig">
+          <img src="assets/push-switch.gif" alt="Extrait du trailer : le message Jump to switch platform présente la règle, chaque saut fait basculer les plateformes" loading="lazy">
+          <figcaption><b>Extrait du trailer.</b> La règle de base en une image : chaque saut fait basculer les plateformes.</figcaption>
+        </figure>
+        <div class="thumbs" data-zoom-all>
+            <img src="assets/push-1.jpg" alt="Niveau de Push Push en ville" loading="lazy">
+            <img src="assets/push-2.jpg" alt="Niveau de Push Push dans une forêt de champignons" loading="lazy">
+            <img src="assets/push-3.jpg" alt="Niveau violet de Push Push" loading="lazy">
+          </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Mon rôle</h4></div>
+        <ul class="skills-list">
+          <li><span><b>Level design &amp; pacing</b>Blockouts, layouts de niveaux et courbe de difficulté. Des puzzles 2,5D qui font comprendre les systèmes de façon organique.</span></li>
+          <li><span><b>Contrôles &amp; 3C</b>Réglage fin du personnage, de la caméra, des courbes de saut et des masques de collision pour une réactivité et une précision maximales.</span></li>
+          <li><span><b>Game feel</b>Mouvements de caméra, retours d'impact et feedbacks visuels à l'activation des blocs pour donner du poids aux actions.</span></li>
+          <li><span><b>Narration environnementale</b>Des détails narratifs intégrés aux décors pour enrichir le monde et guider le joueur de façon implicite.</span></li>
+          <li><span><b>Prototypage</b>Analyse du gameplay voulu dans le LD, intégration sous Unity, puis ajustement du rythme grâce aux playtests.</span></li>
+        </ul>
+      </div>
+      <div class="process">
+        <div class="role-title"><h4>Process</h4></div>
+        <p class="process-intro">Huit sprints, suivis dans le document de production de l'équipe. J'étais assigné à chacune de ces étapes.</p>
+        <ol class="sprints">
+          <li class="mine"><span class="sp-n">S1</span><span>Brainstorm de level design en fake screenshots <span class="who">en trio</span></span></li>
+          <li class="mine"><span class="sp-n">S2</span><span>Recherches de level design après le pitch <span class="who">toute l'équipe</span></span></li>
+          <li class="mine"><span class="sp-n">S3</span><span>Équilibrage du mouvement et banque de situations de level design <span class="who">équipe GD</span></span></li>
+          <li class="mine"><span class="sp-n">S4</span><span>Whitebox des niveaux dans Unity <span class="who">équipe GD</span></span></li>
+          <li class="mine"><span class="sp-n">S5</span><span>Premier jet du monde 2 <span class="who">en binôme</span> et du monde 3 <span class="tag">solo</span></span></li>
+          <li class="mine"><span class="sp-n">S6</span><span>Réglages de la caméra <span class="who">en binôme</span></span></li>
+          <li class="mine"><span class="sp-n">S7</span><span>Playtests internes, revue critique des 3C et post-mortem <span class="who">toute l'équipe</span></span></li>
+          <li class="mine"><span class="sp-n">S8</span><span>Alignement sur la grille, finalisation du level design et de la courbe de difficulté <span class="tag">solo</span></span></li>
+        </ol>
+        <h5>Ce que les playtests ont montré</h5>
+        <div class="process-grid">
+          <figure class="chart">
+            <img src="assets/push-playtest-global.jpg" alt="Notes moyennes des testeurs : fun 8, contrôles 8,5, caméra 7, rythme de difficulté 8 sur 10" loading="lazy" data-zoom>
+            <figcaption><b>Notes moyennes sur 10.</b> Fun, contrôles et rythme de difficulté tournent autour de 8. La caméra est le point le plus faible, autour de 7.</figcaption>
+          </figure>
+          <figure class="chart">
+            <img src="assets/push-playtest-camera.jpg" alt="Note des contrôles : environ 9 sur 10 sans problème de caméra, environ 7,5 avec" loading="lazy" data-zoom>
+            <figcaption><b>Caméra et contrôles.</b> Les testeurs gênés par la caméra notent les contrôles environ 7,5/10, contre environ 9/10 pour les autres.</figcaption>
+          </figure>
+          <figure class="chart">
+            <img src="assets/push-playtest-profils.jpg" alt="Experts de puzzle et joueurs occasionnels donnent environ 8 sur 10 au fun et au rythme de difficulté" loading="lazy" data-zoom>
+            <figcaption><b>Experts ou occasionnels ?</b> Les deux profils donnent environ 8/10 au fun comme au rythme : le jeu n'est pas réservé aux experts.</figcaption>
+          </figure>
+        </div>
+        <p class="credit">Graphiques issus de l'analyse des playtests réalisée par l'équipe.</p>
+      </div>
+      </div>
+    </article>
+
+    <!-- FATAL BOING -->
+    <article class="dossier flip" id="fatal-boing">
+      <div class="dossier-head">
+        <div>
+          <span class="genre">Un one button game multijoueur</span>
+          <h3>Fatal Boing !</h3>
+        </div>
+        <div class="links">
+          <a class="btn btn--red" href="https://geasson.itch.io/fatal-boing" target="_blank" rel="noopener">Télécharger sur itch.io <span class="arr">↗</span></a>
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=xbmsQiT5AwA" target="_blank" rel="noopener">Trailer <span class="arr">▸</span></a>
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=kj92bRlfAtI" target="_blank" rel="noopener">Walkthrough <span class="arr">▸</span></a>
+        </div>
+      </div>
+      <div class="dossier-grid">
+        <div class="media">
+          <div class="screen" data-video="xbmsQiT5AwA" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><img src="assets/fatal-gameplay.gif" alt="Gameplay animé de Fatal Boing : les boules se propulsent autour d'un trou noir" loading="lazy"></div>
+          <div class="dialog-wrap">
+            <span class="dialog-name">Core mechanic</span>
+            <div class="dialog">
+              <q>Maintenir Espace, relâcher, se propulser !</q>
+              <p>Un seul bouton : on maintient pour viser, on relâche pour se projeter. Tout se joue sur le timing et l'anticipation des trajectoires et du terrain.</p>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <dl class="stats">
+            <dt>Rôle</dt><dd>Game Designer et développeur</dd>
+            <dt>Date</dt><dd>Février à avril 2026</dd>
+            <dt>Équipe</dt><dd>Projet solo</dd>
+            <dt>Type</dt><dd>Projet étudiant, ISART Digital</dd>
+            <dt>Genre</dt><dd>Party game / action, multijoueur local</dd>
+            <dt>Moteur</dt><dd>Unity</dd>
+            <dt>Plateforme</dt><dd>PC (Windows)</dd>
+          </dl>
+          <p class="pitch">Fatal Boing est un party game 1v1 au tour par tour, jouable avec un seul bouton. Chaque joueur dirige 3 boules aux classes différentes et doit toucher celles de l'adversaire, sous la menace d'un trou noir qui grossit.</p>
+        </div>
+      </div>
+      <button class="more-btn" type="button" aria-expanded="false" aria-controls="fatal-boing-more"><span class="more-lbl">Règles, classes, process et captures</span><span class="chev" aria-hidden="true">▾</span></button>
+      <div class="more" id="fatal-boing-more" hidden>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Règles et contrôles</h4></div>
+        <ul class="rules">
+          <li><b>But</b>Rebondir sur les Boingers adverses pour leur infliger un maximum de dégâts. Chaque KO rapporte un point, le premier à 5 points gagne.</li>
+          <li><b>En jeu</b>Maintenir Espace pour viser et charger la puissance, relâcher pour tirer. Échap ouvre la pause.</li>
+          <li><b>Menus</b>Eux aussi se jouent avec un seul bouton : appui court pour passer à l'option suivante, appui long pour valider. Sur les curseurs de volume, on maintient pour faire défiler la jauge.</li>
+          <li><b>Lisibilité</b>Avant le tir, un contour s'affiche sur les cibles quand les conditions d'un pouvoir sont réunies.</li>
+        </ul>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Les trois classes</h4></div>
+        <div class="classes">
+          <div class="class-card"><h5>Bunny</h5><span class="kind">Lapin</span><p>S'il met un Boinger adverse KO, son équipe rejoue tout de suite avec l'unité suivante.</p></div>
+          <div class="class-card"><h5>Frogy</h5><span class="kind">Grenouille</span><p>Elle soigne les alliés qu'elle touche, même en dehors de son tour.</p></div>
+          <div class="class-card"><h5>BeeBee</h5><span class="kind">Abeille</span><p>Si elle ramasse un power-up, elle grossit et gagne en puissance.</p></div>
+        </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Process</h4></div>
+        <ul class="rules">
+          <li><b>Visual Scripting</b>Logique du jeu montée en graphes sous Unity : tours des deux joueurs, dégâts, rebonds sur les murs et les bumpers.</li>
+          <li><b>Feedbacks</b>Quatre familles de particules d'impact selon la situation : touche, contact, exécution et victoire.</li>
+          <li><b>Playtests</b>Jeu testé par 7 joueurs avant la version finale.</li>
+        </ul>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Captures</h4></div>
+        <div class="thumbs" data-zoom-all>
+            <img src="assets/fatal-menu.jpg" alt="Menu principal de Fatal Boing" loading="lazy">
+            <img src="assets/fatal-1.jpg" alt="Combo en pleine partie de Fatal Boing" loading="lazy">
+            <img src="assets/fatal-2.jpg" alt="Écran de victoire de Fatal Boing" loading="lazy">
+          </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Mon rôle</h4></div>
+        <ul class="skills-list">
+          <li><span><b>Développement en solo</b>Du concept initial à l'intégration finale, en autonomie : design, programmation, UI et audio.</span></li>
+          <li><span><b>Règles &amp; boucle de gameplay</b>Tour par tour à bouton unique, boucle pensée pour des parties rapides et intuitives.</span></li>
+          <li><span><b>Équilibrage &amp; comeback</b>Classes et power-ups équilibrés pour permettre des retournements spectaculaires sans sacrifier l'équité du jeu.</span></li>
+          <li><span><b>Arène évolutive</b>Un trou noir central qui grandit et accélère les boules à chaque passage, pour dynamiser la fin de partie.</span></li>
+          <li><span><b>Pouvoirs &amp; classes</b>Des compétences situationnelles et jouissives, adaptées à la contrainte de la commande unique.</span></li>
+          <li><span><b>Game feel « juicy »</b>Screen shake, hitstop, particules et caméra pour maximiser le plaisir à chaque collision.</span></li>
+          <li><span><b>UI &amp; menus</b>Interface et menus de sélection pour une navigation fluide, propre aux party games.</span></li>
+          <li><span><b>Sound design</b>Retours sonores qui renforcent le feedback des impacts et la lisibilité des actions.</span></li>
+        </ul>
+      </div>
+      </div>
+    </article>
+
+    <!-- AMY -->
+    <article class="dossier" id="amy">
+      <div class="dossier-head">
+        <div>
+          <span class="genre">Un visual novel pour l'association e-Enfance</span>
+          <h3>Amy</h3>
+        </div>
+        <div class="links">
+          <a class="btn btn--red" href="https://geasson.itch.io/amy" target="_blank" rel="noopener">Télécharger sur itch.io <span class="arr">↗</span></a>
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=SM9Xz37IjlA" target="_blank" rel="noopener">Walkthrough <span class="arr">▸</span></a>
+        </div>
+      </div>
+      <div class="dossier-grid">
+        <div class="media">
+          <div class="screen" data-video="SM9Xz37IjlA" data-video-label="Regarder le walkthrough"><span class="label">Gameplay</span><img src="assets/amy-gameplay.gif" alt="Scène animée d'Amy en salle de classe" loading="lazy"></div>
+          <div class="dialog-wrap">
+            <span class="dialog-name">Core mechanic</span>
+            <div class="dialog">
+              <q>Collecte des preuves, puis fais-les parler.</q>
+              <p>Au fil de la semaine, chaque enquête te fait gagner ou non des preuves qui s'ajoutent à ton inventaire. Lors de la confrontation finale, tu choisis lesquelles présenter, et le dénouement dépend de ces choix.</p>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <dl class="stats">
+            <dt>Rôle</dt><dd>Narrative Designer et Game Designer</dd>
+            <dt>Date</dt><dd>Juin 2026</dd>
+            <dt>Équipe</dt><dd>GD / ND, GA et GP</dd>
+            <dt>Type</dt><dd>Projet étudiant</dd>
+            <dt>Genre</dt><dd>Visual novel, enquête narrative</dd>
+            <dt>Moteur</dt><dd>Ren'Py</dd>
+            <dt>Plateforme</dt><dd>PC</dd>
+          </dl>
+          <p class="pitch">Amy est un visual novel d'enquête sur une semaine. Tu incarnes un membre de la famille d'Amy et tu dois réunir des preuves, puis faire les bons choix pour faire éclater la vérité sur une situation de harcèlement scolaire. L'écriture met l'accent sur les signes avant-coureurs, avec quelques touches d'humour pour alléger le ton sans retirer de poids au sujet.</p>
+        </div>
+      </div>
+      <button class="more-btn" type="button" aria-expanded="false" aria-controls="amy-more"><span class="more-lbl">Mon rôle, le process et les captures</span><span class="chev" aria-hidden="true">▾</span></button>
+      <div class="more" id="amy-more" hidden>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Captures</h4></div>
+        <div class="thumbs" data-zoom-all>
+            <img src="assets/amy-inventaire.jpg" alt="Inventaire des preuves dans Amy" loading="lazy">
+            <img src="assets/amy-1.jpg" alt="Dialogue entre deux personnages dans Amy" loading="lazy">
+            <img src="assets/amy-fin.jpg" alt="Une des fins d'Amy" loading="lazy">
+          </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Mon rôle</h4></div>
+        <ul class="skills-list">
+          <li><span><b>Narrative design &amp; écriture</b>Scénario complet, arborescences de dialogue et embranchements narratifs axés sur la sensibilisation au harcèlement.</span></li>
+          <li><span><b>Scripting Ren'Py</b>Toute la logique du jeu : gestion des preuves, système d'inventaire et variables conditionnelles.</span></li>
+          <li><span><b>Animations &amp; mise en scène</b>Animations de personnages et d'interface pour donner du rythme aux scènes clés.</span></li>
+          <li><span><b>Systèmes d'enquête</b>Boucle construite autour de choix de dialogue accessibles, de la récolte d'indices et de la confrontation finale.</span></li>
+          <li><span><b>Sound design &amp; audio</b>Recherche, montage et intégration des effets sonores et des musiques au service de l'ambiance.</span></li>
+        </ul>
+      </div>
+      <div class="process">
+        <div class="role-title"><h4>Process</h4></div>
+        <p class="process-intro">Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Clique sur une image pour l'agrandir.</p>
+        <div class="process-grid">
+          <figure>
+            <img src="assets/amy-flow.jpg" alt="Arborescence des dialogues d'Amy, vue d'ensemble" loading="lazy" data-zoom>
+            <figcaption><b>Arborescence des dialogues.</b> Les scènes, les choix du joueur et leurs conséquences.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/amy-flow-2.jpg" alt="Arborescence des dialogues d'Amy, partie 2" loading="lazy" data-zoom>
+            <figcaption><b>Mardi, l'enquête à l'école.</b> Selon la piste choisie (salle des profs, observer, élèves), le joueur gagne un témoignage, repart sans preuve, ou déclenche la fin « prison ».</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/amy-flow-3.jpg" alt="Arborescence des dialogues d'Amy, partie 3" loading="lazy" data-zoom>
+            <figcaption><b>Dimanche, le tribunal.</b> Les preuves présentées (témoignages, confiance d'Amy, preuve de cyberattaque) mènent aux différentes fins, de la plus fragile à la meilleure.</figcaption>
+          </figure>
+        </div>
+      </div>
+      </div>
+    </article>
+
+    <!-- LUMI'S JAR -->
+    <article class="dossier flip" id="lumis-jar">
+      <div class="dossier-head">
+        <div>
+          <span class="genre">Un idle game qui vit sur le bureau</span>
+          <h3>Lumi’s Jar</h3>
+        </div>
+        <div class="links">
+          <a class="btn btn--ink" href="https://www.youtube.com/watch?v=H0m9e6-o1E8" data-href-en="https://www.youtube.com/watch?v=knlaWF0Trc0" target="_blank" rel="noopener">Trailer <span class="arr">▸</span></a>
+        </div>
+      </div>
+      <div class="dossier-grid">
+        <div class="media">
+          <div class="screen" data-video="H0m9e6-o1E8" data-video-en="knlaWF0Trc0" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><img src="assets/lumi-tape.gif" data-src-en="assets/lumi-tape-en.gif" alt="Gameplay animé de Lumi's Jar : on tape « Salut Lumi », chaque touche fait tomber des pièces dans le bocal où Lumi est assise" loading="lazy"></div>
+          <div class="dialog-wrap">
+            <span class="dialog-name">Core mechanic</span>
+            <div class="dialog">
+              <q>Tape, clique… les pièces tombent dans le bocal !</q>
+              <p>Le jeu compte chaque frappe et chaque clic faits n'importe où sur le PC, sans jamais savoir lesquels : des pièces tombent dans le bocal de Lumi, posé sur la barre des tâches. On le vide pour encaisser, on le secoue, on rattrape ce qui déborde.</p>
+            </div>
+          </div>
+        </div>
+        <div class="facts">
+          <dl class="stats">
+            <dt>Rôle</dt><dd>Concept, game design, direction artistique et production</dd>
+            <dt>Date</dt><dd>Octobre 2026</dd>
+            <dt>Équipe</dt><dd>Projet solo</dd>
+            <dt>Type</dt><dd>Projet personnel</dd>
+            <dt>Genre</dt><dd>Idle / jeu de bureau (desktop companion)</dd>
+            <dt>Moteur</dt><dd>Electron et JavaScript, moteur maison</dd>
+            <dt>Plateforme</dt><dd>PC (Windows) · sortie Steam en préparation</dd>
+          </dl>
+          <p class="pitch">Lumi’s Jar est un idle game qui vit au-dessus de la barre des tâches : chaque frappe et chaque clic faits sur le PC font tomber une pièce dans le bocal de Lumi, une petite voyageuse tombée loin de chez elle. On encaisse, on débloque quinze contenants aux pouvoirs différents, on défend son butin contre les voleurs, et le prestige mène jusqu'au trou noir et à un choix final. Le défi de design : un jeu qui accompagne la journée sans jamais gêner.</p>
+        </div>
+      </div>
+
+      <!-- Player-facing pitch, the way a store page would sell it -->
+      <div class="vitrine" role="region" aria-labelledby="lumis-jar-vitrine">
+        <div class="vitrine-head">
+          <span class="vitrine-kick">Vitrine</span>
+          <h4 id="lumis-jar-vitrine">Pourquoi l'installer ?</h4>
+          <span class="vitrine-badge">Sortie Steam en préparation</span>
+        </div>
+        <div class="vitrine-top">
+          <figure class="vitrine-key">
+            <img src="assets/lumi-key.jpg" data-src-en="assets/lumi-key-en.jpg" alt="Key art de Lumi's Jar : le logo au-dessus de Lumi, assise sur un nid de dragon rempli d'or" loading="lazy" data-zoom>
+          </figure>
+          <div class="vitrine-pitch">
+            <p class="vitrine-hook">Tu bosses, tu joues, tu discutes… <em>et Lumi récolte.</em></p>
+            <p>Un petit idle game qui vit juste au-dessus de ta barre des tâches. Chaque frappe et chaque clic font tomber une pièce dans le bocal de Lumi, une voyageuse tombée loin de chez elle. Encaisse, offre-lui de plus beaux contenants, collectionne ses tenues… jusqu'au trou noir qui pourrait la ramener chez elle.</p>
+            <ul class="vitrine-tags" aria-label="Tags">
+              <li>Idle</li><li>Incrémental</li><li>Cosy</li><li>Pixel art</li><li>Desktop companion</li><li>Solo</li>
+            </ul>
+            <dl class="vitrine-nums">
+              <div><dt>15</dt><dd>contenants</dd></div>
+              <div><dt>16</dt><dd>tenues</dd></div>
+              <div><dt>14</dt><dd>événements</dd></div>
+              <div><dt>36</dt><dd>succès</dd></div>
+              <div><dt>2</dt><dd>fins</dd></div>
+              <div><dt>FR·EN</dt><dd>langues</dd></div>
+            </dl>
+          </div>
+        </div>
+        <ol class="vitrine-feats">
+          <li>
+            <img src="assets/lumi-bureau.jpg" data-src-en="assets/lumi-bureau-en.jpg" alt="Le bocal se remplit au bord de l'écran pendant qu'on tape des notes" loading="lazy" data-zoom>
+            <h5>Il joue pendant que tu bosses</h5>
+            <p>Aucune fenêtre à surveiller : le bocal se pose sur ta barre des tâches et se remplit pendant que tu écris, codes ou discutes.</p>
+          </li>
+          <li>
+            <img src="assets/lumi-aura.jpg" data-src-en="assets/lumi-aura-en.jpg" alt="Lumi entourée d'une aura de flammes pendant qu'on tape très vite" loading="lazy" data-zoom>
+            <h5>Tape vite, ça flambe</h5>
+            <p>Enchaîne les frappes : Lumi s'entoure de flammes, et 60 touches en 10 secondes lancent la frénésie, où tout vaut double.</p>
+          </li>
+          <li>
+            <img src="assets/lumi-mimic.jpg" data-src-en="assets/lumi-mimic-en.jpg" alt="Le coffre mimic, content, à côté de Lumi" loading="lazy" data-zoom>
+            <h5>15 contenants à débloquer</h5>
+            <p>Le chaudron fait monter le cuivre jusqu'à l'or, le mimic croque ton or, le cristal fait grimper ce que tu laisses dedans, le dragon crache du feu.</p>
+          </li>
+          <li>
+            <img src="assets/lumi-pigeons.jpg" data-src-en="assets/lumi-pigeons-en.jpg" alt="Une bande de pigeons emporte un gros diamant hors du seau" loading="lazy" data-zoom>
+            <h5>Défends ton butin</h5>
+            <p>Une bande de pigeons embarque tes pièces, à quatre pour le diamant, et parfois c'est toute une armada. Tape-les avant qu'ils ne sortent de l'écran… et méfie-toi : ce ne sont pas les seuls voleurs.</p>
+          </li>
+          <li>
+            <img src="assets/lumi-neige.jpg" data-src-en="assets/lumi-neige-en.jpg" alt="La neige tombe, Lumi est assise sur son bocal" loading="lazy" data-zoom>
+            <h5>Une météo qui change tout</h5>
+            <p>Pluie d'or, coup de vent, séisme, orage, neige, étoiles filantes, arc-en-ciel… et un marchand ambulant qui passe avec ses promos. Lumi réagit à chacun.</p>
+          </li>
+          <li>
+            <img src="assets/lumi-fin.jpg" data-src-en="assets/lumi-fin-en.jpg" alt="Lumi devant le trou noir : elle pourrait rentrer chez elle, ou rester" loading="lazy" data-zoom>
+            <h5>Et un jour, le trou noir</h5>
+            <p>Au bout du prestige, Lumi peut enfin rentrer chez elle. Ou rester avec toi, pour toujours. C'est toi qui choisis.</p>
+          </li>
+        </ol>
+        <div class="vitrine-foot">
+          <ul class="vitrine-promises">
+            <li><b>≈ 10 % d'un cœur</b>Au calme, il peut rester ouvert toute la journée.</li>
+            <li><b>Mode jeu</b>Devant un jeu en plein écran, il devient transparent et la souris passe au travers.</li>
+            <li><b>Rien d'enregistré</b>Il compte tes frappes, jamais lesquelles.</li>
+          </ul>
+          <a class="btn btn--red" href="https://www.youtube.com/watch?v=H0m9e6-o1E8" data-href-en="https://www.youtube.com/watch?v=knlaWF0Trc0" target="_blank" rel="noopener">Voir le trailer <span class="arr">▸</span></a>
+        </div>
+      </div>
+
+      <button class="more-btn" type="button" aria-expanded="false" aria-controls="lumis-jar-more"><span class="more-lbl">Règles, systèmes, captures et mon rôle</span><span class="chev" aria-hidden="true">▾</span></button>
+      <div class="more" id="lumis-jar-more" hidden>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Règles et contrôles</h4></div>
+        <ul class="rules">
+          <li><b>But</b>Remplir le bocal, encaisser, acheter de meilleurs contenants, puis faire du prestige jusqu'au trou noir, qui ouvre la fin du jeu.</li>
+          <li><b>Encaisser</b>Maintenir le clic sur le contenant le vide dans le compteur. Glisser le secoue. Ce qui déborde roule sur la barre des tâches et disparaît si personne ne le rattrape.</li>
+          <li><b>Attraper</b>Le rubis ailé à la souris, la météorite à fracasser contre un bord de l'écran, les pigeons voleurs à taper avant qu'ils n'emportent le butin, et les fourmis à écraser avant qu'elles n'emportent le bocal tout entier.</li>
+          <li><b>Lumi</b>Elle ramasse les pièces tombées, réagit à chaque événement (elle patine sur la neige, s'accroche au bocal quand on le lui vole), dit bonjour le matin, fait la sieste quand on ne tape plus, et s'assoit sur le bocal si on l'y pose.</li>
+        </ul>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Les systèmes</h4></div>
+        <div class="classes classes--2">
+          <div class="class-card"><h5>Contenants</h5><span class="kind">15 paliers</span><p>Chacun a son pouvoir : le chaudron transmute, le mimic dévore l'or, le Graal encaisse seul, le nid de dragon crache du feu.</p></div>
+          <div class="class-card"><h5>Prestige &amp; fin</h5><span class="kind">4 couronnes</span><p>On fond le trésor pour monter de palier : bronze, argent, or, puis la couronne cosmique, et chaque palier fait valoir toutes les pièces plus cher. Jusqu'au trou noir et au choix final : libérer Lumi ou rester avec elle.</p></div>
+        </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Captures</h4></div>
+        <div class="thumbs" data-zoom-all>
+            <img src="assets/lumi-fourmis.jpg" data-src-en="assets/lumi-fourmis-en.jpg" alt="Des fourmis emportent le bocal sous les yeux de Lumi" loading="lazy">
+            <img src="assets/lumi-foudre.jpg" data-src-en="assets/lumi-foudre-en.jpg" alt="Pendant l'orage, Lumi se prend la foudre" loading="lazy">
+            <img src="assets/lumi-seisme.jpg" data-src-en="assets/lumi-seisme-en.jpg" alt="Un séisme fait sauter les pièces hors du seau" loading="lazy">
+            <img src="assets/lumi-dragon.jpg" data-src-en="assets/lumi-dragon-en.jpg" alt="Le nid de dragon crache du feu et change les pièces en or" loading="lazy">
+            <img src="assets/lumi-marchand.jpg" data-src-en="assets/lumi-marchand-en.jpg" alt="Le marchand ambulant ouvre sa boutique à côté du coffre mimic" loading="lazy">
+            <img src="assets/lumi-prestige.jpg" data-src-en="assets/lumi-prestige-en.jpg" alt="Le prestige or : une couronne et toutes les pièces valent plus" loading="lazy">
+          </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Les menus</h4></div>
+        <div class="menus" data-zoom-all>
+          <figure>
+            <img src="assets/lumi-menu-contenants.png" alt="Onglet Contenants : le sac en toile, le pot de confiture utilisé, la tirelire cochon et le bocal à cookies, chacun avec son pouvoir et son prix" loading="lazy">
+            <figcaption><b>Contenants.</b> Chacun annonce son pouvoir en une phrase. On l'achète, ou on revient à un ancien d'un clic.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lumi-menu-tenues.png" alt="Onglet Lumi : la garde-robe, avec les tenues trouvées et des silhouettes pour celles qui manquent" loading="lazy">
+            <figcaption><b>Garde-robe.</b> La couleur du cadre donne la rareté de la tenue. Celles qu'on n'a pas encore trouvées restent en silhouette.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lumi-menu-collection.png" alt="Onglet Collection : les succès, chacun avec son icône en pixel art, débloqués ou encore grisés" loading="lazy">
+            <figcaption><b>Collection.</b> Trouvailles rares, records de la partie (frappes, animaux repoussés, prestige…) et les 36 succès, chacun avec son icône en pixel art. Les secrets restent cachés jusqu'à ce qu'on les trouve.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="role-wrap">
+        <div class="role-title"><h4>Mon rôle</h4></div>
+        <ul class="skills-list">
+          <li><span><b>Concept &amp; game design</b>Un jeu qui accompagne sans gêner : la boucle se nourrit de ce qu'on fait déjà sur le PC.</span></li>
+          <li><span><b>Économie &amp; progression</b>Prix, paliers et prestige réglés avec un modèle qui simule le temps de jeu jusqu'à la fin, pour qu'il y ait toujours un prochain objectif en vue.</span></li>
+          <li><span><b>Personnage &amp; narration</b>Lumi, ses répliques selon la situation, son tuto glissé dans ses bulles, et une fin à choix.</span></li>
+          <li><span><b>Game feel</b>Physique des pièces, secousses, aura de flammes quand on tape vite, sons synthétisés.</span></li>
+          <li><span><b>Direction artistique</b>Pixel art lisible à toutes les tailles, de l'icône de 16 pixels aux 36 icônes de succès et au trailer.</span></li>
+          <li><span><b>Production</b>Version Windows installable en français et en anglais, trailer filmé dans le vrai jeu et calé sur la musique, préparation de la sortie Steam.</span></li>
+        </ul>
+      </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= COMPÉTENCES ================= -->
+<section class="stats-sec" id="competences">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="plate plate--paper">
+        <span class="kick">Stats</span>
+        <h2>Compétences</h2>
+      </div>
+      <p>Compétences, outils et langues.</p>
+    </div>
+
+    <div class="stat-top">
+      <figure class="social" id="social">
+        <h3 class="panel-title">Stats sociales</h3>
+        <svg viewBox="-262 -180 524 330" aria-hidden="true">
+          <g class="star-spin"><path class="star-bg" d="M0,-132 L77.6,106.8 L-125.5,-40.8 L125.5,-40.8 L-77.6,106.8 Z"/></g>
+          <polygon class="ring" points="0.0,-110.0 104.6,-34.0 64.7,89.0 -64.7,89.0 -104.6,-34.0"/><polygon class="ring" points="0.0,-88.0 83.7,-27.2 51.7,71.2 -51.7,71.2 -83.7,-27.2"/><polygon class="ring" points="0.0,-66.0 62.8,-20.4 38.8,53.4 -38.8,53.4 -62.8,-20.4"/><polygon class="ring" points="0.0,-44.0 41.8,-13.6 25.9,35.6 -25.9,35.6 -41.8,-13.6"/><polygon class="ring" points="0.0,-22.0 20.9,-6.8 12.9,17.8 -12.9,17.8 -20.9,-6.8"/>
+          <path class="axis" d="M0,0 L0.0,-110.0 M0,0 L104.6,-34.0 M0,0 L64.7,89.0 M0,0 L-64.7,89.0 M0,0 L-104.6,-34.0"/>
+          <polygon class="val" points="0.0,-110.0 104.6,-34.0 51.7,71.2 -38.8,53.4 -83.7,-27.2"><animate attributeName="points" values="0.0,-110.0 104.6,-34.0 51.7,71.2 -38.8,53.4 -83.7,-27.2;0.0,-80.0 98.9,-32.1 64.7,89.0 -54.1,74.4 -59.0,-19.2;0.0,-110.0 66.6,-21.6 56.4,77.7 -64.7,89.0 -76.1,-24.7;0.0,-94.0 93.2,-30.3 37.6,51.8 -58.8,80.9 -104.6,-34.0;0.0,-110.0 104.6,-34.0 51.7,71.2 -38.8,53.4 -83.7,-27.2" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></polygon>
+          <circle class="dot" r="6"><animate attributeName="cx" values="0.0;0.0;0.0;0.0;0.0" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="-110.0;-80.0;-110.0;-94.0;-110.0" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></circle><circle class="dot" r="6"><animate attributeName="cx" values="104.6;98.9;66.6;93.2;104.6" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="-34.0;-32.1;-21.6;-30.3;-34.0" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></circle><circle class="dot" r="6"><animate attributeName="cx" values="51.7;64.7;56.4;37.6;51.7" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="71.2;89.0;77.7;51.8;71.2" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></circle><circle class="dot" r="6"><animate attributeName="cx" values="-38.8;-54.1;-64.7;-58.8;-38.8" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="53.4;74.4;89.0;80.9;53.4" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></circle><circle class="dot" r="6"><animate attributeName="cx" values="-83.7;-59.0;-76.1;-104.6;-83.7" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="-27.2;-19.2;-24.7;-34.0;-27.2" calcMode="spline" keyTimes="0.00;0.25;0.50;0.75;1.00" keySplines=".45 0 .2 1; .45 0 .2 1; .45 0 .2 1; .45 0 .2 1" dur="9s" repeatCount="indefinite"/></circle>
+          <text class="lbl" x="0" y="-150" text-anchor="middle">Level design</text><text class="lbl" x="132" y="-36" text-anchor="start">Game feel</text><text class="lbl" x="80" y="128" text-anchor="start">System design</text><text class="lbl" x="-80" y="128" text-anchor="end">Narration</text><text class="lbl" x="-132" y="-36" text-anchor="end">Prototypage</text>
+        </svg>
+      </figure>
+      <div class="traits">
+        <div class="trait"><h4>Créativité</h4><p>Forte créativité et apprentissage rapide.</p></div>
+        <div class="trait"><h4>Travail d'équipe</h4><p>Un esprit d'équipe naturel et une bonne communication.</p></div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="col">
+        <div>
+          <h3 class="panel-title">Game Design</h3>
+          <ul class="kit">
+            <li><i class="ico"></i><span>Level design et pacing</span></li>
+            <li><i class="ico"></i><span>Game feel et feedbacks</span></li>
+            <li><i class="ico"></i><span>System et combat design</span></li>
+            <li><i class="ico"></i><span>Narration environnementale</span></li>
+            <li><i class="ico"></i><span>Prototypage</span></li>
+            <li><i class="ico"></i><span>Documentation (GDD)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="panel-title alt">Unity</h3>
+          <ul class="kit">
+            <li><i class="ico"></i><span>Prototypage de gameplay et de mécaniques</span></li>
+            <li><i class="ico"></i><span>Agencement de niveaux et blockouts</span></li>
+            <li><i class="ico"></i><span>Intégration d'interfaces utilisateur</span></li>
+            <li><i class="ico"></i><span>Packages et outils : Cinemachine, DOTween</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <div>
+          <h3 class="panel-title">Langues</h3>
+          <div class="ranks">
+            <div class="rank"><span class="what">Français</span><span class="lvl">Langue natale</span><span class="pips" aria-label="Rang maximum"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><span class="max">MAX</span></span></div>
+            <div class="rank"><span class="what">Anglais</span><span class="lvl">Avancé (C1)</span><span class="pips" aria-label="4 sur 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="rank"><span class="what">Portugais (Brésil)</span><span class="lvl">Avancé (C1)</span><span class="pips" aria-label="4 sur 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="panel-title alt">Code &amp; image</h3>
+          <div class="ranks">
+            <div class="rank"><span class="what">Visual Scripting, Python</span><span class="lvl">Niveau intermédiaire</span><span class="pips" aria-label="3 sur 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="rank"><span class="what">C#, HTML, CSS, SQL</span><span class="lvl">Notions de base</span><span class="pips" aria-label="2 sur 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="rank"><span class="what">After Effects, CapCut, Photoshop</span><span class="lvl">Bases en image et montage vidéo</span><span class="pips" aria-label="2 sur 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONFIDENT ================= -->
+<section class="coop" id="confident">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="plate">
+        <span class="kick">Confident</span>
+        <h2>À propos</h2>
+      </div>
+      <p>Mon parcours, ce qui me motive et ce qui m'inspire.</p>
+    </div>
+
+    <div class="coop-grid">
+      <aside class="arcana" aria-label="Carte d'arcane">
+        <span class="arc-kick">Arcane</span>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <symbol id="note-sym" viewBox="0 0 100 124">
+            <g transform="translate(5 4)" fill="#f5b400"><path d="M30,8 L80,40 L70,45 L85,67 L72,63 L77,82 L60,57 L68,54 L47,32 L52,84 L39,86 Z"/><circle cx="34" cy="90" r="25"/></g>
+            <path d="M30,8 L80,40 L70,45 L85,67 L72,63 L77,82 L60,57 L68,54 L47,32 L52,84 L39,86 Z" fill="#0c0b0b"/>
+            <circle cx="34" cy="90" r="25" fill="#0c0b0b"/>
+            <path d="M10,92 Q34,122 58,92 Z" fill="#fff" stroke="#0c0b0b" stroke-width="2.5" stroke-linejoin="round"/>
+            <polyline points="14,95 20,107 25,97 31,111 36,98 42,109 47,97 52,104 55,94" fill="none" stroke="#0c0b0b" stroke-width="2.5" stroke-linejoin="round"/>
+          </symbol>
+        </svg>
+        <svg class="note cat-note n1" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
+        <svg class="note cat-note n2" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
+        <svg class="note cat-note n3" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
+        <div class="card-art"><img src="assets/portrait.jpg" alt="Tiago et son chat noir" loading="lazy"><span class="pet-hint" aria-hidden="true"><span class="hand">✋</span><b>Caresse-le !</b></span><button class="pet-zone" id="pet-zone" type="button" aria-label="Caresser le chat"></button></div>
+        <span class="purr-bubble" id="purr-bubble" aria-live="polite">Rrrrrr…</span>
+        <span class="arc-name">Le Mat</span>
+        <span class="rank-row" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="rank-cap">Coop Tiago · Rang max</span>
+      </aside>
+
+      <div class="bio">
+        <p class="intro">Étudiant en Game Design à ISART Digital après un parcours en informatique et mathématiques à la Sorbonne. Je me spécialise en <b>Level Design</b>, <b>System Design</b> et <b>Game Feel</b>, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.</p>
+        <div class="path" aria-label="Parcours">
+          <span class="step">La Sorbonne<small>Informatique &amp; mathématiques</small></span>
+          <span class="arrow" aria-hidden="true">▸</span>
+          <span class="step now">ISART Digital<small>Game Design · en cours</small></span>
+        </div>
+        <div class="passion">
+          <h3>Ma <span>passion</span></h3>
+          <p>Depuis l'enfance, les jeux vidéo occupent une place particulière dans ma vie. Plus que de simples divertissements, ils m'ont fait traverser des aventures marquantes, vibrer et ressentir des émotions d'une intensité rare.</p>
+          <p>Très tôt, l'envie de passer de l'autre côté du miroir s'est imposée comme une évidence. Mon rêve a toujours été de créer à mon tour : concevoir des univers uniques et transmettre aux joueurs cette même étincelle, cet émerveillement que j'ai éprouvé en grandissant. Le game design est pour moi le moyen de transformer cette sensibilité en expériences concrètes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hobbies">
+      <article class="hobby">
+        <img src="assets/hobby-voyage.jpg" alt="Coucher de soleil sur la mer" loading="lazy">
+        <div class="t">
+          <h4>Les voyages</h4>
+          <p>Découvrir de nouvelles architectures, d'autres cultures et des paysages variés. C'est ma principale source d'inspiration pour concevoir des univers crédibles et nourrir la narration environnementale de mes niveaux.</p>
+        </div>
+      </article>
+      <article class="hobby">
+        <img src="assets/hobby-japon.jpg" alt="Temple japonais illuminé la nuit" loading="lazy">
+        <div class="t">
+          <h4>La culture japonaise</h4>
+          <p>De l'UI légendaire de Persona aux univers d'animation japonais, cette passion m'a poussé à apprendre le japonais à la fac le samedi. Étudier ces œuvres à la source m'aide à décortiquer leurs choix de design.</p>
+        </div>
+      </article>
+      <article class="hobby">
+        <img src="assets/hobby-hardware.jpg" alt="Processeur et composants de PC" loading="lazy">
+        <div class="t">
+          <h4>Le hardware</h4>
+          <p>J'ai assemblé ma propre machine de A à Z. Suivre l'actualité tech au quotidien m'aide à comprendre les limites du matériel et les enjeux d'optimisation.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALLING CARD ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="card">
+      <h2 class="card-head" aria-label="Avis aux studios">
+        <span class="row" data-ransom data-seed="5">AVIS AUX</span>
+        <span class="row" data-ransom data-seed="17">STUDIOS</span>
+      </h2>
+      <p class="card-text">Vous cherchez un stagiaire Game Designer qui prototype vite, pense ses niveaux pour le joueur et soigne chaque impact ? Je viendrai <em>voler votre cœur</em>… et rejoindre votre équipe.</p>
+      <div class="channels">
+        <div class="channel">
+          <span class="k">Stage</span>
+          <span class="v v--note">D'avril à septembre 2027, pas forcément sur toute la période</span>
+        </div>
+        <div class="channel">
+          <span class="k">Mail</span>
+          <span class="v" id="mail">dnf.tiago@gmail.com</span>
+          <button class="copy" id="copy-mail" type="button">Copier</button>
+        </div>
+        <div class="channel">
+          <span class="k">LinkedIn</span>
+          <a class="v" href="https://www.linkedin.com/in/tiago-del-nery-fontaine-1570053b2" target="_blank" rel="noopener">Tiago Del Nery-Fontaine</a>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+        <div class="channel">
+          <span class="k">CV</span>
+          <a class="v" href="https://drive.google.com/file/d/1I_BjQ7_zlHRfxsTsNFt9V4ltrxRemQ57/view?usp=sharing" target="_blank" rel="noopener">Voir mon CV sur Google Drive</a>
+          <span class="arr" aria-hidden="true">↗</span>
+        </div>
+      </div>
+      <p class="sign"><b>Tiago Del Nery-Fontaine</b></p>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" type="button">Fermer ✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="tyt">Take your <span>time</span>.</span>
+    <span>Tiago Del Nery-Fontaine · Game Designer · ISART Digital</span>
+  </div>
+</footer>
+
+<script type="application/json" id="i18n-en">{
+"Tiago Del Nery-Fontaine": "Tiago Del Nery-Fontaine",
+"Game Designer · cherche un stage": "Game Designer · looking for an internship",
+"Projets": "Projects",
+"Compétences": "Skills",
+"À propos": "About",
+"Contact": "Contact",
+"CV ↗": "CV ↗",
+"Game Designer · Level Design · Game Feel": "Game Designer · Level Design · Game Feel",
+"Étudiant à ISART Digital, axé sur la création de prototypes jouables, le level design et la rédaction de GDD précis.": "Student at <strong>ISART Digital<\/strong>, focused on building playable prototypes, level design and writing precise GDDs.",
+"En recherche de stage !": "Looking for an <b>internship<\/b>!",
+"Avril → septembre 2027 · durée flexible": "April → September 2027 · flexible length",
+"Stage": "Internship",
+"D'avril à septembre 2027, pas forcément sur toute la période": "April to September 2027, not necessarily the whole period",
+"Mon CV ↗": "My CV <span class=\"arr\">↗<\/span>",
+"Me contacter ▸": "Contact me <span class=\"arr\">▸<\/span>",
+"Formation": "Education",
+"ISART Digital, Game Design · avant : informatique & maths à la Sorbonne": "ISART Digital, Game Design · before that: computer science &amp; maths at the Sorbonne",
+"Spécialités": "Focus",
+"Level design, system design, game feel, prototypage": "Level design, system design, game feel, prototyping",
+"Outils": "Tools",
+"Unity (Cinemachine, DOTween), Ren'Py, Visual Scripting, Python": "Unity (Cinemachine, DOTween), Ren'Py, Visual Scripting, Python",
+"Langues": "Languages",
+"Français natif · anglais C1 · portugais C1": "French (native) · English C1 · Portuguese C1",
+"Push Push": "Push Push",
+"Fatal Boing !": "Fatal Boing!",
+"Amy": "Amy",
+"Lumi’s Jar": "Lumi’s Jar",
+"Missions · 4 jeux": "Missions · 4 games",
+"Stats": "Stats",
+"Confident": "Confidant",
+"Calling card · CV": "Calling card · CV",
+"Missions": "Missions",
+"Quatre projets réalisés en 2026 : un puzzle platformer, un party game à un bouton, un visual novel d'enquête et un petit jeu qui vit sur le bureau.": "Four projects made in 2026: a puzzle platformer, a one-button party game, an investigation visual novel and a tiny game that lives on your desktop.",
+"Puzzle platformer 2,5D": "2.5D puzzle platformer",
+"Level Designer · Game Designer ▸": "Level Designer · Game Designer ▸",
+"Party game à un bouton": "One-button party game",
+"Projet solo · Design & dev ▸": "Solo project · Design &amp; dev ▸",
+"Visual novel d'enquête": "Investigation visual novel",
+"Narrative Designer · Game Designer ▸": "Narrative Designer · Game Designer ▸",
+"Idle game de bureau": "Desktop idle game",
+"Projet perso · Game design & direction ▸": "Personal project · Game design &amp; direction ▸",
+"Un puzzle platformer en 2,5D": "A 2.5D puzzle platformer",
+"Trailer ▸": "Trailer <span class=\"arr\">▸<\/span>",
+"Walkthrough ▸": "Walkthrough <span class=\"arr\">▸<\/span>",
+"Core mechanic": "Core mechanic",
+"Chaque saut change les règles.": "Every jump changes the rules.",
+"À chaque saut, les blocs alternent entre deux états. Sauter face à un bloc désactivé le fait surgir sur l'axe Z et tue instantanément le personnage. Il faut donc planifier ses sauts autant que ses déplacements.": "Every jump flips the blocks between two states. Jumping in front of a disabled block makes it shoot out along the Z axis and kills the character instantly, so you have to plan your jumps as carefully as your moves.",
+"Rôle": "Role",
+"Game Designer, dominante level design et 3C": "Game Designer, mainly level design and 3C",
+"Date": "Date",
+"Février à avril 2026": "February to April 2026",
+"Équipe": "Team",
+"9 personnes : 6 game designers, 2 programmeurs, 1 compositeur et sound designer": "9 people: 6 game designers, 2 programmers, 1 composer and sound designer",
+"Type": "Type",
+"Projet étudiant, ISART Digital": "Student project, ISART Digital",
+"Moteur": "Engine",
+"Unity": "Unity",
+"Plateforme": "Platform",
+"PC": "PC",
+"Push Push est un puzzle platformer en 2,5D basé sur une mécanique d'alternance d'états : à chaque saut, les blocs du niveau basculent entre actif et inactif. Un mauvais saut face à un bloc désactivé, et il surgit sur l'axe Z pour t'écraser. Timing, anticipation et lecture de l'espace sont tes seuls outils, à travers plusieurs mondes aux ambiances différentes. Un projet qui m'a fait travailler le tuning des 3C, le rythme du level design et le pacing.": "Push Push is a 2.5D puzzle platformer built on a state-switching mechanic: every jump toggles the level's blocks between active and inactive. One wrong jump in front of a disabled block and it shoots out along the Z axis to crush you. Timing, anticipation and reading the space are your only tools, across several worlds with their own moods. This project trained me in 3C tuning, level design rhythm and pacing.",
+"Level design": "Level design",
+"Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Clique sur une image pour l'agrandir.": "My levels from worlds 2 and 3, from paper sketch or Unity blockout to the final version. Click an image to enlarge it.",
+"Monde 2 · Niveau 1": "World 2 · Level 1",
+"Croquis papier": "Paper sketch",
+"Version finale": "Final version",
+"Monde 2 · Niveau 3": "World 2 · Level 3",
+"Monde 3 · Niveau 1": "World 3 · Level 1",
+"Capture annotée": "Annotated screenshot",
+"Monde 3 · Niveau 1, le piège du départ": "World 3 · Level 1, the opening trap",
+"Croquis du piège": "Trap sketch",
+"En jeu": "In game",
+"Après un saut": "After a jump",
+"Monde 3 · Niveau 2": "World 3 · Level 2",
+"Blockout Unity": "Unity blockout",
+"Monde 3 · Niveau 3": "World 3 · Level 3",
+"Monde 3 · Niveau 4": "World 3 · Level 4",
+"Monde 3 · Niveau 5": "World 3 · Level 5",
+"Captures": "Screenshots",
+"Extrait du trailer. La règle de base en une image : chaque saut fait basculer les plateformes.": "<b>From the trailer.<\/b> The core rule in one shot: every jump flips the platforms.",
+"Mon rôle": "My role",
+"Level design & pacingBlockouts, layouts de niveaux et courbe de difficulté. Des puzzles 2,5D qui font comprendre les systèmes de façon organique.": "<b>Level design &amp; pacing<\/b>Blockouts, level layouts and difficulty curve. 2.5D puzzles that teach the systems organically.",
+"Contrôles & 3CRéglage fin du personnage, de la caméra, des courbes de saut et des masques de collision pour une réactivité et une précision maximales.": "<b>Controls &amp; 3C<\/b>Fine-tuning the character, the camera, the jump curves and the collision masks for maximum responsiveness and precision.",
+"Game feelMouvements de caméra, retours d'impact et feedbacks visuels à l'activation des blocs pour donner du poids aux actions.": "<b>Game feel<\/b>Camera moves, impact feedback and visual cues when blocks activate, to give every action some weight.",
+"Narration environnementaleDes détails narratifs intégrés aux décors pour enrichir le monde et guider le joueur de façon implicite.": "<b>Environmental storytelling<\/b>Narrative details built into the sets to enrich the world and guide the player implicitly.",
+"PrototypageAnalyse du gameplay voulu dans le LD, intégration sous Unity, puis ajustement du rythme grâce aux playtests.": "<b>Prototyping<\/b>Breaking down the intended gameplay in the LD, building it in Unity, then adjusting the rhythm through playtests.",
+"Process": "Process",
+"Huit sprints, suivis dans le document de production de l'équipe. J'étais assigné à chacune de ces étapes.": "Eight sprints, tracked in the team's production document. I was assigned to every one of these steps.",
+"S1": "S1",
+"S2": "S2",
+"S3": "S3",
+"S4": "S4",
+"S5": "S5",
+"S6": "S6",
+"S7": "S7",
+"S8": "S8",
+"Brainstorm de level design en fake screenshots en trio": "Level design brainstorm through fake screenshots <span class=\"who\">in a trio<\/span>",
+"Recherches de level design après le pitch toute l'équipe": "Level design research after the pitch <span class=\"who\">whole team<\/span>",
+"Équilibrage du mouvement et banque de situations de level design équipe GD": "Movement balancing and a bank of level design situations <span class=\"who\">GD team<\/span>",
+"Whitebox des niveaux dans Unity équipe GD": "Level whiteboxing in Unity <span class=\"who\">GD team<\/span>",
+"Premier jet du monde 2 en binôme et du monde 3 solo": "First pass on world 2 <span class=\"who\">in a pair<\/span> and world 3 <span class=\"tag\">solo<\/span>",
+"Réglages de la caméra en binôme": "Camera tuning <span class=\"who\">in a pair<\/span>",
+"Playtests internes, revue critique des 3C et post-mortem toute l'équipe": "Internal playtests, critical review of the 3C and post-mortem <span class=\"who\">whole team<\/span>",
+"Alignement sur la grille, finalisation du level design et de la courbe de difficulté solo": "Grid alignment, final pass on the level design and the difficulty curve <span class=\"tag\">solo<\/span>",
+"Ce que les playtests ont montré": "What the playtests showed",
+"Notes moyennes sur 10. Fun, contrôles et rythme de difficulté tournent autour de 8. La caméra est le point le plus faible, autour de 7.": "<b>Average scores out of 10.<\/b> Fun, controls and difficulty pacing all sit around 8. The camera is the weakest point, around 7.",
+"Caméra et contrôles. Les testeurs gênés par la caméra notent les contrôles environ 7,5/10, contre environ 9/10 pour les autres.": "<b>Camera and controls.<\/b> Testers bothered by the camera rate the controls about 7.5/10, against about 9/10 for the others.",
+"Experts ou occasionnels ? Les deux profils donnent environ 8/10 au fun comme au rythme : le jeu n'est pas réservé aux experts.": "<b>Experts or casual players?<\/b> Both profiles give about 8/10 for fun and pacing alike: the game isn't just for experts.",
+"Graphiques issus de l'analyse des playtests réalisée par l'équipe.": "Charts from the team's playtest analysis.",
+"Un one button game multijoueur": "A multiplayer one-button game",
+"Gameplay": "Gameplay",
+"Maintenir Espace, relâcher, se propulser !": "Hold Space, release, launch!",
+"Un seul bouton : on maintient pour viser, on relâche pour se projeter. Tout se joue sur le timing et l'anticipation des trajectoires et du terrain.": "A single button: hold to aim, release to launch yourself. It's all about timing and reading the trajectories and the arena.",
+"Game Designer et développeur": "Game Designer and developer",
+"Projet solo": "Solo project",
+"Genre": "Genre",
+"Party game / action, multijoueur local": "Party game / action, local multiplayer",
+"PC (Windows)": "PC (Windows)",
+"Fatal Boing est un party game 1v1 au tour par tour, jouable avec un seul bouton. Chaque joueur dirige 3 boules aux classes différentes et doit toucher celles de l'adversaire, sous la menace d'un trou noir qui grossit.": "Fatal Boing is a turn-based 1v1 party game played with a single button. Each player controls 3 balls with different classes and has to hit the opponent's, under the threat of a growing black hole.",
+"Règles et contrôles": "Rules and controls",
+"ButRebondir sur les Boingers adverses pour leur infliger un maximum de dégâts. Chaque KO rapporte un point, le premier à 5 points gagne.": "<b>Goal<\/b>Bounce off the enemy Boingers to deal as much damage as possible. Each KO scores a point; first to 5 points wins.",
+"En jeuMaintenir Espace pour viser et charger la puissance, relâcher pour tirer. Échap ouvre la pause.": "<b>In game<\/b>Hold Space to aim and charge power, release to shoot. Esc opens the pause menu.",
+"MenusEux aussi se jouent avec un seul bouton : appui court pour passer à l'option suivante, appui long pour valider. Sur les curseurs de volume, on maintient pour faire défiler la jauge.": "<b>Menus<\/b>They also work with a single button: a short press moves to the next option, a long press confirms. On the volume sliders, you hold to scroll the gauge.",
+"LisibilitéAvant le tir, un contour s'affiche sur les cibles quand les conditions d'un pouvoir sont réunies.": "<b>Readability<\/b>Before the shot, targets get an outline when the conditions for a power are met.",
+"Les trois classes": "The three classes",
+"Bunny": "Bunny",
+"Lapin": "Rabbit",
+"S'il met un Boinger adverse KO, son équipe rejoue tout de suite avec l'unité suivante.": "If it knocks out an enemy Boinger, its team plays again right away with the next unit.",
+"Frogy": "Frogy",
+"Grenouille": "Frog",
+"Elle soigne les alliés qu'elle touche, même en dehors de son tour.": "It heals the allies it touches, even outside its turn.",
+"BeeBee": "BeeBee",
+"Abeille": "Bee",
+"Si elle ramasse un power-up, elle grossit et gagne en puissance.": "If it picks up a power-up, it grows bigger and stronger.",
+"Visual ScriptingLogique du jeu montée en graphes sous Unity : tours des deux joueurs, dégâts, rebonds sur les murs et les bumpers.": "<b>Visual Scripting<\/b>Game logic built as graphs in Unity: both players' turns, damage, bounces off walls and bumpers.",
+"FeedbacksQuatre familles de particules d'impact selon la situation : touche, contact, exécution et victoire.": "<b>Feedback<\/b>Four families of impact particles depending on the situation: hit, contact, finisher and victory.",
+"PlaytestsJeu testé par 7 joueurs avant la version finale.": "<b>Playtests<\/b>Tested by 7 players before the final version.",
+"Développement en soloDu concept initial à l'intégration finale, en autonomie : design, programmation, UI et audio.": "<b>Solo development<\/b>From the first concept to final integration, on my own: design, programming, UI and audio.",
+"Règles & boucle de gameplayTour par tour à bouton unique, boucle pensée pour des parties rapides et intuitives.": "<b>Rules &amp; gameplay loop<\/b>Turn-based with a single button, a loop designed for quick, intuitive matches.",
+"Équilibrage & comebackClasses et power-ups équilibrés pour permettre des retournements spectaculaires sans sacrifier l'équité du jeu.":"<b>Balancing &amp; comebacks<\/b>Classes and power-ups balanced to allow spectacular comebacks without sacrificing fairness.",
+"Arène évolutiveUn trou noir central qui grandit et accélère les boules à chaque passage, pour dynamiser la fin de partie.": "<b>Evolving arena<\/b>A central black hole that grows and speeds up the balls on every pass, to liven up the endgame.",
+"Pouvoirs & classesDes compétences situationnelles et jouissives, adaptées à la contrainte de la commande unique.": "<b>Powers &amp; classes<\/b>Situational, satisfying abilities built around the single-input constraint.",
+"Game feel « juicy »Screen shake, hitstop, particules et caméra pour maximiser le plaisir à chaque collision.": "<b>“Juicy” game feel<\/b>Screen shake, hitstop, particles and camera work to make every collision feel great.",
+"UI & menusInterface et menus de sélection pour une navigation fluide, propre aux party games.": "<b>UI &amp; menus<\/b>Interface and selection menus for the smooth navigation party games need.",
+"Sound designRetours sonores qui renforcent le feedback des impacts et la lisibilité des actions.": "<b>Sound design<\/b>Audio cues that reinforce impact feedback and make actions easier to read.",
+"Un visual novel pour l'association e-Enfance": "A visual novel for the e-Enfance charity",
+"Télécharger sur itch.io ↗": "Download on itch.io <span class=\"arr\">↗<\/span>",
+"Collecte des preuves, puis fais-les parler.": "Gather evidence, then make it speak.",
+"Au fil de la semaine, chaque enquête te fait gagner ou non des preuves qui s'ajoutent à ton inventaire. Lors de la confrontation finale, tu choisis lesquelles présenter, et le dénouement dépend de ces choix.": "Over the week, each investigation may or may not earn you evidence for your inventory. In the final confrontation, you choose which pieces to present, and the outcome depends on those choices.",
+"Narrative Designer et Game Designer": "Narrative Designer and Game Designer",
+"Juin 2026": "June 2026",
+"GD / ND, GA et GP": "GD / ND, GA and GP",
+"Projet étudiant": "Student project",
+"Visual novel, enquête narrative": "Visual novel, narrative investigation",
+"Ren'Py": "Ren'Py",
+"Amy est un visual novel d'enquête sur une semaine. Tu incarnes un membre de la famille d'Amy et tu dois réunir des preuves, puis faire les bons choix pour faire éclater la vérité sur une situation de harcèlement scolaire. L'écriture met l'accent sur les signes avant-coureurs, avec quelques touches d'humour pour alléger le ton sans retirer de poids au sujet.": "Amy is an investigation visual novel spread over one week. You play a member of Amy's family and must gather evidence, then make the right choices to bring the truth about a school bullying case to light. The writing focuses on the warning signs, with a few touches of humor to lighten the tone without taking any weight away from the subject.",
+"Narrative design & écritureScénario complet, arborescences de dialogue et embranchements narratifs axés sur la sensibilisation au harcèlement.": "<b>Narrative design &amp; writing<\/b>Full script, dialogue trees and narrative branches focused on raising awareness of bullying.",
+"Scripting Ren'PyToute la logique du jeu : gestion des preuves, système d'inventaire et variables conditionnelles.": "<b>Ren'Py scripting<\/b>All the game logic: evidence handling, the inventory system and conditional variables.",
+"Animations & mise en scèneAnimations de personnages et d'interface pour donner du rythme aux scènes clés.": "<b>Animation &amp; staging<\/b>Character and interface animations to give rhythm to the key scenes.",
+"Systèmes d'enquêteBoucle construite autour de choix de dialogue accessibles, de la récolte d'indices et de la confrontation finale.": "<b>Investigation systems<\/b>A loop built around accessible dialogue choices, gathering clues and the final confrontation.",
+"Sound design & audioRecherche, montage et intégration des effets sonores et des musiques au service de l'ambiance.": "<b>Sound design &amp; audio<\/b>Finding, editing and integrating sound effects and music to serve the mood.",
+"Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Clique sur une image pour l'agrandir.": "Amy's dialogue trees: every scene of the week, its choices, the evidence it can earn you and the branches toward the different endings. Click an image to enlarge it. (The charts are in French.)",
+"Arborescence des dialogues. Les scènes, les choix du joueur et leurs conséquences.": "<b>Dialogue tree.<\/b> The scenes, the player's choices and their consequences.",
+"Mardi, l'enquête à l'école. Selon la piste choisie (salle des profs, observer, élèves), le joueur gagne un témoignage, repart sans preuve, ou déclenche la fin « prison ».": "<b>Tuesday, investigating at school.<\/b> Depending on the lead chosen (staff room, observe, students), the player gains a testimony, leaves empty-handed, or triggers the “prison” ending.",
+"Dimanche, le tribunal. Les preuves présentées (témoignages, confiance d'Amy, preuve de cyberattaque) mènent aux différentes fins, de la plus fragile à la meilleure.": "<b>Sunday, the courtroom.<\/b> The evidence presented (testimonies, Amy's trust, proof of a cyberattack) leads to the different endings, from the shakiest to the best.",
+"Un idle game qui vit sur le bureau": "An idle game that lives on your desktop",
+"Tape, clique… les pièces tombent dans le bocal !": "Type, click… coins drop into the jar!",
+"Le jeu compte chaque frappe et chaque clic faits n'importe où sur le PC, sans jamais savoir lesquels : des pièces tombent dans le bocal de Lumi, posé sur la barre des tâches. On le vide pour encaisser, on le secoue, on rattrape ce qui déborde.": "The game counts every keystroke and click made anywhere on the PC, without ever knowing which ones: coins fall into Lumi's jar, sitting on the taskbar. You empty it to cash in, shake it, and catch whatever spills over.",
+"Concept, game design, direction artistique et production": "Concept, game design, art direction and production",
+"Octobre 2026": "October 2026",
+"Projet personnel": "Personal project",
+"Idle / jeu de bureau (desktop companion)": "Idle / desktop companion",
+"Electron et JavaScript, moteur maison": "Electron and JavaScript, custom engine",
+"PC (Windows) · sortie Steam en préparation": "PC (Windows) · Steam release in the works",
+"Vitrine": "Storefront",
+"Pourquoi l'installer ?": "Why install it?",
+"Sortie Steam en préparation": "Steam release in the works",
+"Tu bosses, tu joues, tu discutes… et Lumi récolte.": "You work, you play, you chat… <em>and Lumi collects.<\/em>",
+"Un petit idle game qui vit juste au-dessus de ta barre des tâches. Chaque frappe et chaque clic font tomber une pièce dans le bocal de Lumi, une voyageuse tombée loin de chez elle. Encaisse, offre-lui de plus beaux contenants, collectionne ses tenues… jusqu'au trou noir qui pourrait la ramener chez elle.": "A tiny idle game that lives right above your taskbar. Every keystroke and every click drops a coin into the jar of Lumi, a traveler stranded far from home. Cash in, treat her to fancier containers, collect her outfits… all the way to the black hole that could take her home.",
+"Idle": "Idle",
+"Incrémental": "Incremental",
+"Cosy": "Cozy",
+"Pixel art": "Pixel art",
+"Desktop companion": "Desktop companion",
+"Solo": "Singleplayer",
+"contenants": "containers",
+"tenues": "outfits",
+"événements": "events",
+"succès": "achievements",
+"fins": "endings",
+"FR·EN": "FR·EN",
+"langues": "languages",
+"Il joue pendant que tu bosses": "It plays while you work",
+"Aucune fenêtre à surveiller : le bocal se pose sur ta barre des tâches et se remplit pendant que tu écris, codes ou discutes.": "No window to babysit: the jar sits on your taskbar and fills up while you write, code or chat.",
+"Tape vite, ça flambe": "Type fast, catch fire",
+"Enchaîne les frappes : Lumi s'entoure de flammes, et 60 touches en 10 secondes lancent la frénésie, où tout vaut double.": "Keep the keystrokes coming: Lumi bursts into flames, and 60 keys in 10 seconds set off a frenzy where everything is worth double.",
+"15 contenants à débloquer": "15 containers to unlock",
+"Le chaudron fait monter le cuivre jusqu'à l'or, le mimic croque ton or, le cristal fait grimper ce que tu laisses dedans, le dragon crache du feu.": "The cauldron turns copper all the way into gold, the mimic munches your gold, the crystal jar grows what you leave inside, the dragon breathes fire.",
+"Défends ton butin": "Defend your loot",
+"Une météo qui change tout": "Weather that changes everything",
+"Et un jour, le trou noir": "And one day, the black hole",
+"Au bout du prestige, Lumi peut enfin rentrer chez elle. Ou rester avec toi, pour toujours. C'est toi qui choisis.": "At the end of prestige, Lumi can finally go home. Or stay with you, forever. Your call.",
+"≈ 10 % d'un cœurAu calme, il peut rester ouvert toute la journée.": "<b>≈ 10% of one core<\/b>When idle, it can stay open all day.",
+"Mode jeuDevant un jeu en plein écran, il devient transparent et la souris passe au travers.": "<b>Game mode<\/b>In front of a fullscreen game, it turns see-through and the mouse goes right through it.",
+"Rien d'enregistréIl compte tes frappes, jamais lesquelles.": "<b>Nothing recorded<\/b>It counts your keystrokes, never which ones.",
+"Voir le trailer ▸": "Watch the trailer <span class=\"arr\">▸<\/span>",
+"ButRemplir le bocal, encaisser, acheter de meilleurs contenants, puis faire du prestige jusqu'au trou noir, qui ouvre la fin du jeu.": "<b>Goal<\/b>Fill the jar, cash in, buy better containers, then prestige all the way to the black hole, which opens the ending.",
+"EncaisserMaintenir le clic sur le contenant le vide dans le compteur. Glisser le secoue. Ce qui déborde roule sur la barre des tâches et disparaît si personne ne le rattrape.": "<b>Cash in<\/b>Holding the click on the container empties it into the counter. Dragging shakes it. Whatever spills rolls along the taskbar and vanishes if nobody catches it.",
+"Les systèmes": "The systems",
+"Contenants": "Containers",
+"15 paliers": "15 tiers",
+"Chacun a son pouvoir : le chaudron transmute, le mimic dévore l'or, le Graal encaisse seul, le nid de dragon crache du feu.": "Each one has its own power: the cauldron transmutes, the mimic devours gold, the Grail cashes in by itself, the dragon’s nest breathes fire.",
+"Événements": "Events",
+"Prestige & fin": "Prestige &amp; ending",
+"Les menus": "The menus",
+"Contenants. Chacun annonce son pouvoir en une phrase. On l'achète, ou on revient à un ancien d'un clic.": "<b>Containers.<\/b> Each one states its power in a single sentence. Buy it, or switch back to an older one in one click.",
+"Garde-robe. La couleur du cadre donne la rareté de la tenue. Celles qu'on n'a pas encore trouvées restent en silhouette.": "<b>Wardrobe.<\/b> The frame color shows the outfit's rarity. The ones you haven't found yet stay as silhouettes.",
+"Concept & game designUn jeu qui accompagne sans gêner : la boucle se nourrit de ce qu'on fait déjà sur le PC.": "<b>Concept &amp; game design<\/b>A game that keeps you company without getting in the way: the loop feeds on what you already do on your PC.",
+"Personnage & narrationLumi, ses répliques selon la situation, son tuto glissé dans ses bulles, et une fin à choix.": "<b>Character &amp; narrative<\/b>Lumi, her lines for every situation, a tutorial slipped into her speech bubbles, and a choice-based ending.",
+"Game feelPhysique des pièces, secousses, aura de flammes quand on tape vite, sons synthétisés.": "<b>Game feel<\/b>Coin physics, shakes, a flame aura when you type fast, synthesized sounds.",
+"Compétences, outils et langues.": "Skills, tools and languages.",
+"Stats sociales": "Social Stats",
+"Game feel": "Game feel",
+"System design": "System design",
+"Narration": "Narrative",
+"Prototypage": "Prototyping",
+"Créativité": "Creativity",
+"Forte créativité et apprentissage rapide.": "Strong creativity and a fast learner.",
+"Travail d'équipe": "Teamwork",
+"Un esprit d'équipe naturel et une bonne communication.": "A natural team player with good communication.",
+"Game Design": "Game Design",
+"Level design et pacing": "Level design and pacing",
+"Game feel et feedbacks": "Game feel and feedback",
+"System et combat design": "System and combat design",
+"Narration environnementale": "Environmental storytelling",
+"Documentation (GDD)": "Documentation (GDD)",
+"Prototypage de gameplay et de mécaniques": "Gameplay and mechanics prototyping",
+"Agencement de niveaux et blockouts": "Level layouts and blockouts",
+"Intégration d'interfaces utilisateur": "User interface integration",
+"Packages et outils : Cinemachine, DOTween": "Packages and tools: Cinemachine, DOTween",
+"Français": "French",
+"Langue natale": "Native language",
+"MAX": "MAX",
+"Anglais": "English",
+"Avancé (C1)": "Advanced (C1)",
+"Portugais (Brésil)": "Portuguese (Brazil)",
+"Code & image": "Code &amp; visuals",
+"Visual Scripting, Python": "Visual Scripting, Python",
+"Niveau intermédiaire": "Intermediate",
+"C#, HTML, CSS, SQL": "C#, HTML, CSS, SQL",
+"Notions de base": "Basics",
+"After Effects, CapCut, Photoshop": "After Effects, CapCut, Photoshop",
+"Bases en image et montage vidéo": "Basics in image and video editing",
+"Mon parcours, ce qui me motive et ce qui m'inspire.": "My background, what drives me and what inspires me.",
+"Arcane": "Arcana",
+"Caresse-le !": "Pet him!",
+"Le Mat": "The Fool",
+"Coop Tiago · Rang max": "Tiago Confidant · Rank MAX",
+"Étudiant en Game Design à ISART Digital après un parcours en informatique et mathématiques à la Sorbonne. Je me spécialise en Level Design, System Design et Game Feel, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.": "Game Design student at ISART Digital, after studying computer science and mathematics at the Sorbonne. I specialize in <b>Level Design<\/b>, <b>System Design<\/b> and <b>Game Feel<\/b>, with close attention to readability, player comfort and precise controls.",
+"La SorbonneInformatique & mathématiques": "La Sorbonne<small>Computer science &amp; mathematics<\/small>",
+"ISART DigitalGame Design · en cours": "ISART Digital<small>Game Design · ongoing<\/small>",
+"Ma passion": "My <span>passion<\/span>",
+"Depuis l'enfance, les jeux vidéo occupent une place particulière dans ma vie. Plus que de simples divertissements, ils m'ont fait traverser des aventures marquantes, vibrer et ressentir des émotions d'une intensité rare.": "Since childhood, video games have held a special place in my life. More than just entertainment, they took me through unforgettable adventures, thrilled me and made me feel emotions of rare intensity.",
+"Très tôt, l'envie de passer de l'autre côté du miroir s'est imposée comme une évidence. Mon rêve a toujours été de créer à mon tour : concevoir des univers uniques et transmettre aux joueurs cette même étincelle, cet émerveillement que j'ai éprouvé en grandissant. Le game design est pour moi le moyen de transformer cette sensibilité en expériences concrètes.": "Very early on, wanting to step through to the other side of the looking glass felt obvious. My dream has always been to create in turn: to design unique worlds and pass on to players that same spark, the sense of wonder I felt growing up. For me, game design is the way to turn that sensitivity into concrete experiences.",
+"Les voyages": "Traveling",
+"Découvrir de nouvelles architectures, d'autres cultures et des paysages variés. C'est ma principale source d'inspiration pour concevoir des univers crédibles et nourrir la narration environnementale de mes niveaux.": "Discovering new architecture, other cultures and varied landscapes. It's my main source of inspiration for designing believable worlds and feeding the environmental storytelling of my levels.",
+"La culture japonaise": "Japanese culture",
+"De l'UI légendaire de Persona aux univers d'animation japonais, cette passion m'a poussé à apprendre le japonais à la fac le samedi. Étudier ces œuvres à la source m'aide à décortiquer leurs choix de design.": "From Persona's legendary UI to the worlds of Japanese animation, this passion pushed me to take Japanese classes at university on Saturdays. Studying these works at the source helps me break down their design choices.",
+"Le hardware": "Hardware",
+"J'ai assemblé ma propre machine de A à Z. Suivre l'actualité tech au quotidien m'aide à comprendre les limites du matériel et les enjeux d'optimisation.": "I built my own PC from scratch. Following tech news every day helps me understand hardware limits and what's at stake in optimization.",
+"Vous cherchez un stagiaire Game Designer qui prototype vite, pense ses niveaux pour le joueur et soigne chaque impact ? Je viendrai voler votre cœur… et rejoindre votre équipe.": "Looking for a Game Designer intern who prototypes fast, builds levels around the player and polishes every impact? I'll come and <em>steal your heart<\/em>… and join your team.",
+"Mail": "Email",
+"dnf.tiago@gmail.com": "dnf.tiago@gmail.com",
+"LinkedIn": "LinkedIn",
+"CV": "CV",
+"Voir mon CV sur Google Drive": "See my CV on Google Drive",
+"Fermer ✕": "Close ✕",
+"Take your time.": "Take your <span>time<\/span>.",
+"Tiago Del Nery-Fontaine · Game Designer · ISART Digital": "Tiago Del Nery-Fontaine · Game Designer · ISART Digital",
+"TIAGO": "TIAGO",
+"DEL NERY-FONTAINE": "DEL NERY-FONTAINE",
+"AVIS AUX": "CALLING ALL",
+"STUDIOS": "STUDIOS",
+"Navigation rapide": "Quick navigation",
+"Activer ou couper les effets sonores": "Turn sound effects on or off",
+"Aperçu des projets": "Project preview",
+"Capture de Push Push": "Push Push screenshot",
+"Capture de Fatal Boing": "Fatal Boing screenshot",
+"Capture de Amy": "Amy screenshot",
+"Capture de Lumi's Jar": "Lumi's Jar screenshot",
+"Sections": "Sections",
+"Logo de Push Push": "Push Push logo",
+"Logo de Fatal Boing": "Fatal Boing logo",
+"Logo de Amy": "Amy logo",
+"Logo de Lumi's Jar": "Lumi's Jar logo",
+"Regarder le trailer": "Watch the trailer",
+"Niveau 5 : le personnage saute, les blocs basculent et un bloc surgit pour l'écraser": "Level 5: the character jumps, the blocks flip and one shoots out to crush them",
+"Croquis papier du niveau 1 du monde 2": "Paper sketch of world 2, level 1",
+"Niveau 1 du monde 2 dans la version finale": "World 2, level 1 in the final version",
+"Niveau 3 du monde 2 dans la version finale": "World 2, level 3 in the final version",
+"Croquis papier du niveau 1 du monde 3": "Paper sketch of world 3, level 1",
+"Capture du niveau 1 du monde 3 annotée avec le chemin du joueur en pointillés": "Screenshot of world 3, level 1 annotated with the player's path as a dotted line",
+"Niveau 1 du monde 3 dans la version finale": "World 3, level 1 in the final version",
+"Croquis papier du piège au départ du niveau 1 du monde 3": "Paper sketch of the trap at the start of world 3, level 1",
+"Le départ du niveau 1 du monde 3 en jeu, avant le saut": "The start of world 3, level 1 in game, before the jump",
+"Le même endroit après un saut : les blocs ont changé d'état": "The same spot after a jump: the blocks have switched state",
+"Croquis papier du niveau 2 du monde 3": "Paper sketch of world 3, level 2",
+"Blockout Unity du niveau 2 du monde 3": "Unity blockout of world 3, level 2",
+"Niveau 2 du monde 3 dans la version finale": "World 3, level 2 in the final version",
+"Blockout Unity du niveau 3 du monde 3": "Unity blockout of world 3, level 3",
+"Niveau 3 du monde 3 dans la version finale": "World 3, level 3 in the final version",
+"Croquis papier du niveau 4 du monde 3, des blocs emboîtés": "Paper sketch of world 3, level 4, with interlocking blocks",
+"Blockout Unity du niveau 4 du monde 3": "Unity blockout of world 3, level 4",
+"Niveau 4 du monde 3 dans la version finale": "World 3, level 4 in the final version",
+"Croquis papier du niveau 5 du monde 3, un long saut": "Paper sketch of world 3, level 5, a long jump",
+"Blockout Unity du niveau 5 du monde 3": "Unity blockout of world 3, level 5",
+"Niveau 5 du monde 3 dans la version finale": "World 3, level 5 in the final version",
+"Extrait du trailer : le message Jump to switch platform présente la règle, chaque saut fait basculer les plateformes": "From the trailer: the Jump to switch platform message shows the rule, every jump flips the platforms",
+"Niveau de Push Push en ville": "A Push Push level in the city",
+"Niveau de Push Push dans une forêt de champignons": "A Push Push level in a mushroom forest",
+"Niveau violet de Push Push": "A purple Push Push level",
+"Notes moyennes des testeurs : fun 8, contrôles 8,5, caméra 7, rythme de difficulté 8 sur 10": "Testers' average scores: fun 8, controls 8.5, camera 7, difficulty pacing 8 out of 10",
+"Note des contrôles : environ 9 sur 10 sans problème de caméra, environ 7,5 avec": "Controls score: about 9 out of 10 without camera issues, about 7.5 with them",
+"Experts de puzzle et joueurs occasionnels donnent environ 8 sur 10 au fun et au rythme de difficulté": "Puzzle experts and casual players both give about 8 out of 10 for fun and difficulty pacing",
+"Gameplay animé de Fatal Boing : les boules se propulsent autour d'un trou noir": "Animated Fatal Boing gameplay: the balls launch themselves around a black hole",
+"Menu principal de Fatal Boing": "Fatal Boing main menu",
+"Combo en pleine partie de Fatal Boing": "A combo in the middle of a Fatal Boing match",
+"Écran de victoire de Fatal Boing": "Fatal Boing victory screen",
+"Regarder le walkthrough": "Watch the walkthrough",
+"Scène animée d'Amy en salle de classe": "Animated scene from Amy in a classroom",
+"Inventaire des preuves dans Amy": "The evidence inventory in Amy",
+"Dialogue entre deux personnages dans Amy": "A dialogue between two characters in Amy",
+"Une des fins d'Amy": "One of Amy's endings",
+"Arborescence des dialogues d'Amy, vue d'ensemble": "Amy's dialogue tree, overview",
+"Arborescence des dialogues d'Amy, partie 2": "Amy's dialogue tree, part 2",
+"Arborescence des dialogues d'Amy, partie 3": "Amy's dialogue tree, part 3",
+"Gameplay animé de Lumi's Jar : on tape « Salut Lumi », chaque touche fait tomber des pièces dans le bocal où Lumi est assise": "Animated Lumi's Jar gameplay: typing “Hello Lumi”, each key drops coins into the jar Lumi is sitting on",
+"Key art de Lumi's Jar : le logo au-dessus de Lumi, assise sur un nid de dragon rempli d'or": "Lumi's Jar key art: the logo above Lumi, sitting on a dragon’s nest full of gold",
+"Tags": "Tags",
+"Le bocal se remplit au bord de l'écran pendant qu'on tape des notes": "The jar fills up at the edge of the screen while someone types notes",
+"Lumi entourée d'une aura de flammes pendant qu'on tape très vite": "Lumi wrapped in a flame aura during very fast typing",
+"Le coffre mimic, content, à côté de Lumi": "The happy mimic chest next to Lumi",
+"Une bande de pigeons emporte un gros diamant hors du seau": "A gang of pigeons carries a big diamond out of the bucket",
+"La neige tombe, Lumi est assise sur son bocal": "Snow falls while Lumi sits on her jar",
+"Lumi devant le trou noir : elle pourrait rentrer chez elle, ou rester": "Lumi in front of the black hole: she could go home, or stay",
+"Le nid de dragon crache du feu et change les pièces en or": "The dragon’s nest breathes fire and turns the coins into gold",
+"Lumi assise sur le nid de dragon rempli d'or": "Lumi sitting on the dragon’s nest full of gold",
+"Onglet Contenants : le sac en toile, le pot de confiture utilisé, la tirelire cochon et le bocal à cookies, chacun avec son pouvoir et son prix": "Containers tab (in French): the canvas bag, the jam jar in use, the piggy bank and the cookie jar, each with its power and price",
+"Onglet Lumi : la garde-robe, avec les tenues trouvées et des silhouettes pour celles qui manquent": "Lumi tab (in French): the wardrobe, with the outfits found and silhouettes for the missing ones",
+"Rang maximum": "Max rank",
+"4 sur 5": "4 out of 5",
+"3 sur 5": "3 out of 5",
+"2 sur 5": "2 out of 5",
+"Carte d'arcane": "Arcana card",
+"Tiago et son chat noir": "Tiago and a black cat",
+"Caresser le chat": "Pet the cat",
+"Parcours": "Background",
+"Coucher de soleil sur la mer": "Sunset over the sea",
+"Temple japonais illuminé la nuit": "A Japanese temple lit up at night",
+"Processeur et composants de PC": "A processor and PC components",
+"Avis aux studios": "Calling all studios",
+"Level design, process et captures": "Level design, process and screenshots",
+"Règles, classes, process et captures": "Rules, classes, process and screenshots",
+"Mon rôle, le process et les captures": "My role, process and screenshots",
+"Une bande de pigeons embarque tes pièces, à quatre pour le diamant, et parfois c'est toute une armada. Tape-les avant qu'ils ne sortent de l'écran… et méfie-toi : ce ne sont pas les seuls voleurs.": "A gang of pigeons makes off with your coins, four of them for the diamond, and sometimes it's a whole armada. Click them before they leave the screen… and watch out: they're not the only thieves.",
+"Pluie d'or, coup de vent, séisme, orage, neige, étoiles filantes, arc-en-ciel… et un marchand ambulant qui passe avec ses promos. Lumi réagit à chacun.": "Golden rain, gusts of wind, earthquakes, storms, snow, shooting stars, rainbows… and a traveling merchant passing by with his deals. Lumi reacts to every one of them.",
+"AttraperLe rubis ailé à la souris, la météorite à fracasser contre un bord de l'écran, les pigeons voleurs à taper avant qu'ils n'emportent le butin, et les fourmis à écraser avant qu'elles n'emportent le bocal tout entier.": "<b>Catch<\/b>The winged ruby with the mouse, the meteorite by smashing it against the edge of the screen, the thief pigeons by clicking them before they get away with the loot, and the ants by squashing them before they carry off the whole jar.",
+"LumiElle ramasse les pièces tombées, réagit à chaque événement (elle patine sur la neige, s'accroche au bocal quand on le lui vole), dit bonjour le matin, fait la sieste quand on ne tape plus, et s'assoit sur le bocal si on l'y pose.": "<b>Lumi<\/b>She picks up fallen coins, reacts to every event (she skates on the snow, clings to the jar when it gets stolen), says good morning, naps when you stop typing, and sits on the jar if you put her there.",
+"4 couronnes": "4 crowns",
+"On fond le trésor pour monter de palier : bronze, argent, or, puis la couronne cosmique, et chaque palier fait valoir toutes les pièces plus cher. Jusqu'au trou noir et au choix final : libérer Lumi ou rester avec elle.": "You melt the treasure down to rank up: bronze, silver, gold, then the cosmic crown, and each rank makes every coin worth more. All the way to the black hole and the final choice: free Lumi or stay with her.",
+"Collection. Trouvailles rares, records de la partie (frappes, animaux repoussés, prestige…) et les 36 succès, chacun avec son icône en pixel art. Les secrets restent cachés jusqu'à ce qu'on les trouve.": "<b>Collection.<\/b> Rare finds, save records (keystrokes, critters fought off, prestige…) and the 36 achievements, each with its own pixel-art icon. Secret ones stay hidden until you find them.",
+"Direction artistiquePixel art lisible à toutes les tailles, de l'icône de 16 pixels aux 36 icônes de succès et au trailer.": "<b>Art direction<\/b>Pixel art that reads at every size, from the 16-pixel icon to the 36 achievement icons and the trailer.",
+"Onglet Collection : les succès, chacun avec son icône en pixel art, débloqués ou encore grisés": "Collection tab (in French): the achievements, each with its pixel-art icon, unlocked or still grayed out",
+"Règles, systèmes, captures et mon rôle": "Rules, systems, screenshots and my role",
+"ProductionVersion Windows installable en français et en anglais, trailer filmé dans le vrai jeu et calé sur la musique, préparation de la sortie Steam.": "<b>Production<\/b>Installable Windows build in French and English, a trailer captured from the real game and cut to the music, Steam release prep.",
+"Des fourmis emportent le bocal sous les yeux de Lumi": "Ants carry the jar away right under Lumi's nose",
+"Pendant l'orage, Lumi se prend la foudre": "During the storm, Lumi gets struck by lightning",
+"Un séisme fait sauter les pièces hors du seau": "An earthquake shakes the coins out of the bucket",
+"Le prestige or : une couronne et toutes les pièces valent plus": "Gold prestige: a crown, and every coin is worth more",
+"Économie & progressionPrix, paliers et prestige réglés avec un modèle qui simule le temps de jeu jusqu'à la fin, pour qu'il y ait toujours un prochain objectif en vue.": "<b>Economy &amp; progression<\/b>Prices, tiers and prestige tuned with a model that simulates playtime all the way to the ending, so there's always a next goal in sight.",
+"Le marchand ambulant ouvre sa boutique à côté du coffre mimic": "The traveling merchant opens his shop next to the mimic chest",
+"Lumi’s Jar est un idle game qui vit au-dessus de la barre des tâches : chaque frappe et chaque clic faits sur le PC font tomber une pièce dans le bocal de Lumi, une petite voyageuse tombée loin de chez elle. On encaisse, on débloque quinze contenants aux pouvoirs différents, on défend son butin contre les voleurs, et le prestige mène jusqu'au trou noir et à un choix final. Le défi de design : un jeu qui accompagne la journée sans jamais gêner.": "Lumi’s Jar is an idle game that lives above the taskbar: every keystroke and click on the PC drops a coin into the jar of Lumi, a little traveler who fell far from home. You cash in, unlock fifteen containers with different powers, defend your loot from thieves, and prestige all the way to the black hole and a final choice. The design challenge: a game that keeps you company all day without ever getting in the way."
+}</script>
+<script>
+(function () {
+  // Ransom-note letters: deterministic mix of faces, colours and tilt per letter.
+  function ransom(el, text) {
+    var seed = parseInt(el.getAttribute('data-seed') || '1', 10);
+    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    var frag = document.createDocumentFragment();
+    var word = null;
+    var lastC = -1;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (ch === ' ') { var sp = document.createElement('span'); sp.className = 'sp'; frag.appendChild(sp); word = null; continue; }
+      if (!word) { word = document.createElement('span'); word.className = 'w'; frag.appendChild(word); }
+      var s = document.createElement('span');
+      var f = Math.floor(rnd() * 6);
+      var c = Math.floor(rnd() * 5);
+      if (c === lastC) c = (c + 1) % 5;
+      lastC = c;
+      s.className = 'l f' + f + ' c' + c;
+      s.style.transform = 'rotate(' + ((rnd() - .5) * 14).toFixed(1) + 'deg) translateY(' + ((rnd() - .5) * .12).toFixed(2) + 'em)';
+      s.style.fontSize = (0.88 + rnd() * 0.24).toFixed(2) + 'em';
+      s.textContent = ch;
+      word.appendChild(s);
+    }
+    el.textContent = '';
+    el.appendChild(frag);
+    // "Avis aux studios": letters hop one after another, in step with the card's shine
+    var head = el.closest('.card-head');
+    if (head) head.querySelectorAll('.l').forEach(function (l, i) { l.style.setProperty('--i', i); });
+  }
+  var ransoms = Array.prototype.map.call(document.querySelectorAll('[data-ransom]'), function (el) {
+    el.setAttribute('aria-hidden', 'true');
+    el.classList.add('ransom');
+    return { el: el, fr: el.textContent };
+  });
+
+  // ---------- Language: French / English ----------
+  // The page is written in French. The English comes from #i18n-en, keyed by the text of each
+  // French block (spaces collapsed): a French text edited later simply shows in French until its
+  // English is updated; i18nMissing() in the console lists those blocks. Media with an English
+  // version carry it in data-src-en, data-href-en or data-video-en.
+  var EN = {};
+  try { EN = JSON.parse(document.getElementById('i18n-en').textContent); } catch (e) {}
+  var UI = {
+    fr: { soundOn: 'Son : on', soundOff: 'Son : off', hide: 'Masquer : ', close: 'Refermer', video: 'Vidéo', yt: 'Vidéo YouTube',
+      copy: 'Copier', copied: 'Copié !', selected: 'Sélectionné', purr: 'Rrrrrr…', petClick: 'Clique pour le caresser',
+      petSound: 'Active le son pour l\'entendre ↗', other: 'Switch to English' },
+    en: { soundOn: 'Sound: on', soundOff: 'Sound: off', hide: 'Hide: ', close: 'Close', video: 'Video', yt: 'YouTube video',
+      copy: 'Copy', copied: 'Copied!', selected: 'Selected', purr: 'Purrrrr…', petClick: 'Click to pet him',
+      petSound: 'Turn the sound on to hear him ↗', other: 'Passer en français' }
+  };
+  var lang = 'fr';
+  var langHooks = [];
+  function norm(t) { return t.replace(/\s+/g, ' ').trim(); }
+  function tr(fr) { var en = EN[norm(fr)]; return lang === 'en' && en != null ? en : fr; }
+  function ui(k) { return UI[lang][k]; }
+  var LETTER = /\p{L}/u;
+  // Text the script writes itself, kept out of the dictionary
+  var DYNAMIC = '.more-lbl, #copy-mail, #purr-bubble, #sound-toggle, #lang-toggle';
+  var blocks = [];
+  (function collect(el) {
+    for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
+      if (/^(SCRIPT|STYLE)$/.test(c.tagName) || c.hasAttribute('data-ransom') || c.matches(DYNAMIC)) continue;
+      var own = false;
+      for (var n = c.firstChild; n && !own; n = n.nextSibling) own = n.nodeType === 3 && LETTER.test(n.nodeValue);
+      if (own) blocks.push({ el: c, fr: c.innerHTML, key: norm(c.textContent) });
+      else collect(c);
+    }
+  })(document.body);
+  var attrs = [];
+  document.body.querySelectorAll('[alt], [title], [aria-label], [data-video-label]').forEach(function (el) {
+    if (el.matches('#lang-toggle')) return;
+    ['alt', 'title', 'aria-label', 'data-video-label'].forEach(function (a) {
+      var v = el.getAttribute(a);
+      if (v && LETTER.test(v)) attrs.push({ el: el, a: a, fr: v });
+    });
+  });
+  var media = Array.prototype.map.call(document.querySelectorAll('[data-src-en], [data-href-en], [data-video-en]'), function (el) {
+    return { el: el, src: el.getAttribute('src'), href: el.getAttribute('href'), video: el.getAttribute('data-video') };
+  });
+  window.i18nMissing = function () {
+    var keys = blocks.map(function (b) { return b.key; })
+      .concat(attrs.map(function (x) { return norm(x.fr); }), ransoms.map(function (r) { return norm(r.fr); }),
+        Array.prototype.map.call(document.querySelectorAll('.more-btn[data-label]'), function (m) { return norm(m.getAttribute('data-label')); }));
+    return keys.filter(function (k, i) { return EN[k] == null && keys.indexOf(k) === i; });
+  };
+  var langBtn = document.getElementById('lang-toggle');
+  function setLang(l) {
+    lang = l;
+    document.documentElement.lang = l;
+    blocks.forEach(function (b) {
+      var html = l === 'en' && EN[b.key] != null ? EN[b.key] : b.fr;
+      if (b.el.innerHTML !== html) b.el.innerHTML = html;
+    });
+    attrs.forEach(function (x) { x.el.setAttribute(x.a, tr(x.fr)); });
+    ransoms.forEach(function (r) { ransom(r.el, tr(r.fr)); });
+    media.forEach(function (m) {
+      var en = l === 'en';
+      if (m.el.hasAttribute('data-src-en')) m.el.setAttribute('src', en ? m.el.getAttribute('data-src-en') : m.src);
+      if (m.el.hasAttribute('data-href-en')) m.el.setAttribute('href', en ? m.el.getAttribute('data-href-en') : m.href);
+      if (m.el.hasAttribute('data-video-en')) m.el.setAttribute('data-video', en ? m.el.getAttribute('data-video-en') : m.video);
+    });
+    langBtn.children[0].className = l === 'fr' ? 'on' : '';
+    langBtn.children[1].className = l === 'en' ? 'on' : '';
+    langBtn.setAttribute('aria-label', ui('other'));
+    langBtn.title = ui('other');
+    langHooks.forEach(function (f) { f(); });
+  }
+  var asked = (location.search.match(/[?&]lang=(fr|en)\b/) || [])[1];
+  var saved = null;
+  try { saved = localStorage.getItem('tdnf-lang'); } catch (e) {}
+  var browser = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+  setLang(asked || saved || (/^fr\b/i.test(browser) ? 'fr' : 'en'));
+  langBtn.addEventListener('click', function () {
+    setLang(lang === 'fr' ? 'en' : 'fr');
+    try { localStorage.setItem('tdnf-lang', lang); } catch (e) {}
+    // keep the address shareable: ?lang=en in English, nothing in French
+    var q = location.search.replace(/([?&])lang=(fr|en)&?/, '$1').replace(/[?&]$/, '');
+    if (lang === 'en') q += (q ? '&' : '?') + 'lang=en';
+    try { history.replaceState(null, '', location.pathname + q + location.hash); } catch (e) {}
+  });
+
+  // Hero showcase: cards rotate through back / middle / front
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.showcase .shot'));
+  var showcase = document.querySelector('.showcase');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var paused = false;
+  showcase.addEventListener('pointerenter', function () { paused = true; });
+  showcase.addEventListener('pointerleave', function () { paused = false; });
+  showcase.addEventListener('focusin', function () { paused = true; });
+  showcase.addEventListener('focusout', function () { paused = false; });
+  var front = shots.length - 1;
+  function shuffle() {
+    if (paused || document.hidden) return;
+    shots.forEach(function (el) {
+      var p = +el.className.match(/\bp(\d)\b/)[1];
+      var next = (p + 1) % shots.length;
+      el.classList.remove('p' + p, 'pop', 'sink');
+      void el.offsetWidth;
+      el.classList.add('p' + next);
+      if (next === front) el.classList.add('pop');
+      if (p === front) el.classList.add('sink');
+    });
+  }
+  if (!reduce) setInterval(shuffle, 2800);
+
+  // Persona-style sound effects, synthesised with Web Audio (no audio files)
+  var Sfx = (function () {
+    var ctx = null, master = null, noiseBuf = null, on = true;
+    on = false;
+    try { on = localStorage.getItem('tdnf-sfx') === 'on'; } catch (e) {}
+    function unlock() {
+      if (!on) return;
+      if (!ctx) {
+        var C = window.AudioContext || window.webkitAudioContext;
+        if (!C) return;
+        ctx = new C();
+        master = ctx.createGain();
+        master.gain.value = 0.45;
+        master.connect(ctx.destination);
+      }
+      if (ctx.state === 'suspended') ctx.resume();
+    }
+    function env(g, t0, vol, dur) {
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(vol, t0 + 0.004);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    }
+    function tone(type, f0, f1, t0, dur, vol) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = type;
+      o.frequency.setValueAtTime(f0, t0);
+      o.frequency.exponentialRampToValueAtTime(f1, t0 + dur);
+      env(g, t0, vol, dur);
+      o.connect(g); g.connect(master);
+      o.start(t0); o.stop(t0 + dur + 0.03);
+    }
+    function hiss(f0, f1, t0, dur, vol, q) {
+      if (!noiseBuf) {
+        noiseBuf = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.5), ctx.sampleRate);
+        var d = noiseBuf.getChannelData(0);
+        for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+      var src = ctx.createBufferSource(), bp = ctx.createBiquadFilter(), g = ctx.createGain();
+      src.buffer = noiseBuf;
+      bp.type = 'bandpass';
+      bp.Q.value = q || 1.2;
+      bp.frequency.setValueAtTime(f0, t0);
+      bp.frequency.exponentialRampToValueAtTime(f1, t0 + dur);
+      env(g, t0, vol, dur);
+      src.connect(bp); bp.connect(g); g.connect(master);
+      src.start(t0); src.stop(t0 + dur + 0.03);
+    }
+    var sounds = {
+      // menu cursor tick
+      tick: function (t) { tone('square', 2600, 1700, t, 0.04, 0.05); hiss(7000, 5000, t, 0.025, 0.05, 2); },
+      // confirm: blade slash + bright two-tone stab
+      confirm: function (t) {
+        hiss(1200, 9000, t, 0.1, 0.3, 0.8);
+        tone('triangle', 700, 1050, t + 0.015, 0.09, 0.2);
+        tone('square', 1400, 1400, t + 0.07, 0.13, 0.07);
+      },
+      // jump to a section: whoosh then snap
+      whoosh: function (t) {
+        hiss(300, 4000, t, 0.2, 0.28, 0.7);
+        tone('sawtooth', 180, 90, t, 0.16, 0.05);
+        tone('square', 1760, 1760, t + 0.16, 0.06, 0.06);
+      },
+      // copied: little chime
+      chime: function (t) { tone('triangle', 988, 988, t, 0.12, 0.16); tone('triangle', 1319, 1319, t + 0.09, 0.22, 0.16); }
+    };
+    // Cat purr: band-passed noise pulsed ~26 times a second, with exhale / inhale cycles
+    var purr = null;
+    function purrStart() {
+      if (!on || !ctx || purr) return;
+      var t = ctx.currentTime;
+      if (!noiseBuf) hiss(100, 100, t, 0.001, 0.0001, 1);
+      var src = ctx.createBufferSource(); src.buffer = noiseBuf; src.loop = true;
+      var bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 170; bp.Q.value = 0.8;
+      var amp = ctx.createGain(); amp.gain.value = 0.5;
+      var lfo = ctx.createOscillator(); lfo.type = 'triangle'; lfo.frequency.value = 26;
+      var lfoDepth = ctx.createGain(); lfoDepth.gain.value = 0.5;
+      var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 700;
+      var breath = ctx.createGain(); breath.gain.value = 0.0001;
+      var out = ctx.createGain(); out.gain.value = 2.6;
+      lfo.connect(lfoDepth); lfoDepth.connect(amp.gain);
+      src.connect(bp); bp.connect(amp); amp.connect(lp); lp.connect(breath); breath.connect(out); out.connect(master);
+      src.start(t); lfo.start(t);
+      // little trill to say hello
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(520, t);
+      o.frequency.exponentialRampToValueAtTime(820, t + 0.08);
+      o.frequency.exponentialRampToValueAtTime(610, t + 0.2);
+      env(g, t, 0.07, 0.22);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.25);
+      function cycle() {
+        var c = ctx.currentTime + 0.02;
+        breath.gain.cancelScheduledValues(c);
+        breath.gain.setTargetAtTime(1, c, 0.06);          // exhale
+        lfo.frequency.setValueAtTime(27, c);
+        breath.gain.setTargetAtTime(0.08, c + 1.0, 0.05); // pause
+        lfo.frequency.setValueAtTime(23, c + 1.12);
+        breath.gain.setTargetAtTime(0.6, c + 1.15, 0.06); // inhale
+        breath.gain.setTargetAtTime(0.05, c + 1.75, 0.05);
+      }
+      cycle();
+      purr = { src: src, lfo: lfo, breath: breath, timer: setInterval(cycle, 1900) };
+    }
+    function purrStop() {
+      if (!purr) return;
+      var p = purr; purr = null;
+      clearInterval(p.timer);
+      var t = ctx.currentTime;
+      p.breath.gain.cancelScheduledValues(t);
+      p.breath.gain.setTargetAtTime(0.0001, t, 0.08);
+      p.src.stop(t + 0.5); p.lfo.stop(t + 0.5);
+    }
+    return {
+      purrStart: purrStart,
+      purrStop: purrStop,
+      ready: function () { return !!ctx && ctx.state === 'running'; },
+      unlock: unlock,
+      isOn: function () { return on; },
+      set: function (v) { on = v; if (!v) purrStop(); try { localStorage.setItem('tdnf-sfx', v ? 'on' : 'off'); } catch (e) {} },
+      play: function (name) {
+        if (!on || !ctx) return;
+        try { sounds[name](ctx.currentTime + 0.01); } catch (e) {}
+      }
+    };
+  })();
+
+  var toggle = document.getElementById('sound-toggle');
+  function renderToggle() {
+    toggle.setAttribute('aria-pressed', Sfx.isOn() ? 'true' : 'false');
+    toggle.querySelector('.lbl').textContent = Sfx.isOn() ? ui('soundOn') : ui('soundOff');
+  }
+  renderToggle();
+  langHooks.push(renderToggle);
+
+  var lastTick = 0, keyNav = false;
+  function tick() {
+    var now = Date.now();
+    if (now - lastTick < 45) return;
+    lastTick = now;
+    Sfx.play('tick');
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Tab') keyNav = true; Sfx.unlock(); }, true);
+  document.addEventListener('pointerdown', function () { keyNav = false; Sfx.unlock(); }, true);
+  document.addEventListener('pointerover', function (e) {
+    var el = e.target.closest && e.target.closest('a, button');
+    if (!el || el.id === 'pet-zone' || (e.relatedTarget && el.contains(e.relatedTarget))) return;
+    tick();
+  });
+  document.addEventListener('focusin', function (e) {
+    if (keyNav && e.target.closest && e.target.closest('a, button')) tick();
+  });
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest('a, button');
+    if (!el || el.id === 'pet-zone') return;
+    if (el === toggle) {
+      Sfx.set(!Sfx.isOn());
+      renderToggle();
+      if (Sfx.isOn()) { Sfx.unlock(); Sfx.play('confirm'); }
+      return;
+    }
+    Sfx.unlock();
+    if (el.id === 'copy-mail') Sfx.play('chime');
+    else if ((el.getAttribute('href') || '').charAt(0) === '#') Sfx.play('whoosh');
+    else Sfx.play('confirm');
+  });
+
+  // Easter egg: pet the cat, it purrs
+  var pet = document.getElementById('pet-zone');
+  var card = pet.closest('.arcana');
+  var bubble = document.getElementById('purr-bubble');
+  bubble.textContent = ui('purr');
+  var petting = false, heartTimer = null, lastPt = null, noteFlip = false;
+  function spawnHeart() {
+    if (reduce || !lastPt) return;
+    var r = card.getBoundingClientRect();
+    var h;
+    if ((noteFlip = !noteFlip)) {
+      h = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      h.setAttribute('viewBox', '0 0 100 124');
+      h.setAttribute('class', 'note purr-note');
+      h.innerHTML = '<use href="#note-sym"/>';
+    } else {
+      h = document.createElement('span');
+      h.className = 'purr-heart';
+      h.textContent = '♥';
+    }
+    h.style.left = (lastPt.x - r.left) + 'px';
+    h.style.top = (lastPt.y - r.top) + 'px';
+    h.style.setProperty('--dx', ((Math.random() - .5) * 60).toFixed(0) + 'px');
+    card.appendChild(h);
+    setTimeout(function () { h.remove(); }, 1150);
+  }
+  function startPet() {
+    if (petting) return;
+    petting = true;
+    card.classList.add('petting', 'petted');
+    if (Sfx.isOn() && Sfx.ready()) { Sfx.purrStart(); bubble.textContent = ui('purr'); }
+    else if (Sfx.isOn()) bubble.textContent = ui('petClick');
+    else bubble.textContent = ui('petSound');
+    spawnHeart();
+    heartTimer = setInterval(spawnHeart, 380);
+  }
+  function stopPet() {
+    if (!petting) return;
+    petting = false;
+    card.classList.remove('petting');
+    clearInterval(heartTimer);
+    Sfx.purrStop();
+  }
+  pet.addEventListener('pointermove', function (e) { lastPt = { x: e.clientX, y: e.clientY }; });
+  pet.addEventListener('pointerenter', function (e) { lastPt = { x: e.clientX, y: e.clientY }; startPet(); });
+  pet.addEventListener('pointerleave', stopPet);
+  pet.addEventListener('pointercancel', stopPet);
+  pet.addEventListener('pointerdown', function (e) {
+    lastPt = { x: e.clientX, y: e.clientY };
+    Sfx.unlock();
+    startPet();
+    if (Sfx.isOn()) { Sfx.purrStart(); bubble.textContent = ui('purr'); }
+  });
+  pet.addEventListener('pointerup', function (e) { if (e.pointerType !== 'mouse') stopPet(); });
+  pet.closest('.card-art').addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  pet.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    var r = pet.getBoundingClientRect();
+    lastPt = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    Sfx.unlock();
+    if (petting) stopPet(); else { startPet(); Sfx.purrStart(); bubble.textContent = ui('purr'); }
+  });
+  pet.addEventListener('blur', stopPet);
+
+  // Lightbox for screenshots and process images
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbClose = document.getElementById('lightbox-close');
+  var lbReturn = null;
+  document.querySelectorAll('[data-zoom-all] img').forEach(function (img) { img.setAttribute('data-zoom', ''); });
+  function openLb(img) {
+    lbReturn = img;
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lb.hidden = false;
+    lbClose.focus();
+    Sfx.unlock(); Sfx.play('confirm');
+  }
+  function closeLb() {
+    if (lb.hidden) return;
+    lb.hidden = true;
+    lbImg.src = '';
+    if (lbReturn) lbReturn.focus && lbReturn.focus();
+  }
+  document.querySelectorAll('img[data-zoom]').forEach(function (img) {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.addEventListener('click', function () { openLb(img); });
+    img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(img); } });
+  });
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+
+  // Hosted version only (<html data-embed>): play the YouTube video inside the page
+  if (document.documentElement.hasAttribute('data-embed')) {
+    document.querySelectorAll('.screen[data-video]').forEach(function (scr) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'play';
+      function label() { btn.innerHTML = '<span>▶ ' + scr.getAttribute('data-video-label') + '</span>'; }
+      label();
+      langHooks.push(label);
+      scr.appendChild(btn);
+      btn.addEventListener('click', function () {
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + scr.getAttribute('data-video') + '?autoplay=1&rel=0';
+        f.title = ui('yt');
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        scr.querySelector('img').replaceWith(f);
+        btn.remove();
+        var lbl = scr.querySelector('.label'); if (lbl) lbl.textContent = ui('video');
+      });
+    });
+  }
+
+  // Hosted version only: a trailer that is a plain video file (no YouTube)
+  if (document.documentElement.hasAttribute('data-embed')) {
+    document.querySelectorAll('.screen[data-video-fichier]').forEach(function (scr) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'play';
+      function label() { btn.innerHTML = '<span>▶ ' + scr.getAttribute('data-video-label') + '</span>'; }
+      label();
+      langHooks.push(label);
+      scr.appendChild(btn);
+      btn.addEventListener('click', function () {
+        var v = document.createElement('video');
+        v.src = scr.getAttribute('data-video-fichier');
+        v.controls = true; v.autoplay = true; v.playsInline = true;
+        v.style.width = '100%'; v.style.height = '100%'; v.style.display = 'block'; v.style.objectFit = 'contain'; v.style.background = '#000';
+        scr.querySelector('img').replaceWith(v);
+        btn.remove();
+        var lbl = scr.querySelector('.label'); if (lbl) lbl.textContent = ui('video');
+      });
+    });
+  }
+
+  // Project detail: folded by default, opened by its button or by clicking the project
+  function setMore(btn, open) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.querySelector('.more-lbl').textContent = (open ? ui('hide') : '') + tr(btn.getAttribute('data-label'));
+  }
+  document.querySelectorAll('.more-btn').forEach(function (btn) {
+    btn.setAttribute('data-label', btn.querySelector('.more-lbl').textContent);
+    setMore(btn, false);
+    btn.addEventListener('click', function () { setMore(btn, btn.getAttribute('aria-expanded') !== 'true'); });
+    // "Refermer" at the bottom of the opened panel: folds it and goes back up to the project
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var less = document.createElement('button');
+    less.type = 'button';
+    less.className = 'more-btn less-btn';
+    function lessLabel() { less.innerHTML = '<span>' + ui('close') + '</span><span class="chev" aria-hidden="true">▴</span>'; }
+    lessLabel();
+    langHooks.push(lessLabel, function () { setMore(btn, btn.getAttribute('aria-expanded') === 'true'); });
+    less.addEventListener('click', function () {
+      setMore(btn, false);
+      var bar = document.querySelector('.topbar');
+      var top = btn.closest('.dossier').getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 16;
+      window.scrollTo({ top: top, behavior: 'instant' });
+      btn.focus({ preventScroll: true });
+    });
+    panel.appendChild(less);
+  });
+
+  // Floating P5 shapes behind the sections (decoration only)
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  var palettes = {
+    missions: ['var(--ink)', 'var(--paper)', 'var(--red-deep)'],
+    'stats-sec': ['var(--red)', 'var(--yellow)', 'var(--paper)'],
+    coop: ['var(--red)', 'var(--ink)'],
+    contact: ['var(--ink)', 'var(--paper)']
+  };
+  var kinds = ['star', 'gem', 'slash', 'spark', 'star', 'spark'];
+  var noteKinds = { coop: ['note', 'note', 'star', 'spark', 'gem'], contact: ['note', 'star', 'gem', 'spark'] };
+  Object.keys(palettes).forEach(function (cls) {
+    var sec = document.querySelector('section.' + cls);
+    if (!sec) return;
+    var box = document.createElement('div');
+    box.className = 'floaters';
+    box.setAttribute('aria-hidden', 'true');
+    // about one shape per 220px of section (sparser on phones), so tall sections are not empty
+    var n = Math.max(8, Math.min(48, Math.round(sec.offsetHeight / (innerWidth < 620 ? 300 : 150))));
+    for (var i = 0; i < n; i++) {
+      var f = document.createElement('i');
+      var ks = noteKinds[cls] || kinds;
+      var kind = ks[Math.floor(rnd() * ks.length)];
+      var pal = palettes[cls];
+      if (kind === 'note') {
+        f = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        f.setAttribute('viewBox', '0 0 100 124');
+        f.setAttribute('class', 'fl note note-fl');
+        f.innerHTML = '<use href="#note-sym"/>';
+      } else f.className = 'fl ' + kind;
+      // spread down the section: one shape per slice, random across the width
+      // mostly in the side gutters, where the content does not cover them
+      var x = rnd() < .7 ? (rnd() < .5 ? rnd() * 9 : 89 + rnd() * 9) : rnd() * 94;
+      f.style.setProperty('--x', x.toFixed(1) + '%');
+      f.style.setProperty('--y', ((i + rnd()) / n * 96).toFixed(1) + '%');
+      f.style.setProperty('--s', Math.round(18 + rnd() * (kind === 'slash' ? 80 : 46)) + 'px');
+      f.style.setProperty('--c', pal[Math.floor(rnd() * pal.length)]);
+      f.style.setProperty('--o', (.45 + rnd() * .45).toFixed(2));
+      f.style.setProperty('--d', (4 + rnd() * 6).toFixed(1) + 's');
+      f.style.setProperty('--dl', (-rnd() * 8).toFixed(1) + 's');
+      var r0 = Math.round(rnd() * 360);
+      f.style.setProperty('--r0', r0 + 'deg');
+      f.style.setProperty('--r1', (r0 + (rnd() < .5 ? -1 : 1) * Math.round(20 + rnd() * 60)) + 'deg');
+      box.appendChild(f);
+    }
+    sec.insertBefore(box, sec.firstChild);
+  });
+
+  // The morphing star is SMIL: CSS reduced-motion does not reach it
+  var starSvg = document.querySelector('#social svg');
+  if (reduce && starSvg && starSvg.pauseAnimations) starSvg.pauseAnimations();
+
+  // Pause the looping animations of sections out of view
+  if ('IntersectionObserver' in window) {
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle('offscreen', !en.isIntersecting); });
+    }, { rootMargin: '100px 0px' });
+    document.querySelectorAll('body > section').forEach(function (s) { watch.observe(s); });
+  }
+
+  // Social stats star pops in when it scrolls into view
+  var social = document.getElementById('social');
+  if (social && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    social.classList.add('armed');
+    new IntersectionObserver(function (entries, obs) {
+      if (!entries[0].isIntersecting) return;
+      social.classList.add('go');
+      obs.disconnect();
+    }, { threshold: .4 }).observe(social);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    var target = document.getElementById(a.getAttribute('href').slice(1));
+    if (!target || !target.classList.contains('dossier')) return;
+    a.addEventListener('click', function () { setMore(target.querySelector('.more-btn'), true); });
+  });
+  if (location.hash) {
+    var d0 = document.getElementById(location.hash.slice(1));
+    if (d0 && d0.classList.contains('dossier')) setMore(d0.querySelector('.more-btn'), true);
+  }
+
+  // Copy e-mail
+  var btn = document.getElementById('copy-mail');
+  var mail = document.getElementById('mail');
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(mail);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      btn.textContent = ui('selected');
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = ui('copied'); }, selectIt);
+    } catch (e) { selectIt(); }
+    setTimeout(function () { btn.textContent = ui('copy'); }, 2200);
+  });
+  function copyLabel() { btn.textContent = ui('copy'); }
+  copyLabel();
+  langHooks.push(copyLabel);
+})();
+</script>
+
+</body>
+</html>
