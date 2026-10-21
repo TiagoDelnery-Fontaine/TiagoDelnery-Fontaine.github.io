@@ -607,6 +607,8 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .dialog p { color: var(--paper-dim); font-size: 1.02rem; }
 
 .links { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Stay on the right even when a long title pushes the buttons to their own line. */
+.dossier-head .links { margin-left: auto; justify-content: flex-end; }
 
 .role-wrap { margin-top: clamp(26px, 4vw, 40px); }
 .role-title {
@@ -1436,6 +1438,7 @@ footer .tyt span { color: var(--red); }
   .dossier-head { gap: 20px; }
   .dossier-head .genre { font-size: 1rem; margin-bottom: 1.1rem; text-wrap: balance; }
   .dossier-head h3 { font-size: 3.4rem; }
+  .dossier-head .links { margin-left: 0; justify-content: flex-start; }
   /* the path stacks: the arrow points down to the next step */
   .path { flex-direction: column; align-items: flex-start; gap: 6px; }
   .path .arrow { transform: rotate(90deg); margin-left: 1.6rem; line-height: 1; }
