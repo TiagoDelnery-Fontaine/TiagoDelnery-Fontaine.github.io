@@ -278,7 +278,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   transform: rotate(-4deg);
   clip-path: polygon(0 0, 100% 10%, 96% 100%, 2% 88%);
 }
-.name { font-size: clamp(2.6rem, 9vw, 6.8rem); line-height: 1.12; }
+.name { font-size: clamp(2.2rem, 7.4vw, 5.6rem); line-height: 1.12; }
 .name .row { display: block; }
 .name .row + .row { font-size: .52em; margin-top: .3em; padding-left: .4em; }
 .name .row:first-child { transform: rotate(-2deg); transform-origin: left; }
@@ -673,6 +673,25 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .more-btn:hover, .more-btn:focus-visible { background: var(--red-deep); outline: none; }
 .more-btn .chev { display: inline-block; transition: transform .2s ease; }
 .more-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+/* "Plus de détails" tag: says the bar opens something, its arrow nudges while folded */
+.more-cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-size: .72em;
+  background: var(--red);
+  color: var(--paper);
+  padding: .3em .7em;
+  transform: rotate(-2deg);
+  transition: background .14s ease;
+}
+.more-btn:hover .more-cta, .more-btn:focus-visible .more-cta { background: var(--ink); }
+.more-btn[aria-expanded="true"] .more-cta { background: transparent; padding: 0; transform: none; }
+.more-btn[aria-expanded="true"] .cta-txt { display: none; }
+.more-btn[aria-expanded="false"] .chev { animation: nudge 1.3s ease-in-out infinite; }
+@keyframes nudge { 0%, 55%, 100% { transform: none; } 25% { transform: translateY(5px); } }
+.less-btn .chev { animation: none !important; }
 .less-btn { justify-content: center; gap: .6rem; background: var(--red); }
 .less-btn:hover, .less-btn:focus-visible { background: var(--ink); }
 .more { animation: reveal .35s cubic-bezier(.2, .8, .2, 1); }
@@ -2667,9 +2686,9 @@ footer .tyt span { color: var(--red); }
   var EN = {};
   try { EN = JSON.parse(document.getElementById('i18n-en').textContent); } catch (e) {}
   var UI = {
-    fr: { hide: 'Masquer : ', close: 'Refermer', video: 'Vidéo', yt: 'Vidéo YouTube',
+    fr: { hide: 'Masquer : ', more: 'Plus de détails', close: 'Refermer',video: 'Vidéo', yt: 'Vidéo YouTube',
       copy: 'Copier', copied: 'Copié !', selected: 'Sélectionné', purr: 'Rrrrrr…', other: 'Switch to English' },
-    en: { hide: 'Hide: ', close: 'Close', video: 'Video', yt: 'YouTube video',
+    en: { hide: 'Hide: ', more: 'More details', close: 'Close',video: 'Video', yt: 'YouTube video',
       copy: 'Copy', copied: 'Copied!', selected: 'Selected', purr: 'Purrrrr…', other: 'Passer en français' }
   };
   var lang = 'fr';
@@ -2679,7 +2698,7 @@ footer .tyt span { color: var(--red); }
   function ui(k) { return UI[lang][k]; }
   var LETTER = /\p{L}/u;
   // Text the script writes itself, kept out of the dictionary
-  var DYNAMIC = '.more-lbl, #copy-mail, #purr-bubble, #lang-toggle';
+  var DYNAMIC = '.more-lbl, .cta-txt, #copy-mail, #purr-bubble, #lang-toggle';
   var blocks = [];
   (function collect(el) {
     for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
@@ -2765,7 +2784,7 @@ footer .tyt span { color: var(--red); }
       if (p === front) el.classList.add('sink');
     });
   }
-  if (!reduce) setInterval(shuffle, 2800);
+  if (!reduce) setInterval(shuffle, 4500);
 
   // Easter egg: pet the cat, it purrs
   var pet = document.getElementById('pet-zone');
@@ -2905,9 +2924,15 @@ footer .tyt span { color: var(--red); }
     panel.hidden = !open;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.querySelector('.more-lbl').textContent = (open ? ui('hide') : '') + tr(btn.getAttribute('data-label'));
+    btn.querySelector('.cta-txt').textContent = ui('more');
   }
   document.querySelectorAll('.more-btn').forEach(function (btn) {
     btn.setAttribute('data-label', btn.querySelector('.more-lbl').textContent);
+    var cta = document.createElement('span');
+    cta.className = 'more-cta';
+    cta.innerHTML = '<span class="cta-txt"></span>';
+    cta.appendChild(btn.querySelector('.chev'));
+    btn.appendChild(cta);
     setMore(btn, false);
     btn.addEventListener('click', function () { setMore(btn, btn.getAttribute('aria-expanded') !== 'true'); });
     // "Refermer" at the bottom of the opened panel: folds it and goes back up to the project
