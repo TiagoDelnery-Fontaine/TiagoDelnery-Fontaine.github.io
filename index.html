@@ -674,24 +674,71 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .more-btn .chev { display: inline-block; transition: transform .2s ease; }
 .more-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
 /* "Plus de détails" tag: says the bar opens something, its arrow nudges while folded */
+.more-btn { position: relative; overflow: hidden; }
+.more-btn[aria-expanded="false"] { padding-top: .9rem; padding-bottom: .9rem; }
+.more-head { display: flex; flex-direction: column; gap: .2em; min-width: 0; }
+.more-hint {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: .62em;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--paper);
+  opacity: .72;
+}
+.more-btn[aria-expanded="true"] .more-hint { display: none; }
 .more-cta {
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: .45em;
-  font-size: .72em;
+  gap: .55em;
+  font-size: 1em;
   background: var(--red);
   color: var(--paper);
-  padding: .3em .7em;
+  padding: .3em .35em .3em .8em;
   transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 var(--paper);
   transition: background .14s ease;
 }
+.more-cta .chev {
+  width: 1.45em;
+  height: 1.45em;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  color: var(--red);
+  border-radius: 50%;
+  line-height: 1;
+}
 .more-btn:hover .more-cta, .more-btn:focus-visible .more-cta { background: var(--ink); }
-.more-btn[aria-expanded="true"] .more-cta { background: transparent; padding: 0; transform: none; }
+.more-btn[aria-expanded="false"] .more-cta { animation: cta-pop 2.6s ease-in-out infinite; }
+.more-btn[aria-expanded="false"] .chev { animation: nudge .8s ease-in-out infinite; }
+/* light sweeping across the folded bar */
+.more-btn[aria-expanded="false"]::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: -30%;
+  width: 18%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .2), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+.more-btn[aria-expanded="true"] .more-cta { background: transparent; box-shadow: none; padding: 0; transform: none; }
 .more-btn[aria-expanded="true"] .cta-txt { display: none; }
-.more-btn[aria-expanded="false"] .chev { animation: nudge 1.3s ease-in-out infinite; }
-@keyframes nudge { 0%, 55%, 100% { transform: none; } 25% { transform: translateY(5px); } }
-.less-btn .chev { animation: none !important; }
+@keyframes nudge { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(5px); } }
+@keyframes cta-pop {
+  0%, 68%, 100% { transform: rotate(-2deg) scale(1); }
+  74% { transform: rotate(-7deg) scale(1.14); }
+  80% { transform: rotate(4deg) scale(1.08); }
+  86% { transform: rotate(-4deg) scale(1.12); }
+  92% { transform: rotate(-2deg) scale(1); }
+}
+@keyframes shine { 0%, 55% { left: -30%; } 100% { left: 130%; } }
+@media (max-width: 600px) {
+  .more-btn[aria-expanded="false"] { flex-direction: column; align-items: flex-start; gap: .7rem; }
+  .more-btn[aria-expanded="false"] .more-cta { font-size: .85em; }
+}
 .less-btn { justify-content: center; gap: .6rem; background: var(--red); }
 .less-btn:hover, .less-btn:focus-visible { background: var(--ink); }
 .more { animation: reveal .35s cubic-bezier(.2, .8, .2, 1); }
@@ -2686,9 +2733,9 @@ footer .tyt span { color: var(--red); }
   var EN = {};
   try { EN = JSON.parse(document.getElementById('i18n-en').textContent); } catch (e) {}
   var UI = {
-    fr: { hide: 'Masquer : ', more: 'Plus de détails', close: 'Refermer',video: 'Vidéo', yt: 'Vidéo YouTube',
+    fr: { hide: 'Masquer : ', more: 'Plus de détails', hint: 'Clique pour dérouler tout le process', close: 'Refermer', video: 'Vidéo', yt: 'Vidéo YouTube',
       copy: 'Copier', copied: 'Copié !', selected: 'Sélectionné', purr: 'Rrrrrr…', other: 'Switch to English' },
-    en: { hide: 'Hide: ', more: 'More details', close: 'Close',video: 'Video', yt: 'YouTube video',
+    en: { hide: 'Hide: ', more: 'More details', hint: 'Click to unfold the whole process', close: 'Close', video: 'Video', yt: 'YouTube video',
       copy: 'Copy', copied: 'Copied!', selected: 'Selected', purr: 'Purrrrr…', other: 'Passer en français' }
   };
   var lang = 'fr';
@@ -2698,7 +2745,7 @@ footer .tyt span { color: var(--red); }
   function ui(k) { return UI[lang][k]; }
   var LETTER = /\p{L}/u;
   // Text the script writes itself, kept out of the dictionary
-  var DYNAMIC = '.more-lbl, .cta-txt, #copy-mail, #purr-bubble, #lang-toggle';
+  var DYNAMIC = '.more-lbl, .more-hint, .cta-txt, #copy-mail, #purr-bubble, #lang-toggle';
   var blocks = [];
   (function collect(el) {
     for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
@@ -2925,9 +2972,15 @@ footer .tyt span { color: var(--red); }
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.querySelector('.more-lbl').textContent = (open ? ui('hide') : '') + tr(btn.getAttribute('data-label'));
     btn.querySelector('.cta-txt').textContent = ui('more');
+    btn.querySelector('.more-hint').textContent = ui('hint');
   }
   document.querySelectorAll('.more-btn').forEach(function (btn) {
     btn.setAttribute('data-label', btn.querySelector('.more-lbl').textContent);
+    var head = document.createElement('span');
+    head.className = 'more-head';
+    btn.insertBefore(head, btn.firstChild);
+    head.appendChild(btn.querySelector('.more-lbl'));
+    head.insertAdjacentHTML('beforeend', '<span class="more-hint"></span>');
     var cta = document.createElement('span');
     cta.className = 'more-cta';
     cta.innerHTML = '<span class="cta-txt"></span>';
