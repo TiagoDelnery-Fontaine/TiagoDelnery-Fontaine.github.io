@@ -717,11 +717,10 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .more-btn[aria-expanded="false"]::after {
   content: '';
   position: absolute;
-  top: 0; bottom: 0; left: -30%;
-  width: 18%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .2), transparent);
-  transform: skewX(-20deg);
-  animation: shine 3.2s ease-in-out infinite;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .28) 50%, transparent 58%);
+  transform: translateX(-100%);
+  animation: shine 3.2s linear infinite;
   pointer-events: none;
 }
 .more-btn[aria-expanded="true"] .more-cta { background: transparent; box-shadow: none; padding: 0; transform: none; }
@@ -734,7 +733,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   86% { transform: rotate(-4deg) scale(1.12); }
   92% { transform: rotate(-2deg) scale(1); }
 }
-@keyframes shine { 0%, 55% { left: -30%; } 100% { left: 130%; } }
+@keyframes shine { 0%, 50% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 @media (max-width: 600px) {
   .more-btn[aria-expanded="false"] { flex-direction: column; align-items: flex-start; gap: .7rem; }
   .more-btn[aria-expanded="false"] .more-cta { font-size: .85em; }
