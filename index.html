@@ -156,6 +156,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   cursor: pointer;
 }
 .btn:hover, .btn:focus-visible { transform: rotate(-3deg) scale(1.05); background: var(--red); color: var(--paper); }
+.btn:active { transform: rotate(-3deg) scale(.96); transition-duration: .05s; }
 .btn--red { --b: var(--red); --t: var(--paper); }
 .btn--red:hover, .btn--red:focus-visible { background: var(--paper); color: var(--ink); }
 .btn--ink { --b: var(--ink); --t: var(--paper); }
@@ -481,7 +482,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .target .body { padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
 .target .body h3 { font-family: var(--display); font-size: 1.9rem; text-transform: uppercase; line-height: 1; }
 .target .body .eyebrow { color: var(--red-text); }
-.target .body .go { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .82rem; white-space: nowrap; color: var(--paper-dim); }
+.target .body .go { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .82rem; color: var(--paper-dim); }
 .target:hover .go, .target:focus-visible .go { color: var(--paper); }
 
 /* project dossier */
@@ -608,8 +609,9 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .dialog p { color: var(--paper-dim); font-size: 1.02rem; }
 
 .links { display: flex; flex-wrap: wrap; gap: 12px; }
-/* Stay on the right even when a long title pushes the buttons to their own line. */
-.dossier-head .links { margin-left: auto; justify-content: flex-end; }
+/* the buttons always sit under the title, in the same place for every project */
+.dossier-head { flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+.dossier-head .links { margin-left: 0; justify-content: flex-start; }
 
 .role-wrap { margin-top: clamp(26px, 4vw, 40px); }
 .role-title {
@@ -726,8 +728,8 @@ section[id], .dossier { scroll-margin-top: 72px; }
   overflow: hidden;
   margin-top: clamp(22px, 3.5vw, 32px);
   cursor: pointer;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 20%, transparent);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 20%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .9) 25%, transparent);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .9) 25%, transparent);
   transition: -webkit-mask-image .2s ease, mask-image .2s ease;
 }
 .more-peek > * { pointer-events: none; }
@@ -863,7 +865,8 @@ img[data-zoom] { cursor: zoom-in; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(12, 11, 11, .25);
+  /* darken only behind the button, so the game keeps its colours at the edges */
+  background: radial-gradient(ellipse 60% 55% at center, rgba(12, 11, 11, .4), transparent);
   border: 0;
   cursor: pointer;
   padding: 0;
@@ -1269,6 +1272,7 @@ img[data-zoom] { cursor: zoom-in; }
   clip-path: polygon(0 0, 100% 10%, 94% 100%, 4% 90%);
 }
 .copy:hover, .copy:focus-visible { background: var(--red); color: var(--paper); }
+.copy:active, .play:active span, .more-btn:active .more-cta, .shot:active { scale: .95; }
 .sign { margin-top: 24px; text-align: right; font-family: "Special Elite", "Courier New", monospace; font-size: 1.15rem; color: var(--paper-dim); }
 .sign b { font-family: var(--display); font-weight: 400; color: var(--paper); font-size: 1.5rem; letter-spacing: .04em; }
 
@@ -1317,6 +1321,8 @@ footer .tyt span { color: var(--red); }
 
 /* ---------- Responsive ---------- */
 .top-cv, .top-contact, .lang { white-space: nowrap; flex: none; }
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--paper); color: var(--ink); font-weight: 800; padding: .5rem 1rem; }
+.skip:focus { left: 16px; }
 @media (max-width: 760px) {
   .topnav { display: none; }
   .top-contact { display: inline-flex; }
@@ -1364,6 +1370,18 @@ footer .tyt span { color: var(--red); }
   .showcase .shot:nth-child(3) { --r: 2deg; --sh: 6px 6px 0 var(--ink); }
   .showcase .shot:nth-child(4) { --r: -2.5deg; --sh: -6px 6px 0 var(--red-deep); }
 }
+@media (max-width: 900px) and (min-width: 621px) {
+  /* tablets: hobby cards go full width, photo on the left */
+  .hobbies { grid-template-columns: minmax(0, 1fr); }
+  .hobby { flex-direction: row; }
+  .hobby:nth-child(n) { transform: none; }
+  .hobby img { width: 38%; flex: none; aspect-ratio: auto; height: auto; min-height: 100%; }
+}
+@media (max-width: 480px) {
+  .stats { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .stats dt { justify-self: start; }
+  .stats dd { margin-bottom: 8px; }
+}
 @media (max-width: 700px) {
   .hero-grid, .stats-grid, .coop-grid, .stat-top { grid-template-columns: minmax(0, 1fr); }
 }
@@ -1402,7 +1420,9 @@ footer .tyt span { color: var(--red); }
   .dossier-head { gap: 20px; }
   .dossier-head .genre { font-size: 1rem; margin-bottom: 1.1rem; text-wrap: balance; }
   .dossier-head h3 { font-size: 3.4rem; }
-  .dossier-head .links { margin-left: 0; justify-content: flex-start; }
+  .dossier-head .links { margin-left: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; width: 100%; }
+  .dossier-head .links .btn { justify-content: center; font-size: 1.12rem; padding-inline: .6rem; gap: .4rem; }
+  .dossier-head .links .btn--red, .dossier-head .links .btn:only-child, .dossier-head .links .btn--red + .btn:last-child { grid-column: 1 / -1; }
   /* the path stacks: the arrow points down to the next step */
   .path { flex-direction: column; align-items: flex-start; gap: 6px; }
   .path .arrow { transform: rotate(90deg); margin-left: 1.6rem; line-height: 1; }
@@ -1423,6 +1443,7 @@ footer .tyt span { color: var(--red); }
 
 
 <!-- ================= TOP BAR ================= -->
+<a class="skip" href="#missions">Aller aux projets</a>
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#top"><b>Tiago Del Nery-Fontaine</b><small>Game Designer, en recherche de stage</small></a>
@@ -1438,6 +1459,7 @@ footer .tyt span { color: var(--red); }
   </div>
 </header>
 
+<main id="contenu">
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
@@ -1464,7 +1486,7 @@ footer .tyt span { color: var(--red); }
     <div class="showcase" aria-label="Aperçu des projets">
       <a class="shot p0" href="#push-push"><img src="assets/push-1.jpg" alt="Capture de Push Push"><span>Push Push</span></a>
       <a class="shot p1" href="#fatal-boing"><img src="assets/fatal-1.jpg" alt="Capture de Fatal Boing"><span>Fatal Boing !</span></a>
-      <a class="shot p2" href="#amy"><img src="assets/amy-inventaire.jpg" alt="Capture de Amy"><span>Amy</span></a>
+      <a class="shot p2" href="#amy"><img src="assets/amy-inventaire.jpg" alt="Capture d'Amy"><span>Amy</span></a>
       <a class="shot p3" href="#lumis-jar"><img src="assets/lumi-miniature.jpg" data-src-en="assets/lumi-miniature-en.jpg" alt="Capture de Lumi's Jar"><span>Lumi’s Jar</span></a>
     </div>
   </div>
@@ -1498,7 +1520,7 @@ footer .tyt span { color: var(--red); }
         <div class="body">
           <span class="eyebrow">Puzzle platformer 2,5D</span>
           <h3>Push Push</h3>
-          <span class="go">Projet d'équipe, level design &amp; 3C ▸</span>
+          <span class="go">Projet d'équipe, level design &amp; 3C&nbsp;▸</span>
         </div>
       </a>
       <a class="target" href="#fatal-boing">
@@ -1506,15 +1528,15 @@ footer .tyt span { color: var(--red); }
         <div class="body">
           <span class="eyebrow">Party game à un bouton</span>
           <h3>Fatal Boing !</h3>
-          <span class="go">Projet solo, design &amp; dev ▸</span>
+          <span class="go">Projet solo, design &amp; dev&nbsp;▸</span>
         </div>
       </a>
       <a class="target" href="#amy">
-        <div class="logo"><img src="assets/amy-logo.jpg" alt="Logo de Amy"></div>
+        <div class="logo"><img src="assets/amy-logo.jpg" alt="Logo d'Amy"></div>
         <div class="body">
           <span class="eyebrow">Visual novel d'enquête</span>
           <h3>Amy</h3>
-          <span class="go">Narrative Designer et Game Designer ▸</span>
+          <span class="go">Narrative Designer et Game Designer&nbsp;▸</span>
         </div>
       </a>
       <a class="target" href="#lumis-jar">
@@ -1522,7 +1544,7 @@ footer .tyt span { color: var(--red); }
         <div class="body">
           <span class="eyebrow">Idle game de bureau</span>
           <h3>Lumi’s Jar</h3>
-          <span class="go">Projet perso, concept &amp; game design ▸</span>
+          <span class="go">Projet perso, concept &amp; game design&nbsp;▸</span>
         </div>
       </a>
     </div>
@@ -1581,7 +1603,7 @@ footer .tyt span { color: var(--red); }
           <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-m2-n3-final.jpg" alt="Niveau 3 du monde 2 dans la version finale" loading="lazy" data-zoom></figure>
           </div>
         </div>
-        <div class="ld-level">
+        <div class="ld-level" data-peek>
           <h5>Monde 3, niveau 1</h5>
           <div class="ld-steps">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n1-croquis.jpg" alt="Croquis papier du niveau 1 du monde 3" loading="lazy" data-zoom></figure>
@@ -2158,6 +2180,8 @@ footer .tyt span { color: var(--red); }
   </div>
 </section>
 
+</main>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox-close" id="lightbox-close" type="button">Fermer ✕</button>
   <img id="lightbox-img" alt="">
@@ -2174,6 +2198,7 @@ footer .tyt span { color: var(--red); }
 "Tiago Del Nery-Fontaine": "Tiago Del Nery-Fontaine",
 "Game Designer, en recherche de stage": "Game Designer, looking for an internship",
 "Projets": "Projects",
+"Aller aux projets": "Skip to projects",
 "Compétences": "Skills",
 "À propos": "About",
 "Contact": "Contact",
@@ -2209,13 +2234,13 @@ footer .tyt span { color: var(--red); }
 "Calling card et CV": "Calling card &amp; CV",
 "Quatre projets réalisés en 2026 : un puzzle platformer, un party game à un bouton, un visual novel d'enquête et un petit jeu qui vit sur le bureau.": "Four projects made in 2026: a puzzle platformer, a one-button party game, an investigation visual novel and a tiny game that lives on your desktop.",
 "Puzzle platformer 2,5D": "2.5D puzzle platformer",
-"Projet d'équipe, level design & 3C ▸": "Team project, level design &amp; 3C ▸",
+"Projet d'équipe, level design & 3C ▸": "Team project, level design &amp; 3C&nbsp;▸",
 "Party game à un bouton": "One-button party game",
-"Projet solo, design & dev ▸": "Solo project, design &amp; dev ▸",
+"Projet solo, design & dev ▸": "Solo project, design &amp; dev&nbsp;▸",
 "Visual novel d'enquête": "Investigation visual novel",
-"Narrative Designer et Game Designer ▸": "Narrative Designer &amp; Game Designer ▸",
+"Narrative Designer et Game Designer ▸": "Narrative Designer &amp; Game Designer&nbsp;▸",
 "Idle game de bureau": "Desktop idle game",
-"Projet perso, concept & game design ▸": "Personal project, concept &amp; game design ▸",
+"Projet perso, concept & game design ▸": "Personal project, concept &amp; game design&nbsp;▸",
 "Un puzzle platformer en 2,5D": "A 2.5D puzzle platformer",
 "Trailer ▸": "Trailer <span class=\"arr\">▸<\/span>",
 "Walkthrough ▸": "Walkthrough <span class=\"arr\">▸<\/span>",
@@ -2481,12 +2506,12 @@ footer .tyt span { color: var(--red); }
 "Aperçu des projets": "Project preview",
 "Capture de Push Push": "Push Push screenshot",
 "Capture de Fatal Boing": "Fatal Boing screenshot",
-"Capture de Amy": "Amy screenshot",
+"Capture d'Amy": "Amy screenshot",
 "Capture de Lumi's Jar": "Lumi's Jar screenshot",
 "Sections": "Sections",
 "Logo de Push Push": "Push Push logo",
 "Logo de Fatal Boing": "Fatal Boing logo",
-"Logo de Amy": "Amy logo",
+"Logo d'Amy": "Amy logo",
 "Logo de Lumi's Jar": "Lumi's Jar logo",
 "Regarder le trailer": "Watch the trailer",
 "Niveau 5 : le personnage saute, les blocs basculent et un bloc surgit pour l'écraser": "Level 5: the character jumps, the blocks flip and one shoots out to crush them",
@@ -2895,8 +2920,9 @@ footer .tyt span { color: var(--red); }
       peek.addEventListener('click', function () { setMore(btn, true); });
       btn.parentNode.insertBefore(peek, btn);
     }
+    // a block marked data-peek wins; otherwise the block of the first image
     var img = panel.querySelector('img');
-    var block = img && img.closest('.role-wrap > *');
+    var block = panel.querySelector('[data-peek]') || (img && img.closest('.role-wrap > *'));
     var copy;
     if (block) {
       var wrap = block.parentNode;
