@@ -740,6 +740,22 @@ section[id], .dossier { scroll-margin-top: 72px; }
 }
 .less-btn { justify-content: center; gap: .6rem; background: var(--red); }
 .less-btn:hover, .less-btn:focus-visible { background: var(--ink); }
+/* faded peek of the folded panel above its button: a taste of what opens */
+.more-peek {
+  max-height: 200px;
+  overflow: hidden;
+  margin-top: clamp(22px, 3.5vw, 32px);
+  cursor: pointer;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 20%, transparent);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 20%, transparent);
+  transition: -webkit-mask-image .2s ease, mask-image .2s ease;
+}
+.more-peek > * { pointer-events: none; }
+.more-peek:hover {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .95) 20%, transparent);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .95) 20%, transparent);
+}
+.more-peek + .more-btn { margin-top: -6px; }
 .more { animation: reveal .35s cubic-bezier(.2, .8, .2, 1); }
 @keyframes reveal { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
 .more .thumbs { max-width: 760px; }
@@ -867,8 +883,6 @@ section[id], .dossier { scroll-margin-top: 72px; }
 
 /* level design steps */
 .ld-level { margin-bottom: 26px; }
-.ld-teaser { margin: clamp(22px, 3.5vw, 32px) 0 0; max-width: 980px; }
-.ld-teaser + .more-btn { margin-top: 0; }
 .ld-level h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; }
 .ld-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .ld-steps.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
@@ -1658,14 +1672,6 @@ footer .tyt span { color: var(--red); }
           <p class="pitch">Push Push est un puzzle platformer en 2,5D basé sur une mécanique d'alternance d'états : à chaque saut, les blocs du niveau basculent entre actif et inactif. Un mauvais saut face à un bloc désactivé, et il surgit sur l'axe Z pour t'écraser. Timing, anticipation et lecture de l'espace sont tes seuls outils, à travers plusieurs mondes aux ambiances différentes. Un projet qui m'a fait travailler le tuning des 3C, le rythme du level design et le pacing.</p>
         </div>
       </div>
-      <div class="ld-level ld-teaser">
-        <h5>Monde 3 · Niveau 2 : du croquis au niveau final</h5>
-        <div class="ld-steps">
-        <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n2-croquis.jpg" alt="Croquis papier du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
-        <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n2-blockout.jpg" alt="Blockout Unity du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
-        <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n2-final.jpg" alt="Niveau 2 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
-        </div>
-      </div>
       <button class="more-btn" type="button" aria-expanded="false" aria-controls="push-push-more"><span class="more-lbl">Level design, process et captures</span><span class="chev" aria-hidden="true">▾</span></button>
       <div class="more" id="push-push-more" hidden>
       <div class="role-wrap ld">
@@ -2128,7 +2134,7 @@ footer .tyt span { color: var(--red); }
 
     <div class="stat-top">
       <figure class="social" id="social">
-        <h3 class="panel-title">Stats sociales</h3>
+        <h3 class="panel-title">Stats de game design</h3>
         <svg viewBox="-262 -180 524 330" aria-hidden="true">
           <g class="star-spin"><path class="star-bg" d="M0,-132 L77.6,106.8 L-125.5,-40.8 L125.5,-40.8 L-77.6,106.8 Z"/></g>
           <polygon class="ring" points="0.0,-110.0 104.6,-34.0 64.7,89.0 -64.7,89.0 -104.6,-34.0"/><polygon class="ring" points="0.0,-88.0 83.7,-27.2 51.7,71.2 -51.7,71.2 -83.7,-27.2"/><polygon class="ring" points="0.0,-66.0 62.8,-20.4 38.8,53.4 -38.8,53.4 -62.8,-20.4"/><polygon class="ring" points="0.0,-44.0 41.8,-13.6 25.9,35.6 -25.9,35.6 -41.8,-13.6"/><polygon class="ring" points="0.0,-22.0 20.9,-6.8 12.9,17.8 -12.9,17.8 -20.9,-6.8"/>
@@ -2219,11 +2225,11 @@ footer .tyt span { color: var(--red); }
         <svg class="note cat-note n1" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
         <svg class="note cat-note n2" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
         <svg class="note cat-note n3" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
-        <div class="card-art"><img src="assets/portrait.jpg" alt="Tiago et son chat noir" loading="lazy"><span class="pet-hint" aria-hidden="true"><span class="hand">✋</span><b>Caresse-le !</b></span><button class="pet-zone" id="pet-zone" type="button" aria-label="Caresser le chat"></button></div>
+        <div class="card-art"><img src="assets/portrait.jpg" alt="Tiago et son chat noir, Cosmos" loading="lazy"><span class="pet-hint" aria-hidden="true"><span class="hand">✋</span><b>Caresse-le !</b></span><button class="pet-zone" id="pet-zone" type="button" aria-label="Caresser Cosmos"></button></div>
         <span class="purr-bubble" id="purr-bubble" aria-live="polite">Rrrrrr…</span>
         <span class="arc-name">Le Mat</span>
         <span class="rank-row" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-        <span class="rank-cap">Coop Tiago · Rang max</span>
+        <span class="rank-cap">Coop Tiago &amp; Cosmos · Rang max</span>
       </aside>
 
       <div class="bio">
@@ -2389,7 +2395,6 @@ footer .tyt span { color: var(--red); }
 "En jeu": "In game",
 "Après un saut": "After a jump",
 "Monde 3 · Niveau 2": "World 3 · Level 2",
-"Monde 3 · Niveau 2 : du croquis au niveau final": "World 3 · Level 2: from sketch to final level",
 "Blockout Unity": "Unity blockout",
 "Monde 3 · Niveau 3": "World 3 · Level 3",
 "Monde 3 · Niveau 4": "World 3 · Level 4",
@@ -2534,7 +2539,7 @@ footer .tyt span { color: var(--red); }
 "Personnage & narrationLumi, ses répliques selon la situation, son tuto glissé dans ses bulles, et une fin à choix.": "<b>Character &amp; narrative<\/b>Lumi, her lines for every situation, a tutorial slipped into her speech bubbles, and a choice-based ending.",
 "Game feelPhysique des pièces, secousses, aura de flammes quand on tape vite, retours sonores.": "<b>Game feel<\/b>Coin physics, shakes, a flame aura when you type fast, sound feedback.",
 "Compétences, outils et langues.": "Skills, tools and languages.",
-"Stats sociales": "Social Stats",
+"Stats de game design": "Game Design Stats",
 "Game feel": "Game feel",
 "System design": "System design",
 "Narration": "Narrative",
@@ -2570,7 +2575,7 @@ footer .tyt span { color: var(--red); }
 "Arcane": "Arcana",
 "Caresse-le !": "Pet him!",
 "Le Mat": "The Fool",
-"Coop Tiago · Rang max": "Tiago Confidant · Rank MAX",
+"Coop Tiago & Cosmos · Rang max": "Tiago &amp; Cosmos Confidant · Rank MAX",
 "Étudiant en Game Design à ISART Digital après un parcours en informatique et mathématiques à la Sorbonne. Je me spécialise en Level Design, System Design et Game Feel, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.": "Game Design student at ISART Digital, after studying computer science and mathematics at the Sorbonne. I specialize in <b>Level Design<\/b>, <b>System Design<\/b> and <b>Game Feel<\/b>, with close attention to readability, player comfort and precise controls.",
 "La SorbonneInformatique & mathématiques": "La Sorbonne<small>Computer science &amp; mathematics<\/small>",
 "ISART DigitalGame Design · en cours": "ISART Digital<small>Game Design · ongoing<\/small>",
@@ -2667,8 +2672,8 @@ footer .tyt span { color: var(--red); }
 "2 sur 5": "2 out of 5",
 "1 sur 5": "1 out of 5",
 "Carte d'arcane": "Arcana card",
-"Tiago et son chat noir": "Tiago and a black cat",
-"Caresser le chat": "Pet the cat",
+"Tiago et son chat noir, Cosmos": "Tiago and his black cat, Cosmos",
+"Caresser Cosmos": "Pet Cosmos",
 "Parcours": "Background",
 "Coucher de soleil sur la mer": "Sunset over the sea",
 "Temple japonais illuminé la nuit": "A Japanese temple lit up at night",
@@ -2984,9 +2989,43 @@ footer .tyt span { color: var(--red); }
     btn.querySelector('.more-lbl').textContent = (open ? ui('hide') : '') + tr(btn.getAttribute('data-label'));
     btn.querySelector('.cta-txt').textContent = ui('more');
     btn.querySelector('.more-hint').textContent = ui('hint');
+    var peek = btn.previousElementSibling;
+    if (peek && peek.classList.contains('more-peek')) peek.hidden = open;
+  }
+  // The peek copies the panel's first visual block (in the current language), without its titles:
+  // the button below already names it. Faded, and it opens the panel on click
+  function buildPeek(btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var peek = btn.previousElementSibling;
+    if (!peek || !peek.classList.contains('more-peek')) {
+      peek = document.createElement('div');
+      peek.className = 'more-peek';
+      peek.setAttribute('aria-hidden', 'true');
+      peek.addEventListener('click', function () { setMore(btn, true); });
+      btn.parentNode.insertBefore(peek, btn);
+    }
+    var img = panel.querySelector('img');
+    var block = img && img.closest('.role-wrap > *');
+    var copy;
+    if (block) {
+      var wrap = block.parentNode;
+      copy = wrap.cloneNode(false);
+      copy.appendChild(block.cloneNode(true));
+    } else copy = panel.firstElementChild.cloneNode(true);
+    copy.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+    copy.querySelectorAll('[data-zoom], [data-zoom-all], [data-video]').forEach(function (el) {
+      el.removeAttribute('data-zoom'); el.removeAttribute('data-zoom-all'); el.removeAttribute('data-video');
+    });
+    copy.querySelectorAll('a, button').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
+    copy.querySelectorAll('h4, h5').forEach(function (el) { el.remove(); });
+    copy.querySelectorAll('img').forEach(function (el) { el.loading = 'eager'; });
+    peek.replaceChildren(copy);
+    peek.hidden = btn.getAttribute('aria-expanded') === 'true';
   }
   document.querySelectorAll('.more-btn').forEach(function (btn) {
     btn.setAttribute('data-label', btn.querySelector('.more-lbl').textContent);
+    buildPeek(btn);
+    langHooks.push(function () { buildPeek(btn); });
     var head = document.createElement('span');
     head.className = 'more-head';
     btn.insertBefore(head, btn.firstChild);
