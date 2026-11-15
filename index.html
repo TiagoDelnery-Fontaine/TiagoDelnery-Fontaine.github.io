@@ -675,7 +675,8 @@ section[id], .dossier { scroll-margin-top: 72px; }
   clip-path: polygon(0 0, 100% 6%, 99.4% 100%, .4% 92%);
   transition: background .14s ease;
 }
-.more-btn:hover, .more-btn:focus-visible { background: var(--red-deep); outline: none; }
+/* the bar lights up from the bar itself or from the faded screens above it */
+.more-btn:hover, .more-btn:focus-visible, .more-peek:hover + .more-btn { background: var(--red-deep); outline: none; }
 .more-btn .chev { display: inline-block; transition: transform .2s ease; }
 .more-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
 /* "Plus de détails": a red plate like the other red buttons, same hover; the faded peek above
@@ -705,11 +706,23 @@ section[id], .dossier { scroll-margin-top: 72px; }
   transition: background .14s ease, color .14s ease, transform .14s ease;
 }
 .more-cta .chev { font-family: var(--body); font-weight: 800; line-height: 1; }
-.more-btn:hover .more-cta, .more-btn:focus-visible .more-cta { background: var(--paper); color: var(--ink); transform: rotate(-3deg) scale(1.05); }
-.more-btn[aria-expanded="false"] .chev { animation: more-nudge 1.1s ease-in-out infinite; }
+.more-btn:hover .more-cta, .more-btn:focus-visible .more-cta, .more-peek:hover + .more-btn .more-cta { background: var(--paper); color: var(--ink); }
+/* on the plate itself: the same tilt as the other buttons */
+.more-cta:hover, .more-btn:focus-visible .more-cta { transform: rotate(-3deg) scale(1.07); }
+/* a light sweeps across the folded bar now and then */
+.more-btn { position: relative; overflow: hidden; }
+.more-btn[aria-expanded="false"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .28) 50%, transparent 58%);
+  transform: translateX(-100%);
+  animation: more-shine 4.4s linear infinite;
+  pointer-events: none;
+}
 .more-btn[aria-expanded="true"] .more-cta { background: transparent; color: var(--paper); clip-path: none; padding: 0; transform: none; }
 .more-btn[aria-expanded="true"] .cta-txt { display: none; }
-@keyframes more-nudge { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+@keyframes more-shine { 0%, 35% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 @media (max-width: 600px) {
   .more-btn[aria-expanded="false"] { flex-direction: column; align-items: flex-start; gap: .7rem; }
   .more-btn[aria-expanded="false"] .more-cta { font-size: .85em; }
@@ -1005,6 +1018,7 @@ img[data-zoom] { cursor: zoom-in; }
 .stats-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
   gap: clamp(24px, 4vw, 48px);
 }
 .panel-title {
@@ -2098,23 +2112,7 @@ footer .tyt span { color: var(--red); }
         </div>
       </div>
 
-      <div class="col">
-        <div>
-          <h3 class="panel-title alt">Outils</h3>
-          <ul class="kit">
-            <li><i class="ico"></i><span>Unity : prototypage, blockouts et intégration d'UI</span></li>
-            <li><i class="ico"></i><span>Visual Scripting, Cinemachine et DOTween</span></li>
-            <li><i class="ico"></i><span>Python, HTML, CSS et SQL</span></li>
-            <li><i class="ico"></i><span>Git, Trello et Figma</span></li>
-            <li><i class="ico"></i><span>Ren'Py et Lucidchart</span></li>
-            <li><i class="ico"></i><span>Photoshop, After Effects et CapCut</span></li>
-            <li><i class="ico"></i><span>Notions de C# (lecture de code)</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="stat-top">
+      <div class="col col--star">
       <figure class="social" id="social">
         <h3 class="panel-title">Langues</h3>
         <div class="star-board">
@@ -2161,6 +2159,24 @@ footer .tyt span { color: var(--red); }
           <div class="stat s5"><span class="tag">Japonais<b>2</b></span><span class="rk">Élémentaire (A2)</span></div>
         </div>
       </figure>
+      </div>
+    </div>
+
+    <div class="stat-top">
+      <div class="col">
+        <div>
+          <h3 class="panel-title alt">Outils</h3>
+          <ul class="kit">
+            <li><i class="ico"></i><span>Unity : prototypage, blockouts et intégration d'UI</span></li>
+            <li><i class="ico"></i><span>Visual Scripting, Cinemachine et DOTween</span></li>
+            <li><i class="ico"></i><span>Python, HTML, CSS et SQL</span></li>
+            <li><i class="ico"></i><span>Git, Trello et Figma</span></li>
+            <li><i class="ico"></i><span>Ren'Py et Lucidchart</span></li>
+            <li><i class="ico"></i><span>Photoshop, After Effects et CapCut</span></li>
+            <li><i class="ico"></i><span>Notions de C# (lecture de code)</span></li>
+          </ul>
+        </div>
+      </div>
       <div class="traits">
         <div class="trait"><h4>Créativité</h4><p>Forte créativité et apprentissage rapide.</p></div>
         <div class="trait"><h4>Travail d'équipe</h4><p>Un esprit d'équipe naturel et une bonne communication.</p></div>
