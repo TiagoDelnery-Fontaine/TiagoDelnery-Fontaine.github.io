@@ -1104,18 +1104,36 @@ img[data-zoom] { cursor: zoom-in; }
   margin-bottom: clamp(40px, 7vw, 72px);
 }
 .social { margin: 0; min-width: 0; }
-.social svg { display: block; width: 100%; max-width: 520px; height: auto; overflow: visible; }
-.social .ring { fill: none; stroke: #3a3434; stroke-width: 1.5; }
-.social .axis { stroke: #3a3434; stroke-width: 1.5; }
-.social .star-bg { fill: var(--ink-2); stroke: var(--paper); stroke-width: 4; stroke-linejoin: round; }
-.social .val { fill: var(--yellow); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; transform-origin: 0 0; }
-.social .dot { fill: var(--ink); stroke: var(--yellow); stroke-width: 3; }
-.social .lbl { font-family: var(--display); font-size: 21px; letter-spacing: .04em; text-transform: uppercase; fill: var(--paper); }
-.social .lv { font-family: var(--display); font-size: 18px; letter-spacing: .06em; text-transform: uppercase; fill: var(--yellow); }
-.social .star-spin { animation: spin 40s linear infinite; }
-.social.armed .val { transform: scale(0) rotate(-40deg); }
-.social.go .val { animation: starpop .7s cubic-bezier(.2, 1.4, .4, 1) forwards; }
-@keyframes starpop { from { transform: scale(0) rotate(-40deg); } to { transform: none; } }
+.star-board { position: relative; width: min(100%, 540px); aspect-ratio: 1; margin-inline: auto; }
+.star-board svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.star-bg { fill: var(--ink-2); stroke: #2c2828; stroke-width: 3; stroke-linejoin: round; }
+.star-ring { fill: none; stroke: #4a4444; stroke-width: 4; stroke-linejoin: round; }
+.star-ring.dotted { stroke: #6b6363; stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
+.star-core { fill: var(--yellow); stroke: var(--ink); stroke-width: 6; stroke-linejoin: round; }
+.star-shine { fill: #fff6a8; opacity: .55; }
+/* one plate per arm: language in black on yellow, rank in the corner, level underneath */
+.stat { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 4px; white-space: nowrap; }
+.stat.s1 { left: 50%; top: 13%; }
+.stat.s2 { left: 84%; top: 39%; }
+.stat.s3 { left: 71%; top: 81%; }
+.stat.s4 { left: 29%; top: 81%; }
+.stat.s5 { left: 16%; top: 39%; }
+.stat .tag {
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 2.6vw, 1.55rem);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: .05em .35em .1em;
+  transform: rotate(-4deg) skewX(-6deg);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.stat .tag b { font-weight: 400; font-size: .62em; margin-left: .2em; padding: 0 .2em; background: var(--ink); color: var(--yellow); vertical-align: .55em; }
+.stat .rk { font-weight: 800; font-style: italic; font-size: clamp(.82rem, 1.8vw, 1rem); color: var(--paper); text-shadow: 2px 2px 0 var(--ink); }
+.social.armed .stat { opacity: 0; translate: 0 10px; }
+.social.go .stat { opacity: 1; translate: 0 0; transition: opacity .35s ease, translate .35s cubic-bezier(.2, 1.3, .4, 1); }
+.social.go .s2 { transition-delay: .08s; } .social.go .s3 { transition-delay: .16s; } .social.go .s4 { transition-delay: .24s; } .social.go .s5 { transition-delay: .32s; }
 
 .traits { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
 .trait {
@@ -1454,7 +1472,6 @@ footer .tyt span { color: var(--red); }
   .vitrine-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .vitrine-nums div:nth-child(3n + 2) { background: var(--paper); color: var(--ink); }
   .vitrine-nums div:nth-child(4n + 2), .vitrine-nums div:nth-child(4n + 3) { background: var(--red); color: var(--paper); }
-  .social svg { width: calc(100% + 24px); max-width: none; margin-left: -12px; }
 }
 @media (max-width: 360px) {
   .topbar .wrap { gap: 8px; }
@@ -1559,12 +1576,12 @@ footer .tyt span { color: var(--red); }
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="tag-role">Game Designer / Level Design / System Design</span>
+      <span class="tag-role">Game Designer / Level Designer / System Designer</span>
       <h1 class="name" aria-label="Tiago Del Nery-Fontaine">
         <span class="row" data-ransom data-seed="3">TIAGO</span>
         <span class="row" data-ransom data-seed="11">DEL NERY-FONTAINE</span>
       </h1>
-      <p class="lede">Étudiant en 2ᵉ année de Game Design à <strong>ISART Digital</strong> (Paris), axé sur la création de prototypes jouables, le level design et la rédaction de GDD précis.</p>
+      <p class="lede">Étudiant en 2ᵉ année de Game Design à <strong>ISART Digital</strong> (Paris), axé sur la création de prototypes jouables, le level design et le system design.</p>
       <div class="status">En recherche de <b>stage</b> !</div>
       <p class="status-when">Mai → août 2027, durée flexible</p>
       <div class="hero-actions">
@@ -2076,18 +2093,20 @@ footer .tyt span { color: var(--red); }
     <div class="stat-top">
       <figure class="social" id="social">
         <h3 class="panel-title">Langues</h3>
-        <svg viewBox="-270 -205 540 385" role="img" aria-label="Français natif, anglais C1, portugais C1, espagnol B1, japonais A2">
-          <g class="star-spin"><path class="star-bg" d="M0,-132 L77.6,106.8 L-125.5,-40.8 L125.5,-40.8 L-77.6,106.8 Z"/></g>
-          <polygon class="ring" points="0.0,-110.0 104.6,-34.0 64.7,89.0 -64.7,89.0 -104.6,-34.0"/><polygon class="ring" points="0.0,-88.0 83.7,-27.2 51.7,71.2 -51.7,71.2 -83.7,-27.2"/><polygon class="ring" points="0.0,-66.0 62.8,-20.4 38.8,53.4 -38.8,53.4 -62.8,-20.4"/><polygon class="ring" points="0.0,-44.0 41.8,-13.6 25.9,35.6 -25.9,35.6 -41.8,-13.6"/><polygon class="ring" points="0.0,-22.0 20.9,-6.8 12.9,17.8 -12.9,17.8 -20.9,-6.8"/>
-          <path class="axis" d="M0,0 L0.0,-110.0 M0,0 L104.6,-34.0 M0,0 L64.7,89.0 M0,0 L-64.7,89.0 M0,0 L-104.6,-34.0"/>
-          <polygon class="val" points="0.0,-110.0 83.7,-27.2 51.7,71.2 -38.8,53.4 -41.8,-13.6"/>
-          <circle class="dot" r="6" cx="0" cy="-110"/><circle class="dot" r="6" cx="83.7" cy="-27.2"/><circle class="dot" r="6" cx="51.7" cy="71.2"/><circle class="dot" r="6" cx="-38.8" cy="53.4"/><circle class="dot" r="6" cx="-41.8" cy="-13.6"/>
-          <text class="lbl" x="0" y="-176" text-anchor="middle">Français</text><text class="lv" x="0" y="-152" text-anchor="middle">Natif</text>
-          <text class="lbl" x="128" y="-44" text-anchor="start">Anglais</text><text class="lv" x="128" y="-20" text-anchor="start">C1</text>
-          <text class="lbl" x="78" y="126" text-anchor="start">Portugais</text><text class="lv" x="78" y="150" text-anchor="start">C1</text>
-          <text class="lbl" x="-78" y="126" text-anchor="end">Espagnol</text><text class="lv" x="-78" y="150" text-anchor="end">B1</text>
-          <text class="lbl" x="-128" y="-44" text-anchor="end">Japonais</text><text class="lv" x="-128" y="-20" text-anchor="end">A2</text>
-        </svg>
+        <div class="star-board">
+          <svg viewBox="-260 -260 520 520" aria-hidden="true">
+            <path class="star-bg" d="M0.0,-250.0 L56.1,-77.3 L237.8,-77.3 L90.8,29.5 L146.9,202.3 L0.0,95.5 L-146.9,202.3 L-90.8,29.5 L-237.8,-77.3 L-56.1,-77.3 Z"/>
+            <path class="star-ring" d="M0.0,-175.0 L39.3,-54.1 L166.4,-54.1 L63.6,20.7 L102.9,141.6 L0.0,66.8 L-102.9,141.6 L-63.6,20.7 L-166.4,-54.1 L-39.3,-54.1 Z"/>
+            <path class="star-ring dotted" d="M0.0,-118.0 L26.5,-36.5 L112.2,-36.5 L42.9,13.9 L69.4,95.5 L0.0,45.1 L-69.4,95.5 L-42.9,13.9 L-112.2,-36.5 L-26.5,-36.5 Z"/>
+            <path class="star-core" d="M0.0,-62.0 L13.9,-19.2 L59.0,-19.2 L22.5,7.3 L36.4,50.2 L0.0,23.7 L-36.4,50.2 L-22.5,7.3 L-59.0,-19.2 L-13.9,-19.2 Z"/>
+            <path class="star-shine" d="M0.0,-30.0 L6.7,-9.3 L28.5,-9.3 L10.9,3.5 L17.6,24.3 L0.0,11.5 L-17.6,24.3 L-10.9,3.5 L-28.5,-9.3 L-6.7,-9.3 Z"/>
+          </svg>
+          <div class="stat s1"><span class="tag">Français<b>MAX</b></span><span class="rk">Natif</span></div>
+          <div class="stat s2"><span class="tag">Anglais<b>4</b></span><span class="rk">Courant (C1)</span></div>
+          <div class="stat s3"><span class="tag">Portugais<b>4</b></span><span class="rk">Courant (C1)</span></div>
+          <div class="stat s4"><span class="tag">Espagnol<b>3</b></span><span class="rk">Intermédiaire (B1)</span></div>
+          <div class="stat s5"><span class="tag">Japonais<b>2</b></span><span class="rk">Élémentaire (A2)</span></div>
+        </div>
       </figure>
       <div class="traits">
         <div class="trait"><h4>Créativité</h4><p>Forte créativité et apprentissage rapide.</p></div>
@@ -2106,28 +2125,21 @@ footer .tyt span { color: var(--red); }
             <li><i class="ico"></i><span>Équilibrage et tableurs (Excel)</span></li>
             <li><i class="ico"></i><span>Narration environnementale</span></li>
             <li><i class="ico"></i><span>Prototypage</span></li>
-            <li><i class="ico"></i><span>Documentation (GDD)</span></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="panel-title alt">Unity</h3>
-          <ul class="kit">
-            <li><i class="ico"></i><span>Prototypage de gameplay et de mécaniques</span></li>
-            <li><i class="ico"></i><span>Agencement de niveaux et blockouts</span></li>
-            <li><i class="ico"></i><span>Intégration d'interfaces utilisateur</span></li>
-            <li><i class="ico"></i><span>Packages et outils : Cinemachine, DOTween</span></li>
           </ul>
         </div>
       </div>
 
       <div class="col">
         <div>
-          <h3 class="panel-title alt">Code &amp; image</h3>
-          <div class="ranks">
-            <div class="rank"><span class="what">Visual Scripting, Python</span><span class="lvl">Niveau intermédiaire</span><span class="pips" aria-label="3 sur 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
-            <div class="rank"><span class="what">C#, HTML, CSS, SQL</span><span class="lvl">Notions de base</span><span class="pips" aria-label="2 sur 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
-            <div class="rank"><span class="what">After Effects, CapCut, Photoshop, Blender</span><span class="lvl">Bases en image et montage vidéo</span><span class="pips" aria-label="2 sur 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
-          </div>
+          <h3 class="panel-title alt">Outils</h3>
+          <ul class="kit">
+            <li><i class="ico"></i><span>Unity : prototypage, blockouts et intégration d'UI</span></li>
+            <li><i class="ico"></i><span>C#, Visual Scripting, Cinemachine, DOTween</span></li>
+            <li><i class="ico"></i><span>Ren'Py pour le visual novel</span></li>
+            <li><i class="ico"></i><span>Git (Fork), Trello et Figma</span></li>
+            <li><i class="ico"></i><span>Python, HTML, CSS et SQL</span></li>
+            <li><i class="ico"></i><span>Photoshop, After Effects et CapCut</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -2268,8 +2280,8 @@ footer .tyt span { color: var(--red); }
 "À propos": "About",
 "Contact": "Contact",
 "CV ↗": "CV ↗",
-"Game Designer / Level Design / System Design": "Game Designer / Level Design / System Design",
-"Étudiant en 2ᵉ année de Game Design à ISART Digital (Paris), axé sur la création de prototypes jouables, le level design et la rédaction de GDD précis.": "Second-year Game Design student at <strong>ISART Digital<\/strong> (Paris), focused on building playable prototypes, level design and writing precise GDDs.",
+"Game Designer / Level Designer / System Designer": "Game Designer / Level Designer / System Designer",
+"Étudiant en 2ᵉ année de Game Design à ISART Digital (Paris), axé sur la création de prototypes jouables, le level design et le system design.": "Second-year Game Design student at <strong>ISART Digital<\/strong> (Paris), focused on building playable prototypes, level design and system design.",
 "En recherche de stage !": "Looking for an <b>internship<\/b>!",
 "Mai → août 2027, durée flexible": "May → August 2027, flexible length",
 "Stage": "Internship",
@@ -2482,6 +2494,21 @@ footer .tyt span { color: var(--red); }
 "Level design et system design d'abord, avec les outils de mes projets : Unity, Ren'Py et Excel.": "Level design and system design first, with the tools from my projects: Unity, Ren'Py and Excel.",
 "Langues": "Languages",
 "Natif": "Native",
+"Outils": "Tools",
+"Unity : prototypage, blockouts et intégration d'UI": "Unity: prototyping, blockouts and UI integration",
+"C#, Visual Scripting, Cinemachine, DOTween": "C#, Visual Scripting, Cinemachine, DOTween",
+"Ren'Py pour le visual novel": "Ren'Py for visual novels",
+"Git (Fork), Trello et Figma": "Git (Fork), Trello and Figma",
+"Python, HTML, CSS et SQL": "Python, HTML, CSS and SQL",
+"Photoshop, After Effects et CapCut": "Photoshop, After Effects and CapCut",
+"FrançaisMAX": "French<b>MAX</b>",
+"Anglais4": "English<b>4</b>",
+"Portugais4": "Portuguese<b>4</b>",
+"Espagnol3": "Spanish<b>3</b>",
+"Japonais2": "Japanese<b>2</b>",
+"Courant (C1)": "Fluent (C1)",
+"Intermédiaire (B1)": "Intermediate (B1)",
+"Élémentaire (A2)": "Elementary (A2)",
 "C1": "C1",
 "B1": "B1",
 "A2": "A2",
@@ -2501,7 +2528,6 @@ footer .tyt span { color: var(--red); }
 "Game feel et feedbacks": "Game feel and feedback",
 "System et combat design": "System and combat design",
 "Narration environnementale": "Environmental storytelling",
-"Documentation (GDD)": "Documentation (GDD)",
 "Prototypage de gameplay et de mécaniques": "Gameplay and mechanics prototyping",
 "Agencement de niveaux et blockouts": "Level layouts and blockouts",
 "Intégration d'interfaces utilisateur": "User interface integration",
