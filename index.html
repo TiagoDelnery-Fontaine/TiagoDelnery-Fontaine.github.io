@@ -19,11 +19,13 @@
 <title>Tiago Del Nery-Fontaine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Abril+Fatface&family=Bungee&family=Rubik+Mono+One&family=Special+Elite&family=Dela+Gothic+One&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,700;0,800;1,800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,700;0,800;1,800&display=swap">
+<!-- ransom-note letters only: these five fonts are cut down to the Latin letters the titles use -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Rubik+Mono+One&family=Special+Elite&family=Dela+Gothic+One&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%C3%80%C3%82%C3%84%C3%87%C3%89%C3%88%C3%8A%C3%8B%C3%8E%C3%8F%C3%94%C3%96%C3%99%C3%9B%C3%9C%C3%A0%C3%A2%C3%A4%C3%A7%C3%A9%C3%A8%C3%AA%C3%AB%C3%AE%C3%AF%C3%B4%C3%B6%C3%B9%C3%BB%C3%BC%C5%92%C5%930123456789%21%3F%27%E2%80%99-.%2C%3A%26%C2%AB%C2%BB">
 <style>
 /* Layout: écrans de menu pause empilés — dalles inclinées rouge / noir / blanc, chaque section ouverte par une plaque de titre tranchée. */
 :root {
-  --red: #e5001c;
+  --red: #d6001a;
   --red-deep: #8f0011;
   --red-text: #ff4a5c; /* red for small text on dark grounds (>= 5:1) */
   --ink: #0c0b0b;
@@ -55,6 +57,7 @@ body {
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 :focus-visible { outline: 3px solid var(--paper); outline-offset: 3px; }
+.dossier :focus-visible, .coop :focus-visible { outline-color: var(--ink); }
 h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
 p { margin: 0; }
 
@@ -90,7 +93,6 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .l.c4 { background: var(--paper); color: var(--red); }
 
 /* ---------- Shared bits ---------- */
-.jp { font-family: var(--jp); letter-spacing: .08em; }
 .eyebrow {
   font-family: var(--body);
   font-weight: 800;
@@ -171,7 +173,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1.05; margin-right: auto; min-width: 0; }
 .brand b { font-family: var(--display); font-weight: 400; font-size: 1.2rem; letter-spacing: .03em; text-transform: uppercase; }
 @media (max-width: 1000px) { .brand small { display: none; } }
-.brand small { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red-text); }
+.brand small { font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red-text); }
 .topnav { display: flex; gap: 2px; }
 .topnav a {
   font-weight: 800;
@@ -334,7 +336,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   padding: .9rem 1rem;
   max-width: 560px;
 }
-.facts-bar dt { font-weight: 800; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); padding-top: .2rem; }
+.facts-bar dt { font-weight: 800; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); padding-top: .2rem; }
 .facts-bar dd { margin: 0; font-weight: 600; font-size: 1.02rem; }
 
 .showcase {
@@ -437,8 +439,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   letter-spacing: .01em;
 }
 .menu .sub { font-size: .85rem; font-weight: 700; color: var(--paper-dim); letter-spacing: .1em; text-transform: uppercase; }
-.menu .jp { font-size: .78rem; color: var(--red); }
-.menu a:hover .jp, .menu a:focus-visible .jp, .menu a:hover .sub, .menu a:focus-visible .sub { color: var(--paper); }
+.menu a:hover .sub, .menu a:focus-visible .sub { color: var(--paper); }
 
 /* ---------- MISSIONS ---------- */
 .missions {
@@ -474,12 +475,13 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .target:nth-child(2), .target:nth-child(4) { transform: rotate(1.5deg); }
 .target:nth-child(1), .target:nth-child(3) { transform: rotate(-1.2deg); }
 .target:hover, .target:focus-visible { transform: rotate(-3deg) scale(1.03); outline: none; }
+.target:focus-visible { outline: 3px solid var(--paper); outline-offset: -9px; }
 .target .logo { aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
 .target .logo img { width: 100%; height: 100%; object-fit: contain; }
 .target .body { padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
 .target .body h3 { font-family: var(--display); font-size: 1.9rem; text-transform: uppercase; line-height: 1; }
 .target .body .eyebrow { color: var(--red-text); }
-.target .body .go { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .8rem; color: var(--paper-dim); }
+.target .body .go { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .82rem; white-space: nowrap; color: var(--paper-dim); }
 .target:hover .go, .target:focus-visible .go { color: var(--paper); }
 
 /* project dossier */
@@ -534,7 +536,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   box-shadow: 10px 10px 0 var(--red);
 }
 .dossier.flip .screen { transform: rotate(1.2deg); box-shadow: -10px 10px 0 var(--red); }
-.screen img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.screen img, .screen video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
 .screen .label {
   position: absolute;
   top: -12px;
@@ -542,7 +544,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   background: var(--red-deep);
   color: var(--paper);
   font-weight: 800;
-  font-size: .75rem;
+  font-size: .82rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: .15rem .6rem;
@@ -559,7 +561,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   background: var(--ink);
   color: var(--paper);
   font-weight: 800;
-  font-size: .74rem;
+  font-size: .82rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: .12rem .55rem;
@@ -623,7 +625,6 @@ section[id], .dossier { scroll-margin-top: 72px; }
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   text-transform: uppercase;
 }
-.role-title .jp { color: var(--red); font-size: .85rem; }
 .skills-list {
   list-style: none;
   margin: 0;
@@ -651,6 +652,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   transform: rotate(45deg);
   box-shadow: 3px 3px 0 var(--paper);
 }
+.skills-list li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .skills-list b { display: block; color: var(--paper); font-weight: 800; letter-spacing: .02em; }
 
 /* collapsible project detail */
@@ -682,16 +684,6 @@ section[id], .dossier { scroll-margin-top: 72px; }
    already shows what opens, so only its arrow moves */
 .more-btn[aria-expanded="false"] { padding-top: .9rem; padding-bottom: .9rem; }
 .more-head { display: flex; flex-direction: column; gap: .2em; min-width: 0; }
-.more-hint {
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: .62em;
-  letter-spacing: .02em;
-  text-transform: none;
-  color: var(--paper);
-  opacity: .72;
-}
-.more-btn[aria-expanded="true"] .more-hint { display: none; }
 .more-cta {
   flex: none;
   display: inline-flex;
@@ -746,135 +738,25 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .more-peek:not([hidden]) + .more-btn { margin-top: -6px; }
 .more { animation: reveal .35s cubic-bezier(.2, .8, .2, 1); }
 @keyframes reveal { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
-.more .thumbs { max-width: 760px; }
+.more .thumbs { gap: 14px; }
+/* text blocks and the trailer clip line up with two columns of that grid */
+.more .gif-fig, .more .rules, .more .sprints { max-width: calc((100% - 28px) / 3 * 2 + 14px); }
 .gif-fig { margin: 0 0 18px; max-width: 600px; display: flex; flex-direction: column; gap: 6px; }
-.gif-fig img { width: 100%; border: 6px solid var(--ink); box-shadow: 8px 8px 0 var(--red); }
+.gif-fig img, .gif-fig video { display: block; width: 100%; height: auto; border: 6px solid var(--ink); box-shadow: 8px 8px 0 var(--red); background: #000; }
 .gif-fig figcaption { font-size: .95rem; font-weight: 500; margin-top: 6px; }
 
-/* Lumi's Jar: the player-facing pitch, laid out like a store page */
-.vitrine {
-  margin-top: clamp(28px, 4.5vw, 44px);
-  background: var(--dots-light) 0 0 / 10px 10px, var(--ink);
-  color: var(--paper);
-  padding: clamp(24px, 3.5vw, 38px) clamp(18px, 3.5vw, 38px) clamp(26px, 3.5vw, 38px);
-  clip-path: polygon(0 10px, 100% 0, calc(100% - 8px) 100%, 6px calc(100% - 10px));
-}
-.vitrine-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: clamp(18px, 3vw, 26px); }
-.vitrine-kick {
-  background: var(--red);
-  font-weight: 800;
-  font-size: .82rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  padding: .1rem .6rem;
-  transform: rotate(-3deg);
-}
-.vitrine-head h4 {
-  margin: 0;
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2rem, 4.6vw, 3.2rem);
-  line-height: 1;
-  text-transform: uppercase;
-  text-shadow: .05em .05em 0 var(--red);
-}
-.vitrine-badge {
-  margin-left: auto;
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-  font-weight: 800;
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  padding: .15rem .6rem;
-  transform: rotate(1.5deg);
-}
-.vitrine-top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(22px, 3.5vw, 36px); align-items: start; }
-.vitrine-key {
-  margin: 0;
-  background: var(--paper);
-  padding: 6px;
-  transform: rotate(-1deg);
-  box-shadow: 10px 10px 0 var(--red);
-}
-.vitrine-key img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.vitrine-pitch { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.vitrine-hook {
-  font-family: var(--display);
-  font-size: clamp(1.55rem, 3vw, 2.05rem);
-  line-height: 1.05;
-  text-transform: uppercase;
-}
-.vitrine-hook em { font-style: normal; color: var(--yellow); }
-.vitrine-pitch > p:not(.vitrine-hook) { color: var(--paper-dim); }
-.vitrine-tags { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.vitrine-tags li {
-  background: var(--ink-2);
-  border: 1px solid #423b3b;
-  font-weight: 700;
-  font-size: .86rem;
-  padding: .08rem .6rem;
-  transform: skewX(-10deg);
-}
-.vitrine-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 6px 0 0; }
-.vitrine-nums div { background: var(--paper); color: var(--ink); padding: .4rem .7rem .5rem; clip-path: polygon(0 0, 100% 6%, 97% 100%, 2% 94%); }
-.vitrine-nums div:nth-child(3n + 2) { background: var(--red); color: var(--paper); }
-.vitrine-nums dt { font-family: var(--display); font-size: 1.9rem; line-height: 1.05; }
-.vitrine-nums dd { margin: 0; font-weight: 800; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
-.vitrine-feats {
-  list-style: none;
-  margin: clamp(32px, 5vw, 48px) 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 3.5vw, 34px) clamp(16px, 2.5vw, 24px);
-  counter-reset: feat;
-}
-.vitrine-feats li { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; counter-increment: feat; }
-.vitrine-feats li::before {
-  content: counter(feat, decimal-leading-zero);
-  position: absolute;
-  top: -14px;
-  left: -6px;
-  z-index: 1;
-  background: var(--red);
-  font-family: var(--display);
-  font-size: 1.25rem;
-  line-height: 1.2;
-  padding: 0 .45rem;
-  transform: rotate(-6deg);
-}
-.vitrine-feats img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 4px solid var(--paper); margin-bottom: 6px; }
-.vitrine-feats li:nth-child(odd) img { transform: rotate(-1.2deg); }
-.vitrine-feats li:nth-child(even) img { transform: rotate(1deg); }
-.vitrine-feats h5 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.45rem; line-height: 1.05; text-transform: uppercase; }
-.vitrine-feats p { color: var(--paper-dim); font-size: 1rem; }
-.vitrine-foot {
-  margin-top: clamp(28px, 4vw, 40px);
-  padding-top: 18px;
-  border-top: 3px solid var(--red);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px 28px;
-}
-.vitrine-promises { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 28px; flex: 1 1 520px; }
-.vitrine-promises li { flex: 1 1 180px; font-size: .98rem; color: var(--paper-dim); }
-.menus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 920px; }
+.menus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .menus figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .menus img { width: 100%; aspect-ratio: 23 / 20; object-fit: cover; object-position: top; background: #2b2119; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--red); }
 .menus figure:nth-child(2) img { transform: rotate(1deg); }
 .menus figcaption { font-size: .95rem; font-weight: 500; }
 .menus figcaption b { font-weight: 800; }
-.vitrine-promises b { display: block; color: var(--yellow); font-family: var(--display); font-weight: 400; font-size: 1.25rem; letter-spacing: .02em; text-transform: uppercase; }
 
 /* level design steps */
 .ld-level { margin-bottom: 26px; }
 .ld-level h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; }
 .ld-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.ld-steps.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
-.ld-steps.one { grid-template-columns: minmax(0, 1fr); max-width: 410px; }
+/* every level on the same 3 columns, so a sketch is the same size from one level to the next */
 .ld-steps figure { position: relative; margin: 0; min-width: 0; }
 .ld-steps img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; border: 4px solid var(--ink); background: var(--ink); }
 .ld-steps figure.sketch img { background: #fff; }
@@ -886,7 +768,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   background: var(--ink);
   color: var(--paper);
   font-weight: 800;
-  font-size: .72rem;
+  font-size: .82rem;
   letter-spacing: .12em;
   text-transform: uppercase;
   padding: .12rem .55rem;
@@ -902,12 +784,12 @@ section[id], .dossier { scroll-margin-top: 72px; }
 .class-card { background: var(--ink); color: var(--paper); padding: 1rem 1.1rem 1.2rem; clip-path: polygon(0 0, 100% 3%, 98% 100%, 1% 97%); }
 .class-card:nth-child(2) { transform: rotate(.8deg); }
 .class-card h5 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-transform: uppercase; }
-.class-card .kind { display: inline-block; margin: .2rem 0 .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
+.class-card .kind { display: inline-block; margin: .2rem 0 .5rem; font-size: .82rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
 .class-card p { color: var(--paper-dim); }
 
 /* process */
 .process { margin-top: clamp(26px, 4vw, 40px); }
-.process-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.process-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .process figure { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .process figure:first-child { grid-column: 1 / -1; }
 .process figure img { width: 100%; background: #fff; border: 4px solid var(--ink); }
@@ -924,7 +806,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   border-left: 4px solid var(--ink);
   background: rgba(12, 11, 11, .05);
 }
-.sprints li.mine { border-left-color: var(--red); background: rgba(229, 0, 28, .08); }
+.sprints li.mine { border-left-color: var(--red); background: rgba(214, 0, 26, .08); }
 .sprints .sp-n { font-family: var(--display); font-size: 1.2rem; }
 .sprints .who { font-size: .9rem; font-weight: 500; color: #4a4444; }
 .sprints li.mine .tag {
@@ -932,7 +814,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
   margin-left: .4rem;
   background: var(--red-deep);
   color: var(--paper);
-  font-size: .7rem;
+  font-size: .82rem;
   font-weight: 800;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -1049,35 +931,6 @@ img[data-zoom] { cursor: zoom-in; }
 .kit .ico { width: 12px; height: 12px; background: var(--red); transform: rotate(45deg); flex: none; }
 .col { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
 
-.ranks { display: flex; flex-direction: column; gap: 12px; }
-.rank {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 4px 14px;
-  align-items: center;
-  padding: .7rem 1rem .8rem;
-  background: var(--ink-2);
-  clip-path: polygon(0 0, 100% 6%, 99% 100%, 0 94%);
-}
-.rank .what { font-weight: 800; font-size: 1.12rem; min-width: 0; }
-.rank .lvl { color: var(--paper-dim); font-weight: 500; font-size: .95rem; grid-column: 1; }
-.pips { display: flex; gap: 5px; grid-row: 1 / span 2; grid-column: 2; align-items: center; }
-.pips i {
-  width: 16px;
-  height: 22px;
-  background: #3a3434;
-  clip-path: polygon(30% 0, 100% 0, 70% 100%, 0 100%);
-}
-.pips i.on { background: var(--red); }
-.pips .max {
-  font-family: var(--display);
-  font-size: .95rem;
-  color: var(--ink);
-  background: var(--paper);
-  padding: 0 .4rem;
-  margin-left: 4px;
-  transform: rotate(-6deg);
-}
 /* Social stats (P5 yellow star) + the two traits, at the top of the section */
 .stat-top {
   display: grid;
@@ -1182,7 +1035,7 @@ img[data-zoom] { cursor: zoom-in; }
   gap: 10px;
   text-align: center;
 }
-.arcana .arc-kick { font-weight: 800; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red-text); }
+.arcana .arc-kick { font-weight: 800; font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red-text); }
 .arcana .card-art {
   border: 3px solid var(--paper);
   aspect-ratio: 3 / 4;
@@ -1276,8 +1129,10 @@ img[data-zoom] { cursor: zoom-in; }
 @keyframes nudge { 0%, 100% { transform: rotate(-4deg) scale(1); } 50% { transform: rotate(-2deg) scale(1.08); } }
 .arcana.petted .pet-hint, .arcana.petting .pet-hint { opacity: 0; }
 @media (max-width: 620px) {
-  /* no gutter on phones: the notes sit on the card corners like stickers */
   .arcana { margin-inline: auto; }
+}
+@media (max-width: 1100px) {
+  /* no gutter below 1100px: the notes sit on the card corners like stickers */
   .cat-note.n1 { --s: 44px; top: -22px; left: -8px; }
   .cat-note.n2 { --s: 36px; right: -12px; }
   .cat-note.n3 { --s: 32px; left: -6px; bottom: 18%; }
@@ -1285,7 +1140,7 @@ img[data-zoom] { cursor: zoom-in; }
 .arcana .arc-name { font-family: var(--display); font-size: 1.8rem; letter-spacing: .12em; text-transform: uppercase; }
 .arcana .rank-row { display: flex; justify-content: center; gap: 4px; }
 .arcana .rank-row i { width: 12px; height: 12px; background: var(--red); transform: rotate(45deg); }
-.arcana .rank-cap { font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-dim); }
+.arcana .rank-cap { font-size: .82rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-dim); }
 
 .bio { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .bio .intro { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 500; line-height: 1.35; max-width: 40ch; }
@@ -1319,7 +1174,6 @@ img[data-zoom] { cursor: zoom-in; }
 .hobby img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .hobby .t { padding: 1rem 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
 .hobby h4 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-transform: uppercase; }
-.hobby h4 .jp { color: var(--red); font-size: .8rem; margin-left: .4rem; }
 .hobby p { color: var(--paper-dim); font-size: 1rem; }
 
 /* ---------- CALLING CARD ---------- */
@@ -1384,19 +1238,24 @@ img[data-zoom] { cursor: zoom-in; }
 .channels { display: grid; gap: 12px; position: relative; }
 .channel {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) auto;
+  grid-template-columns: 136px minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
   background: var(--ink-2);
   padding: .7rem 1rem;
   clip-path: polygon(0 0, 100% 6%, 99% 100%, 0 94%);
 }
-.channel .k { display: flex; align-items: center; gap: .55rem; font-weight: 800; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-text); }
+.channel .k { display: flex; align-items: center; gap: .55rem; font-weight: 800; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; color: var(--red-text); }
 .channel .ico { width: 22px; height: 22px; flex: none; }
 .channel .v { font-weight: 700; font-size: 1.15rem; overflow-wrap: anywhere; user-select: all; min-width: 0; }
 .channel a.v { text-decoration: none; user-select: auto; }
 .channel .v--note { font-size: 1.05rem; user-select: text; }
-.channel a.v:hover { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; }
+.channel a.v:hover, .channel a.v:focus-visible { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; outline: none; }
+/* the link covers its whole row; the copy button stays on top */
+.channel { position: relative; }
+.channel a.v::after { content: ""; position: absolute; inset: 0; }
+.channel:has(a.v:hover), .channel:has(a.v:focus-visible) { background: #2a2525; }
+.channel .copy { position: relative; z-index: 1; }
 .copy {
   font-family: var(--display);
   font-size: 1rem;
@@ -1470,9 +1329,6 @@ footer .tyt span { color: var(--red); }
   /* the hero's big CV button sits right below: the bar keeps the name, FR/EN and contact */
   .top-cv { display: none; }
   .tag-role { font-size: 1rem; }
-  .vitrine-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .vitrine-nums div:nth-child(3n + 2) { background: var(--paper); color: var(--ink); }
-  .vitrine-nums div:nth-child(4n + 2), .vitrine-nums div:nth-child(4n + 3) { background: var(--red); color: var(--paper); }
 }
 @media (max-width: 360px) {
   .topbar .wrap { gap: 8px; }
@@ -1486,44 +1342,15 @@ footer .tyt span { color: var(--red); }
   .dossier.flip .media { order: 0; }
   /* the buttons start under the title instead of floating to the right */
   .dossier-head .links { margin-left: 0; justify-content: flex-start; }
-  .vitrine-top { grid-template-columns: minmax(0, 1fr); }
-  .vitrine-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .showcase { width: min(92%, 440px); }
   .arcana { max-width: 300px; }
+  /* the contact card keeps clear of the screen edges once it gets narrow */
+  .card { max-width: calc(100% - 24px); transform: rotate(-1deg); box-shadow: 10px 10px 0 var(--paper); }
 }
-@media (max-width: 700px) {
-  .hero-grid, .stats-grid, .coop-grid, .stat-top { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 620px) {
-  .targets { grid-template-columns: minmax(0, 1fr); }
-  .classes { grid-template-columns: minmax(0, 1fr); }
-  .vitrine-feats { grid-template-columns: minmax(0, 1fr); }
-  .menus { grid-template-columns: minmax(0, 1fr); max-width: 460px; }
-  .vitrine-badge { margin-left: 0; }
-  .rules li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  .ld-steps, .ld-steps.two, .ld-steps.one { grid-template-columns: minmax(0, 1fr); max-width: none; }
-  .process-grid { grid-template-columns: minmax(0, 1fr); }
-  .skills-list, .traits, .hobbies { grid-template-columns: minmax(0, 1fr); }
-  .hobby:nth-child(2) { transform: rotate(1deg); }
-  .channel { grid-template-columns: minmax(0, 1fr) auto; }
-  .channel .k { grid-column: 1 / -1; }
-  .menu { grid-template-columns: minmax(0, 1fr); }
-  .menu li { transform: none !important; }
-  .menu li:nth-child(even) { padding-left: 2rem; }
-  /* phones: the games come right under the name, before the lede and the buttons */
-  .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 1.1rem; }
-  .hero-copy { display: contents; }
-  .tag-role { order: 1; }
-  .name { order: 2; }
-  .status { order: 3; }
-  .status-when { order: 4; font-size: .76rem; letter-spacing: .05em; padding-inline: .6rem; }
-  .showcase { order: 5; }
-  .lede { order: 6; }
-  .hero-actions { order: 7; }
-  .facts-bar { order: 8; }
+@media (max-width: 1000px) {
+  /* tablets and phones: the four polaroids sit in a 2x2 grid, so no caption hides under the next card */
   .showcase {
-    width: 100%;
+    width: min(100%, 440px);
     aspect-ratio: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1536,6 +1363,39 @@ footer .tyt span { color: var(--red); }
   .showcase .shot:nth-child(2) { --r: 2.5deg; --sh: -6px 6px 0 var(--ink); }
   .showcase .shot:nth-child(3) { --r: 2deg; --sh: 6px 6px 0 var(--ink); }
   .showcase .shot:nth-child(4) { --r: -2.5deg; --sh: -6px 6px 0 var(--red-deep); }
+}
+@media (max-width: 700px) {
+  .hero-grid, .stats-grid, .coop-grid, .stat-top { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  .targets { grid-template-columns: minmax(0, 1fr); }
+  .classes { grid-template-columns: minmax(0, 1fr); }
+  .menus { grid-template-columns: minmax(0, 1fr); max-width: 460px; }
+  .rules li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .ld-steps { grid-template-columns: minmax(0, 1fr); }
+  .more .gif-fig, .more .rules, .more .sprints { max-width: none; }
+  .process-grid { grid-template-columns: minmax(0, 1fr); }
+  .skills-list, .traits, .hobbies { grid-template-columns: minmax(0, 1fr); }
+  .hobby:nth-child(2) { transform: rotate(1deg); }
+  .channel { grid-template-columns: minmax(0, 1fr) auto; }
+  .channel .k { grid-column: 1 / -1; }
+  .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; align-items: start; }
+  .menu li { transform: none !important; }
+  .menu .big { font-size: clamp(1.3rem, 6.4vw, 1.7rem); }
+  .menu a { padding-inline: .5rem; }
+  .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+  /* phones: the games come right under the name, before the lede and the buttons */
+  .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 1.1rem; }
+  .hero-copy { display: contents; }
+  .tag-role { order: 1; }
+  .name { order: 2; }
+  .status { order: 3; }
+  .status-when { order: 4; font-size: .82rem; letter-spacing: .05em; padding-inline: .6rem; }
+  .showcase { order: 5; }
+  .lede { order: 6; }
+  .hero-actions { order: 7; }
+  .facts-bar { order: 8; }
+  .showcase { width: 100%; }
   /* the band gets tall once the menu stacks: a % slant would cut into "Projets" */
   .menu-band { clip-path: polygon(0 34px, 100% 0, 100% 100%, 0 100%); padding-top: 58px; }
   /* room around the game title, so it is not squeezed between the genre tag and the buttons */
@@ -1595,7 +1455,7 @@ footer .tyt span { color: var(--red); }
         <a class="btn btn--red" href="#contact">Me contacter <span class="arr">▸</span></a>
       </div>
       <dl class="facts-bar">
-        <dt>Formation</dt><dd>ISART Digital, Game Design (avant : informatique &amp; maths à la Sorbonne)</dd>
+        <dt>Formation</dt><dd>ISART Digital, Game Design (avant : L1 informatique à la Sorbonne)</dd>
         <dt>Spécialités</dt><dd>Level design, system design, game feel, prototypage</dd>
         <dt>Outils</dt><dd>Unity, Visual Scripting, Python, Excel, Git, Figma</dd>
         <dt>Langues</dt><dd>Français natif, anglais C1, portugais C1, espagnol B1, japonais A2</dd>
@@ -1612,9 +1472,9 @@ footer .tyt span { color: var(--red); }
   <nav class="menu-band" aria-label="Sections">
     <div class="wrap">
       <ul class="menu">
-        <li><a href="#missions"><span class="big">Projets</span><span class="sub">Missions : 4 jeux</span></a></li>
-        <li><a href="#competences"><span class="big">Compétences</span><span class="sub">Stats</span></a></li>
-        <li><a href="#confident"><span class="big">À propos</span><span class="sub">Confident</span></a></li>
+        <li><a href="#missions"><span class="big">Projets</span><span class="sub">4 jeux finis</span></a></li>
+        <li><a href="#competences"><span class="big">Compétences</span><span class="sub">Game design, outils, langues</span></a></li>
+        <li><a href="#confident"><span class="big">À propos</span><span class="sub">Parcours et passions</span></a></li>
         <li><a href="#contact"><span class="big">Contact</span><span class="sub">Calling card et CV</span></a></li>
       </ul>
     </div>
@@ -1626,7 +1486,7 @@ footer .tyt span { color: var(--red); }
   <div class="wrap">
     <div class="sec-head">
       <div class="plate">
-        <span class="kick">Missions</span>
+        <span class="kick">Portfolio</span>
         <h2>Projets</h2>
       </div>
       <p>Quatre projets réalisés en 2026 : un puzzle platformer, un party game à un bouton, un visual novel d'enquête et un petit jeu qui vit sur le bureau.</p>
@@ -1682,7 +1542,7 @@ footer .tyt span { color: var(--red); }
       </div>
       <div class="dossier-grid">
         <div class="media">
-          <div class="screen" data-video="WdsLGsdeSPQ" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><img src="assets/push-gameplay.gif" alt="Niveau 5 : le personnage saute, les blocs basculent et un bloc surgit pour l'écraser" loading="lazy"></div>
+          <div class="screen" data-video="WdsLGsdeSPQ" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><video class="loop" src="assets/push-gameplay.mp4" poster="assets/push-gameplay-poster.jpg" muted loop playsinline preload="none" aria-label="Niveau 5 : le personnage saute, les blocs basculent et un bloc surgit pour l'écraser"></video></div>
           <div class="dialog-wrap">
             <span class="dialog-name">Core mechanic</span>
             <div class="dialog">
@@ -1707,7 +1567,7 @@ footer .tyt span { color: var(--red); }
       <div class="more" id="push-push-more" hidden>
       <div class="role-wrap ld">
         <div class="role-title"><h4>Level design</h4></div>
-        <p class="process-intro">Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Clique sur une image pour l'agrandir.</p>
+        <p class="process-intro">Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Cliquez sur une image pour l'agrandir.</p>
         <div class="ld-level">
           <h5>Monde 2, niveau 1</h5>
           <div class="ld-steps two">
@@ -1772,7 +1632,7 @@ footer .tyt span { color: var(--red); }
       <div class="role-wrap">
         <div class="role-title"><h4>Captures</h4></div>
         <figure class="gif-fig">
-          <img src="assets/push-switch.gif" alt="Extrait du trailer : le message Jump to switch platform présente la règle, chaque saut fait basculer les plateformes" loading="lazy">
+          <video class="loop" src="assets/push-switch.mp4" poster="assets/push-switch-poster.jpg" muted loop playsinline preload="none" aria-label="Extrait du trailer : le message Jump to switch platform présente la règle, chaque saut fait basculer les plateformes"></video>
           <figcaption><b>Extrait du trailer.</b> La règle de base en une image : chaque saut fait basculer les plateformes.</figcaption>
         </figure>
         <div class="thumbs" data-zoom-all>
@@ -1799,7 +1659,7 @@ footer .tyt span { color: var(--red); }
           <li class="mine"><span class="sp-n">S2</span><span>Recherches de level design après le pitch <span class="who">toute l'équipe</span></span></li>
           <li class="mine"><span class="sp-n">S3</span><span>Équilibrage du mouvement et banque de situations de level design <span class="who">équipe GD</span></span></li>
           <li class="mine"><span class="sp-n">S4</span><span>Whitebox des niveaux dans Unity <span class="who">équipe GD</span></span></li>
-          <li class="mine"><span class="sp-n">S5</span><span>Premier jet du monde 2 <span class="who">en binôme</span> et du monde 3 <span class="tag">solo</span></span></li>
+          <li class="mine"><span class="sp-n">S5</span><span>Premier jet des mondes 2 et 3 <span class="tag">solo</span></span></li>
           <li class="mine"><span class="sp-n">S6</span><span>Réglages de la caméra <span class="who">en binôme</span></span></li>
           <li class="mine"><span class="sp-n">S7</span><span>Playtests internes, revue critique des 3C et post-mortem <span class="who">toute l'équipe</span></span></li>
           <li class="mine"><span class="sp-n">S8</span><span>Alignement sur la grille, finalisation du level design et de la courbe de difficulté <span class="tag">solo</span></span></li>
@@ -1839,7 +1699,7 @@ footer .tyt span { color: var(--red); }
       </div>
       <div class="dossier-grid">
         <div class="media">
-          <div class="screen" data-video="xbmsQiT5AwA" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><img src="assets/fatal-gameplay.gif" alt="Gameplay animé de Fatal Boing : les boules se propulsent autour d'un trou noir" loading="lazy"></div>
+          <div class="screen" data-video="xbmsQiT5AwA" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><video class="loop" src="assets/fatal-gameplay.mp4" poster="assets/fatal-gameplay-poster.jpg" muted loop playsinline preload="none" aria-label="Gameplay animé de Fatal Boing : les boules se propulsent autour d'un trou noir"></video></div>
           <div class="dialog-wrap">
             <span class="dialog-name">Core mechanic</span>
             <div class="dialog">
@@ -1926,7 +1786,7 @@ footer .tyt span { color: var(--red); }
       </div>
       <div class="dossier-grid">
         <div class="media">
-          <div class="screen" data-video="SM9Xz37IjlA" data-video-label="Regarder le walkthrough"><span class="label">Gameplay</span><img src="assets/amy-gameplay.gif" alt="Scène animée d'Amy en salle de classe" loading="lazy"></div>
+          <div class="screen" data-video="SM9Xz37IjlA" data-video-label="Regarder le walkthrough"><span class="label">Gameplay</span><video class="loop" src="assets/amy-gameplay.mp4" poster="assets/amy-gameplay-poster.jpg" muted loop playsinline preload="none" aria-label="Scène animée d'Amy en salle de classe"></video></div>
           <div class="dialog-wrap">
             <span class="dialog-name">Core mechanic</span>
             <div class="dialog">
@@ -1970,7 +1830,7 @@ footer .tyt span { color: var(--red); }
       </div>
       <div class="process">
         <div class="role-title"><h4>Process</h4></div>
-        <p class="process-intro">Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Clique sur une image pour l'agrandir.</p>
+        <p class="process-intro">Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Cliquez sur une image pour l'agrandir.</p>
         <div class="process-grid">
           <figure>
             <img src="assets/amy-flow.jpg" alt="Arborescence des dialogues d'Amy, vue d'ensemble" loading="lazy" data-zoom>
@@ -2002,7 +1862,7 @@ footer .tyt span { color: var(--red); }
       </div>
       <div class="dossier-grid">
         <div class="media">
-          <div class="screen" data-video="PTczFCP-DxY" data-video-en="mQw6bCtCnkE" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><img src="assets/lumi-tape.gif" data-src-en="assets/lumi-tape-en.gif" alt="Gameplay animé de Lumi's Jar : on tape « Salut Lumi », chaque touche fait tomber des pièces dans le bocal où Lumi est assise" loading="lazy"></div>
+          <div class="screen" data-video="PTczFCP-DxY" data-video-en="mQw6bCtCnkE" data-video-label="Regarder le trailer"><span class="label">Gameplay</span><video class="loop" src="assets/lumi-tape.mp4" poster="assets/lumi-tape-poster.jpg" data-src-en="assets/lumi-tape-en.mp4" data-poster-en="assets/lumi-tape-en-poster.jpg" muted loop playsinline preload="none" aria-label="Gameplay animé de Lumi's Jar : on tape « Salut Lumi », chaque touche fait tomber des pièces dans le bocal où Lumi est assise"></video></div>
           <div class="dialog-wrap">
             <span class="dialog-name">Core mechanic</span>
             <div class="dialog">
@@ -2090,7 +1950,7 @@ footer .tyt span { color: var(--red); }
   <div class="wrap">
     <div class="sec-head">
       <div class="plate plate--paper">
-        <span class="kick">Stats</span>
+        <span class="kick">Savoir-faire</span>
         <h2>Compétences</h2>
       </div>
     </div>
@@ -2189,15 +2049,15 @@ footer .tyt span { color: var(--red); }
   <div class="wrap">
     <div class="sec-head">
       <div class="plate">
-        <span class="kick">Confident</span>
+        <span class="kick">Qui je suis</span>
         <h2>À propos</h2>
       </div>
-      <p>Des maths à la Sorbonne au game design à ISART, et ce qui m'inspire.</p>
+      <p>De l'informatique à la Sorbonne au game design à ISART, et ce qui m'inspire.</p>
     </div>
 
     <div class="coop-grid">
       <aside class="arcana" aria-label="Carte d'arcane">
-        <span class="arc-kick">Arcane</span>
+        <span class="arc-kick">Coéquipier</span>
         <svg width="0" height="0" style="position:absolute" aria-hidden="true">
           <symbol id="note-sym" viewBox="0 0 100 124">
             <g transform="translate(5 4)" fill="#f5b400"><path d="M30,8 L80,40 L70,45 L85,67 L72,63 L77,82 L60,57 L68,54 L47,32 L52,84 L39,86 Z"/><circle cx="34" cy="90" r="25"/></g>
@@ -2210,17 +2070,17 @@ footer .tyt span { color: var(--red); }
         <svg class="note cat-note n1" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
         <svg class="note cat-note n2" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
         <svg class="note cat-note n3" viewBox="0 0 100 124" aria-hidden="true"><use href="#note-sym"/></svg>
-        <div class="card-art"><img src="assets/portrait.jpg" alt="Tiago et son chat noir, Cosmos" loading="lazy"><span class="pet-hint" aria-hidden="true"><span class="hand">✋</span><b>Caresse-le !</b></span><button class="pet-zone" id="pet-zone" type="button" aria-label="Caresser Cosmos"></button></div>
+        <div class="card-art"><img src="assets/portrait.jpg" alt="Tiago et son chat noir, Cosmos" loading="lazy"><span class="pet-hint" aria-hidden="true"><span class="hand">✋</span><b>Caressez-le !</b></span><button class="pet-zone" id="pet-zone" type="button" aria-label="Caresser Cosmos"></button></div>
         <span class="purr-bubble" id="purr-bubble" aria-live="polite">Rrrrrr…</span>
-        <span class="arc-name">Le Mat</span>
+        <span class="arc-name">Cosmos</span>
         <span class="rank-row" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-        <span class="rank-cap">Coop Tiago &amp; Cosmos, rang max</span>
+        <span class="rank-cap">Chat de soutien moral</span>
       </aside>
 
       <div class="bio">
-        <p class="intro">Étudiant en Game Design à ISART Digital après un parcours en informatique et mathématiques à la Sorbonne. Je me spécialise en <b>Level Design</b>, <b>System Design</b> et <b>Game Feel</b>, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.</p>
+        <p class="intro">Étudiant en Game Design à ISART Digital après une première année de licence d'informatique, très axée maths, à la Sorbonne. Je me spécialise en <b>Level Design</b>, <b>System Design</b> et <b>Game Feel</b>, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.</p>
         <div class="path" aria-label="Parcours">
-          <span class="step">La Sorbonne<small>Informatique &amp; mathématiques</small></span>
+          <span class="step">La Sorbonne<small>L1 informatique</small></span>
           <span class="arrow" aria-hidden="true">▸</span>
           <span class="step now">ISART Digital<small>Game Design, en cours</small></span>
         </div>
@@ -2274,7 +2134,7 @@ footer .tyt span { color: var(--red); }
         </div>
         <div class="channel">
           <span class="k"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg><span>Mail</span></span>
-          <span class="v" id="mail">dnf.tiago@gmail.com</span>
+          <a class="v" id="mail" href="mailto:dnf.tiago@gmail.com">dnf.tiago@gmail.com</a>
           <button class="copy" id="copy-mail" type="button">Copier</button>
         </div>
         <div class="channel">
@@ -2329,7 +2189,7 @@ footer .tyt span { color: var(--red); }
 "Me contacter ▸": "Contact me <span class=\"arr\">▸<\/span>",
 "Contact ▸": "Contact <span class=\"arr\">▸<\/span>",
 "Formation": "Education",
-"ISART Digital, Game Design (avant : informatique & maths à la Sorbonne)": "ISART Digital, Game Design (before that: computer science &amp; maths at the Sorbonne)",
+"ISART Digital, Game Design (avant : L1 informatique à la Sorbonne)": "ISART Digital, Game Design (before that: first year of computer science at the Sorbonne)",
 "Spécialités": "Focus",
 "Level design, system design, game feel, prototypage": "Level design, system design, game feel, prototyping",
 "Outils": "Tools",
@@ -2340,11 +2200,13 @@ footer .tyt span { color: var(--red); }
 "Fatal Boing !": "Fatal Boing!",
 "Amy": "Amy",
 "Lumi’s Jar": "Lumi’s Jar",
-"Missions : 4 jeux": "Missions: 4 games",
-"Stats": "Stats",
-"Confident": "Confidant",
+"4 jeux finis": "4 finished games",
+"Game design, outils, langues": "Game design, tools, languages",
+"Parcours et passions": "Background and interests",
+"Portfolio": "Portfolio",
+"Savoir-faire": "Know-how",
+"Qui je suis": "Who I am",
 "Calling card et CV": "Calling card &amp; CV",
-"Missions": "Missions",
 "Quatre projets réalisés en 2026 : un puzzle platformer, un party game à un bouton, un visual novel d'enquête et un petit jeu qui vit sur le bureau.": "Four projects made in 2026: a puzzle platformer, a one-button party game, an investigation visual novel and a tiny game that lives on your desktop.",
 "Puzzle platformer 2,5D": "2.5D puzzle platformer",
 "Projet d'équipe, level design & 3C ▸": "Team project, level design &amp; 3C ▸",
@@ -2374,7 +2236,7 @@ footer .tyt span { color: var(--red); }
 "PC": "PC",
 "Push Push est un puzzle platformer en 2,5D basé sur une mécanique d'alternance d'états : à chaque saut, les blocs du niveau basculent entre actif et inactif. Un mauvais saut face à un bloc désactivé, et il surgit sur l'axe Z pour t'écraser. Timing, anticipation et lecture de l'espace sont tes seuls outils, à travers plusieurs mondes aux ambiances différentes. Un projet qui m'a fait travailler le tuning des 3C, le rythme du level design et le pacing.": "Push Push is a 2.5D puzzle platformer built on a state-switching mechanic: every jump toggles the level's blocks between active and inactive. One wrong jump in front of a disabled block and it shoots out along the Z axis to crush you. Timing, anticipation and reading the space are your only tools, across several worlds with their own moods. This project trained me in 3C tuning, level design rhythm and pacing.",
 "Level design": "Level design",
-"Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Clique sur une image pour l'agrandir.": "My levels from worlds 2 and 3, from paper sketch or Unity blockout to the final version. Click an image to enlarge it.",
+"Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Cliquez sur une image pour l'agrandir.": "My levels from worlds 2 and 3, from paper sketch or Unity blockout to the final version. Click an image to enlarge it.",
 "Monde 2, niveau 1": "World 2, level 1",
 "Croquis papier": "Paper sketch",
 "Version finale": "Final version",
@@ -2412,7 +2274,7 @@ footer .tyt span { color: var(--red); }
 "Recherches de level design après le pitch toute l'équipe": "Level design research after the pitch <span class=\"who\">whole team<\/span>",
 "Équilibrage du mouvement et banque de situations de level design équipe GD": "Movement balancing and a bank of level design situations <span class=\"who\">GD team<\/span>",
 "Whitebox des niveaux dans Unity équipe GD": "Level whiteboxing in Unity <span class=\"who\">GD team<\/span>",
-"Premier jet du monde 2 en binôme et du monde 3 solo": "First pass on world 2 <span class=\"who\">in a pair<\/span> and world 3 <span class=\"tag\">solo<\/span>",
+"Premier jet des mondes 2 et 3 solo": "First pass on worlds 2 and 3 <span class=\"tag\">solo<\/span>",
 "Réglages de la caméra en binôme": "Camera tuning <span class=\"who\">in a pair<\/span>",
 "Playtests internes, revue critique des 3C et post-mortem toute l'équipe": "Internal playtests, critical review of the 3C and post-mortem <span class=\"who\">whole team<\/span>",
 "Alignement sur la grille, finalisation du level design et de la courbe de difficulté solo": "Grid alignment, final pass on the level design and the difficulty curve <span class=\"tag\">solo<\/span>",
@@ -2473,7 +2335,7 @@ footer .tyt span { color: var(--red); }
 "Animations & mise en scèneAnimations de personnages et d'interface pour donner du rythme aux scènes clés.": "<b>Animation &amp; staging<\/b>Character and interface animations to give rhythm to the key scenes.",
 "Systèmes d'enquêteBoucle construite autour de choix de dialogue accessibles, de la récolte d'indices et de la confrontation finale.": "<b>Investigation systems<\/b>A loop built around accessible dialogue choices, gathering clues and the final confrontation.",
 "Sound design & audioRecherche, montage et intégration des effets sonores et des musiques au service de l'ambiance.": "<b>Sound design &amp; audio<\/b>Finding, editing and integrating sound effects and music to serve the mood.",
-"Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Clique sur une image pour l'agrandir.": "Amy's dialogue trees: every scene of the week, its choices, the evidence it can earn you and the branches toward the different endings. Click an image to enlarge it. (The charts are in French.)",
+"Les arborescences de dialogue d'Amy : chaque scène de la semaine, ses choix, les preuves qu'elle permet de gagner et les embranchements vers les différentes fins. Cliquez sur une image pour l'agrandir.": "Amy's dialogue trees: every scene of the week, its choices, the evidence it can earn you and the branches toward the different endings. Click an image to enlarge it. (The charts are in French.)",
 "Arborescence des dialogues. Les scènes, les choix du joueur et leurs conséquences.": "<b>Dialogue tree.<\/b> The scenes, the player's choices and their consequences.",
 "Mardi, l'enquête à l'école. Selon la piste choisie (salle des profs, observer, élèves), le joueur gagne un témoignage, repart sans preuve, ou déclenche la fin « prison ».": "<b>Tuesday, investigating at school.<\/b> Depending on the lead chosen (staff room, observe, students), the player gains a testimony, leaves empty-handed, or triggers the “prison” ending.",
 "Dimanche, le tribunal. Les preuves présentées (témoignages, confiance d'Amy, preuve de cyberattaque) mènent aux différentes fins, de la plus fragile à la meilleure.": "<b>Sunday, the courtroom.<\/b> The evidence presented (testimonies, Amy's trust, proof of a cyberattack) leads to the different endings, from the shakiest to the best.",
@@ -2585,13 +2447,13 @@ footer .tyt span { color: var(--red); }
 "Notions de base": "Basics",
 "After Effects, CapCut, Photoshop, Blender": "After Effects, CapCut, Photoshop, Blender",
 "Bases en image et montage vidéo": "Basics in image and video editing",
-"Des maths à la Sorbonne au game design à ISART, et ce qui m'inspire.": "From maths at the Sorbonne to game design at ISART, and what inspires me.",
-"Arcane": "Arcana",
-"Caresse-le !": "Pet him!",
-"Le Mat": "The Fool",
-"Coop Tiago & Cosmos, rang max": "Tiago &amp; Cosmos Confidant, Rank MAX",
-"Étudiant en Game Design à ISART Digital après un parcours en informatique et mathématiques à la Sorbonne. Je me spécialise en Level Design, System Design et Game Feel, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.": "Game Design student at ISART Digital, after studying computer science and mathematics at the Sorbonne. I specialize in <b>Level Design<\/b>, <b>System Design<\/b> and <b>Game Feel<\/b>, with close attention to readability, player comfort and precise controls.",
-"La SorbonneInformatique & mathématiques": "La Sorbonne<small>Computer science &amp; mathematics<\/small>",
+"De l'informatique à la Sorbonne au game design à ISART, et ce qui m'inspire.": "From computer science at the Sorbonne to game design at ISART, and what inspires me.",
+"Coéquipier": "Teammate",
+"Caressez-le !": "Pet him!",
+"Cosmos": "Cosmos",
+"Chat de soutien moral": "Moral support cat",
+"Étudiant en Game Design à ISART Digital après une première année de licence d'informatique, très axée maths, à la Sorbonne. Je me spécialise en Level Design, System Design et Game Feel, avec une attention particulière à la lisibilité, au confort de jeu et à la précision des contrôles.": "Game Design student at ISART Digital, after a first year of computer science, heavy on maths, at the Sorbonne. I specialize in <b>Level Design<\/b>, <b>System Design<\/b> and <b>Game Feel<\/b>, with close attention to readability, player comfort and precise controls.",
+"La SorbonneL1 informatique": "La Sorbonne<small>1st year, computer science<\/small>",
 "ISART DigitalGame Design, en cours": "ISART Digital<small>Game Design, ongoing<\/small>",
 "Ma passion": "My <span>passion<\/span>",
 "Depuis l'enfance, les jeux vidéo occupent une place particulière dans ma vie. Plus que de simples divertissements, ils m'ont fait traverser des aventures marquantes, vibrer et ressentir des émotions d'une intensité rare.": "Since childhood, video games have held a special place in my life. More than just entertainment, they took me through unforgettable adventures, thrilled me and made me feel emotions of rare intensity.",
@@ -2775,7 +2637,7 @@ footer .tyt span { color: var(--red); }
   function ui(k) { return UI[lang][k]; }
   var LETTER = /\p{L}/u;
   // Text the script writes itself, kept out of the dictionary
-  var DYNAMIC = '.more-lbl, .more-hint, .cta-txt, #copy-mail, #purr-bubble, #lang-toggle';
+  var DYNAMIC = '.more-lbl, .cta-txt, #copy-mail, #purr-bubble, #lang-toggle';
   var blocks = [];
   (function collect(el) {
     for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
@@ -2795,7 +2657,7 @@ footer .tyt span { color: var(--red); }
     });
   });
   var media = Array.prototype.map.call(document.querySelectorAll('[data-src-en], [data-href-en], [data-video-en]'), function (el) {
-    return { el: el, src: el.getAttribute('src'), href: el.getAttribute('href'), video: el.getAttribute('data-video') };
+    return { el: el, src: el.getAttribute('src'), poster: el.getAttribute('poster'), href: el.getAttribute('href'), video: el.getAttribute('data-video') };
   });
   window.i18nMissing = function () {
     var keys = blocks.map(function (b) { return b.key; })
@@ -2816,6 +2678,7 @@ footer .tyt span { color: var(--red); }
     media.forEach(function (m) {
       var en = l === 'en';
       if (m.el.hasAttribute('data-src-en')) m.el.setAttribute('src', en ? m.el.getAttribute('data-src-en') : m.src);
+      if (m.el.hasAttribute('data-poster-en')) m.el.setAttribute('poster', en ? m.el.getAttribute('data-poster-en') : m.poster);
       if (m.el.hasAttribute('data-href-en')) m.el.setAttribute('href', en ? m.el.getAttribute('data-href-en') : m.href);
       if (m.el.hasAttribute('data-video-en')) m.el.setAttribute('data-video', en ? m.el.getAttribute('data-video-en') : m.video);
     });
@@ -2862,6 +2725,21 @@ footer .tyt span { color: var(--red); }
     });
   }
   if (!reduce) setInterval(shuffle, 4500);
+
+  // Gameplay loops (MP4 instead of GIF): load and play only while on screen
+  var loops = Array.prototype.slice.call(document.querySelectorAll('video.loop'));
+  function playLoop(v) { if (reduce) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  if ('IntersectionObserver' in window) {
+    var loopWatch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        en.target._seen = en.isIntersecting;
+        if (en.isIntersecting) playLoop(en.target); else en.target.pause();
+      });
+    }, { rootMargin: '200px 0px' });
+    loops.forEach(function (v) { loopWatch.observe(v); });
+  } else loops.forEach(playLoop);
+  // a language switch swaps the source, which stops the clip: restart the visible ones
+  langHooks.push(function () { loops.forEach(function (v) { if (v._seen) playLoop(v); }); });
 
   // Easter egg: pet the cat, it purrs
   var pet = document.getElementById('pet-zone');
@@ -2966,7 +2844,7 @@ footer .tyt span { color: var(--red); }
         f.title = ui('yt');
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.allowFullscreen = true;
-        scr.querySelector('img').replaceWith(f);
+        scr.querySelector('img, video').replaceWith(f);
         btn.remove();
         var lbl = scr.querySelector('.label'); if (lbl) lbl.textContent = ui('video');
       });
@@ -2988,7 +2866,7 @@ footer .tyt span { color: var(--red); }
         v.src = scr.getAttribute('data-video-fichier');
         v.controls = true; v.autoplay = true; v.playsInline = true;
         v.style.width = '100%'; v.style.height = '100%'; v.style.display = 'block'; v.style.objectFit = 'contain'; v.style.background = '#000';
-        scr.querySelector('img').replaceWith(v);
+        scr.querySelector('img, video').replaceWith(v);
         btn.remove();
         var lbl = scr.querySelector('.label'); if (lbl) lbl.textContent = ui('video');
       });
@@ -3002,7 +2880,6 @@ footer .tyt span { color: var(--red); }
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.querySelector('.more-lbl').textContent = (open ? ui('hide') : '') + tr(btn.getAttribute('data-label'));
     btn.querySelector('.cta-txt').textContent = ui('more');
-    btn.querySelector('.more-hint').textContent = ui('hint');
     var peek = btn.previousElementSibling;
     if (peek && peek.classList.contains('more-peek')) peek.hidden = open;
   }
@@ -3044,7 +2921,6 @@ footer .tyt span { color: var(--red); }
     head.className = 'more-head';
     btn.insertBefore(head, btn.firstChild);
     head.appendChild(btn.querySelector('.more-lbl'));
-    head.insertAdjacentHTML('beforeend', '<span class="more-hint"></span>');
     var cta = document.createElement('span');
     cta.className = 'more-cta';
     cta.innerHTML = '<span class="cta-txt"></span>';
@@ -3104,9 +2980,9 @@ footer .tyt span { color: var(--red); }
         f.innerHTML = '<use href="#note-sym"/>';
       } else f.className = 'fl ' + kind;
       // spread down the section: one shape per slice, random across the width
-      // mostly in the side gutters, where the content does not cover them
-      var free = cls !== 'coop' && innerWidth >= 1100;
-      var x = !free || rnd() < .7 ? (rnd() < .5 ? rnd() * 6 : 92 + rnd() * 6) : rnd() * 94;
+      // only in the side gutters, so no shape ever lands on text
+      var side = Math.max(6, (innerWidth - 1180) / 2 / innerWidth * 100 - 5);
+      var x = rnd() < .5 ? rnd() * side : 98 - rnd() * side;
       f.style.setProperty('--x', x.toFixed(1) + '%');
       f.style.setProperty('--y', ((i + rnd()) / n * 96).toFixed(1) + '%');
       f.style.setProperty('--s', Math.round(18 + rnd() * (kind === 'slash' ? 80 : 46)) + 'px');
