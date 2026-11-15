@@ -867,6 +867,8 @@ section[id], .dossier { scroll-margin-top: 72px; }
 
 /* level design steps */
 .ld-level { margin-bottom: 26px; }
+.ld-teaser { margin: clamp(22px, 3.5vw, 32px) 0 0; max-width: 980px; }
+.ld-teaser + .more-btn { margin-top: 0; }
 .ld-level h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; }
 .ld-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .ld-steps.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; }
@@ -1535,7 +1537,7 @@ footer .tyt span { color: var(--red); }
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="tag-role">Game Designer · Level Design · Game Feel</span>
+      <span class="tag-role">Game Designer · Level Design · System Design</span>
       <h1 class="name" aria-label="Tiago Del Nery-Fontaine">
         <span class="row" data-ransom data-seed="3">TIAGO</span>
         <span class="row" data-ransom data-seed="11">DEL NERY-FONTAINE</span>
@@ -1654,6 +1656,14 @@ footer .tyt span { color: var(--red); }
             <dt>Plateforme</dt><dd>PC (Windows)</dd>
           </dl>
           <p class="pitch">Push Push est un puzzle platformer en 2,5D basé sur une mécanique d'alternance d'états : à chaque saut, les blocs du niveau basculent entre actif et inactif. Un mauvais saut face à un bloc désactivé, et il surgit sur l'axe Z pour t'écraser. Timing, anticipation et lecture de l'espace sont tes seuls outils, à travers plusieurs mondes aux ambiances différentes. Un projet qui m'a fait travailler le tuning des 3C, le rythme du level design et le pacing.</p>
+        </div>
+      </div>
+      <div class="ld-level ld-teaser">
+        <h5>Monde 3 · Niveau 2 : du croquis au niveau final</h5>
+        <div class="ld-steps">
+        <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n2-croquis.jpg" alt="Croquis papier du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
+        <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n2-blockout.jpg" alt="Blockout Unity du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
+        <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n2-final.jpg" alt="Niveau 2 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
         </div>
       </div>
       <button class="more-btn" type="button" aria-expanded="false" aria-controls="push-push-more"><span class="more-lbl">Level design, process et captures</span><span class="chev" aria-hidden="true">▾</span></button>
@@ -2312,7 +2322,7 @@ footer .tyt span { color: var(--red); }
 "À propos": "About",
 "Contact": "Contact",
 "CV ↗": "CV ↗",
-"Game Designer · Level Design · Game Feel": "Game Designer · Level Design · Game Feel",
+"Game Designer · Level Design · System Design": "Game Designer · Level Design · System Design",
 "Étudiant en 2ᵉ année de Game Design à ISART Digital (Paris), axé sur la création de prototypes jouables, le level design et la rédaction de GDD précis.": "Second-year Game Design student at <strong>ISART Digital<\/strong> (Paris), focused on building playable prototypes, level design and writing precise GDDs.",
 "En recherche de stage !": "Looking for an <b>internship<\/b>!",
 "Mai → août 2027 · durée flexible": "May → August 2027 · flexible length",
@@ -2320,6 +2330,7 @@ footer .tyt span { color: var(--red); }
 "De mai à août 2027, pas forcément sur toute la période": "May to August 2027, not necessarily the whole period",
 "Mon CV ↗": "My CV <span class=\"arr\">↗<\/span>",
 "Me contacter ▸": "Contact me <span class=\"arr\">▸<\/span>",
+"Contact ▸": "Contact <span class=\"arr\">▸<\/span>",
 "Formation": "Education",
 "ISART Digital, Game Design · avant : informatique & maths à la Sorbonne": "ISART Digital, Game Design · before that: computer science &amp; maths at the Sorbonne",
 "Spécialités": "Focus",
@@ -2378,6 +2389,7 @@ footer .tyt span { color: var(--red); }
 "En jeu": "In game",
 "Après un saut": "After a jump",
 "Monde 3 · Niveau 2": "World 3 · Level 2",
+"Monde 3 · Niveau 2 : du croquis au niveau final": "World 3 · Level 2: from sketch to final level",
 "Blockout Unity": "Unity blockout",
 "Monde 3 · Niveau 3": "World 3 · Level 3",
 "Monde 3 · Niveau 4": "World 3 · Level 4",
