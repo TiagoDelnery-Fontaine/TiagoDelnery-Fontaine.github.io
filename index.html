@@ -757,6 +757,7 @@ section[id], .dossier { scroll-margin-top: 72px; }
 /* level design steps */
 .ld-level { margin-bottom: 26px; }
 .ld-level h5 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; }
+.ld-note { max-width: 70ch; margin: 0 0 12px; }
 .ld-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 /* every level on the same 3 columns, so a sketch is the same size from one level to the next */
 .ld-steps figure { position: relative; margin: 0; min-width: 0; }
@@ -1593,6 +1594,7 @@ footer .tyt span { color: var(--red); }
         <p class="process-intro">Mes niveaux des mondes 2 et 3, du croquis papier ou du blockout Unity jusqu'à la version finale. Cliquez sur une image pour l'agrandir.</p>
         <div class="ld-level">
           <h5>Monde 2, niveau 1</h5>
+          <p class="ld-note">Le piège tient en un saut. Le réflexe est de sauter tout de suite vers la plateforme blanche à droite, mais ce saut fait basculer les plateformes et on retombe sur la noire, coincé en bas. Il faut d'abord sauter sur place depuis la grise puis sauter vers la blanche. En playtest, presque tout le monde s'y fait prendre : c'est sa simplicité qui le rend efficace.</p>
           <div class="ld-steps two">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-m2-n1-croquis.jpg" alt="Croquis papier du niveau 1 du monde 2" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-m2-n1-final.jpg" alt="Niveau 1 du monde 2 dans la version finale" loading="lazy" data-zoom></figure>
@@ -1600,12 +1602,14 @@ footer .tyt span { color: var(--red); }
         </div>
         <div class="ld-level">
           <h5>Monde 2, niveau 3</h5>
+          <p class="ld-note">Ce niveau présente la porte posée sur une plateforme : si on saute alors que cette plateforme est désactivée, on ne peut pas entrer dans la porte verte. Il faut se laisser tomber sur la plateforme blanche sans sauter, sauter sur la noire puis revenir sur la blanche. Sauter directement vers l'escalier noir fait tomber le joueur. Depuis la petite plateforme blanche, on peut enfin sauter sur la noire. Il n'y a pas de croquis papier parce que la mécanique a été ajoutée en fin de production et que je l'ai introduite directement en jeu. C'est l'un des niveaux préférés des testeurs.</p>
           <div class="ld-steps one">
           <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-m2-n3-final.jpg" alt="Niveau 3 du monde 2 dans la version finale" loading="lazy" data-zoom></figure>
           </div>
         </div>
         <div class="ld-level" data-peek>
           <h5>Monde 3, niveau 1</h5>
+          <p class="ld-note">Ce niveau ouvre le monde 3 et ses blocs qui flottent partout. Son but est de faire comprendre qu'on peut se laisser tomber pour avancer. Beaucoup de joueurs n'ont pas encore ce réflexe à ce stade, avec tout ce qu'ils ont déjà à retenir. La grille sert de repère pour lire de quelle hauteur on peut se laisser tomber.</p>
           <div class="ld-steps">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n1-croquis.jpg" alt="Croquis papier du niveau 1 du monde 3" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Capture annotée</span><img src="assets/ld-n1-annote.jpg" alt="Capture du niveau 1 du monde 3 annotée avec le chemin du joueur en pointillés" loading="lazy" data-zoom></figure>
@@ -1613,15 +1617,8 @@ footer .tyt span { color: var(--red); }
           </div>
         </div>
         <div class="ld-level">
-          <h5>Monde 3, niveau 1 : le piège du départ</h5>
-          <div class="ld-steps">
-          <figure class="sketch"><span class="step-lbl">Croquis du piège</span><img src="assets/ld-n1-piege-croquis.jpg" alt="Croquis papier du piège au départ du niveau 1 du monde 3" loading="lazy" data-zoom></figure>
-          <figure class="ld-shot"><span class="step-lbl">En jeu</span><img src="assets/ld-n1-piege-a.jpg" alt="Le départ du niveau 1 du monde 3 en jeu, avant le saut" loading="lazy" data-zoom></figure>
-          <figure class="ld-shot"><span class="step-lbl">Après un saut</span><img src="assets/ld-n1-piege-b.jpg" alt="Le même endroit après un saut : les blocs ont changé d'état" loading="lazy" data-zoom></figure>
-          </div>
-        </div>
-        <div class="ld-level">
           <h5>Monde 3, niveau 2</h5>
+          <p class="ld-note">Nouvelle règle : sauter avec un bloc derrière soi éjecte le joueur. Il faut se laisser tomber sur le petit rebord pour sauter sans bloc dans le dos. La suite reprend le motif du niveau 3 du monde 2 (monter sur le bloc puis sauter) : les mondes réutilisent les motifs des mondes précédents.</p>
           <div class="ld-steps">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n2-croquis.jpg" alt="Croquis papier du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n2-blockout.jpg" alt="Blockout Unity du niveau 2 du monde 3" loading="lazy" data-zoom></figure>
@@ -1630,6 +1627,7 @@ footer .tyt span { color: var(--red); }
         </div>
         <div class="ld-level">
           <h5>Monde 3, niveau 3</h5>
+          <p class="ld-note">Premier niveau en U : le joueur part vers la gauche, monte puis revient vers la droite. Le thème est la synchronisation de deux plateformes superposées sur lesquelles il faut sauter au bon moment. J'ai modifié le blockout de départ pour placer le piège de l'escalier et, tout en haut, le piège de synchronisation avec la plateforme noire. Il n'y a pas de vide : une erreur fait recommencer le passage, pas mourir.</p>
           <div class="ld-steps two">
           <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n3-blockout.jpg" alt="Blockout Unity du niveau 3 du monde 3" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Version finale</span><img src="assets/ld-n3-final.jpg" alt="Niveau 3 du monde 3 dans la version finale" loading="lazy" data-zoom></figure>
@@ -1637,6 +1635,7 @@ footer .tyt span { color: var(--red); }
         </div>
         <div class="ld-level">
           <h5>Monde 3, niveau 4</h5>
+          <p class="ld-note">L'idée de départ était de faire entrer le joueur dans les plateformes avec deux carrés emboîtés. Je les ai en partie défaits parce que sinon le niveau était impossible et pas amusant. Le joueur revient d'abord en arrière pour désactiver la plateforme blanche, puis il entre dans le cube blanc et dans le cube noir. Il remonte ensuite sur le cube blanc et rejoint la fin.</p>
           <div class="ld-steps">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n4-croquis.jpg" alt="Croquis papier du niveau 4 du monde 3, des blocs emboîtés" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n4-blockout.jpg" alt="Blockout Unity du niveau 4 du monde 3" loading="lazy" data-zoom></figure>
@@ -1645,6 +1644,7 @@ footer .tyt span { color: var(--red); }
         </div>
         <div class="ld-level">
           <h5>Monde 3, niveau 5</h5>
+          <p class="ld-note">Ce niveau très vertical travaille la distance de saut. On fait un petit saut puis un grand saut sans aller trop à droite, sinon on se fait éjecter. Le cœur du niveau est un escalier qu'on ne monte qu'en grands sauts : il faut viser directement la 3e marche, la blanche, et pas la 1re. De là, on vise le petit trou pour désactiver la plateforme blanche, on monte sur la noire puis on remonte sur la blanche. La fin reprend l'escalier : il faut sauter directement sur la 2e plateforme noire, sinon on ne peut pas atteindre la suivante.</p>
           <div class="ld-steps">
           <figure class="sketch"><span class="step-lbl">Croquis papier</span><img src="assets/ld-n5-croquis.jpg" alt="Croquis papier du niveau 5 du monde 3, un long saut" loading="lazy" data-zoom></figure>
           <figure class="ld-shot"><span class="step-lbl">Blockout Unity</span><img src="assets/ld-n5-blockout.jpg" alt="Blockout Unity du niveau 5 du monde 3" loading="lazy" data-zoom></figure>
@@ -2273,15 +2273,19 @@ footer .tyt span { color: var(--red); }
 "Monde 2, niveau 3": "World 2, level 3",
 "Monde 3, niveau 1": "World 3, level 1",
 "Capture annotée": "Annotated screenshot",
-"Monde 3, niveau 1 : le piège du départ": "World 3, level 1: the opening trap",
-"Croquis du piège": "Trap sketch",
 "En jeu": "In game",
-"Après un saut": "After a jump",
 "Monde 3, niveau 2": "World 3, level 2",
 "Blockout Unity": "Unity blockout",
 "Monde 3, niveau 3": "World 3, level 3",
 "Monde 3, niveau 4": "World 3, level 4",
 "Monde 3, niveau 5": "World 3, level 5",
+"Le piège tient en un saut. Le réflexe est de sauter tout de suite vers la plateforme blanche à droite, mais ce saut fait basculer les plateformes et on retombe sur la noire, coincé en bas. Il faut d'abord sauter sur place depuis la grise puis sauter vers la blanche. En playtest, presque tout le monde s'y fait prendre : c'est sa simplicité qui le rend efficace.": "The trap is a single jump. The instinct is to jump straight to the white platform on the right, but that jump switches the platforms and you land on the black one, stuck below. You first have to jump in place on the grey platform, then jump to the white one. In playtests almost everyone falls for it: its simplicity is what makes it work.",
+"Ce niveau présente la porte posée sur une plateforme : si on saute alors que cette plateforme est désactivée, on ne peut pas entrer dans la porte verte. Il faut se laisser tomber sur la plateforme blanche sans sauter, sauter sur la noire puis revenir sur la blanche. Sauter directement vers l'escalier noir fait tomber le joueur. Depuis la petite plateforme blanche, on peut enfin sauter sur la noire. Il n'y a pas de croquis papier parce que la mécanique a été ajoutée en fin de production et que je l'ai introduite directement en jeu. C'est l'un des niveaux préférés des testeurs.": "This level introduces the door placed on a platform: if you jump while that platform is switched off, you can't enter the green door. You have to drop onto the white platform without jumping, jump to the black one, then come back to the white one. Jumping straight to the black staircase makes the player fall. From the small white platform you can finally jump to the black one. There is no paper sketch because the mechanic was added late in production and I introduced it directly in the game. It is one of the testers' favorite levels.",
+"Ce niveau ouvre le monde 3 et ses blocs qui flottent partout. Son but est de faire comprendre qu'on peut se laisser tomber pour avancer. Beaucoup de joueurs n'ont pas encore ce réflexe à ce stade, avec tout ce qu'ils ont déjà à retenir. La grille sert de repère pour lire de quelle hauteur on peut se laisser tomber.": "This level opens world 3 and its floating blocks. Its goal is to make players understand they can drop down to move forward. Many players don't have that reflex yet at this point, with everything they already have to keep in mind. The grid is there to show how far down you can safely drop.",
+"Nouvelle règle : sauter avec un bloc derrière soi éjecte le joueur. Il faut se laisser tomber sur le petit rebord pour sauter sans bloc dans le dos. La suite reprend le motif du niveau 3 du monde 2 (monter sur le bloc puis sauter) : les mondes réutilisent les motifs des mondes précédents.": "New rule: jumping with a block behind you ejects the player. You have to drop onto the small ledge so you can jump with no block at your back. The rest reuses the pattern from world 2, level 3 (climb onto the block, then jump): each world brings back patterns from the previous ones.",
+"Premier niveau en U : le joueur part vers la gauche, monte puis revient vers la droite. Le thème est la synchronisation de deux plateformes superposées sur lesquelles il faut sauter au bon moment. J'ai modifié le blockout de départ pour placer le piège de l'escalier et, tout en haut, le piège de synchronisation avec la plateforme noire. Il n'y a pas de vide : une erreur fait recommencer le passage, pas mourir.": "First U-shaped level: the player heads left, climbs, then comes back to the right. The theme is syncing two stacked platforms that you have to jump on at the right moment. I changed the original blockout to fit the staircase trap and, at the very top, the sync trap with the black platform. There is no pit: a mistake means retrying the section, not dying.",
+"L'idée de départ était de faire entrer le joueur dans les plateformes avec deux carrés emboîtés. Je les ai en partie défaits parce que sinon le niveau était impossible et pas amusant. Le joueur revient d'abord en arrière pour désactiver la plateforme blanche, puis il entre dans le cube blanc et dans le cube noir. Il remonte ensuite sur le cube blanc et rejoint la fin.": "The starting idea was to make the player go inside the platforms, with two interlocking squares. I partly broke them apart because otherwise the level was impossible and not fun. The player first goes back to switch off the white platform, then enters the white cube and the black cube. They then climb back onto the white cube and reach the end.",
+"Ce niveau très vertical travaille la distance de saut. On fait un petit saut puis un grand saut sans aller trop à droite, sinon on se fait éjecter. Le cœur du niveau est un escalier qu'on ne monte qu'en grands sauts : il faut viser directement la 3e marche, la blanche, et pas la 1re. De là, on vise le petit trou pour désactiver la plateforme blanche, on monte sur la noire puis on remonte sur la blanche. La fin reprend l'escalier : il faut sauter directement sur la 2e plateforme noire, sinon on ne peut pas atteindre la suivante.": "A very vertical level built around jump distance. You make a small jump, then a long jump without going too far right, or you get ejected. The core of the level is a staircase you can only climb with long jumps: you have to aim straight for the third step, the white one, not the first. From there you aim for the small gap to switch off the white platform, climb onto the black one, then back onto the white one. The ending reuses the staircase: you have to jump straight onto the second black platform, or you can't reach the next one.",
 "Captures": "Screenshots",
 "Extrait du trailer. La règle de base en une image : chaque saut fait basculer les plateformes.": "<b>From the trailer.<\/b> The core rule in one shot: every jump flips the platforms.",
 "Mon rôle": "My role",
@@ -2528,9 +2532,6 @@ footer .tyt span { color: var(--red); }
 "Croquis papier du niveau 1 du monde 3": "Paper sketch of world 3, level 1",
 "Capture du niveau 1 du monde 3 annotée avec le chemin du joueur en pointillés": "Screenshot of world 3, level 1 annotated with the player's path as a dotted line",
 "Niveau 1 du monde 3 dans la version finale": "World 3, level 1 in the final version",
-"Croquis papier du piège au départ du niveau 1 du monde 3": "Paper sketch of the trap at the start of world 3, level 1",
-"Le départ du niveau 1 du monde 3 en jeu, avant le saut": "The start of world 3, level 1 in game, before the jump",
-"Le même endroit après un saut : les blocs ont changé d'état": "The same spot after a jump: the blocks have switched state",
 "Croquis papier du niveau 2 du monde 3": "Paper sketch of world 3, level 2",
 "Blockout Unity du niveau 2 du monde 3": "Unity blockout of world 3, level 2",
 "Niveau 2 du monde 3 dans la version finale": "World 3, level 2 in the final version",
@@ -2941,7 +2942,7 @@ footer .tyt span { color: var(--red); }
       el.removeAttribute('data-zoom'); el.removeAttribute('data-zoom-all'); el.removeAttribute('data-video');
     });
     copy.querySelectorAll('a, button').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
-    copy.querySelectorAll('h4, h5').forEach(function (el) { el.remove(); });
+    copy.querySelectorAll('h4, h5, .ld-note').forEach(function (el) { el.remove(); });
     copy.querySelectorAll('img').forEach(function (el) { el.loading = 'eager'; });
     peek.replaceChildren(copy);
     peek.hidden = btn.getAttribute('aria-expanded') === 'true';
